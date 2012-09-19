@@ -11,3 +11,5 @@ CREATE TABLE ShippingMethod (
 	TrackingNumber NVARCHAR(100) NOT NULL
 )
 GO
+
+-- TODO: Change 'TrackingNumber' to 'TrackingUrl'

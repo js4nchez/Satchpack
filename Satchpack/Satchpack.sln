@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satchpack", "Satchpack\Satc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satchpack.Database", "Satchpack.Database\Satchpack.Database.csproj", "{E35467A1-94D4-4DF1-A8BA-C323F3497B46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satchpack.Domain", "Satchpack.Domain\Satchpack.Domain.csproj", "{EDB4A1BD-EE11-4F87-A350-DE6D579B110E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{E35467A1-94D4-4DF1-A8BA-C323F3497B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E35467A1-94D4-4DF1-A8BA-C323F3497B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E35467A1-94D4-4DF1-A8BA-C323F3497B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB4A1BD-EE11-4F87-A350-DE6D579B110E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB4A1BD-EE11-4F87-A350-DE6D579B110E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB4A1BD-EE11-4F87-A350-DE6D579B110E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB4A1BD-EE11-4F87-A350-DE6D579B110E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

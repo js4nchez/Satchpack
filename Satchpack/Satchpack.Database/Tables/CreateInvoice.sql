@@ -12,3 +12,5 @@ CREATE TABLE Invoice (
 	InvoiceTotal DECIMAL NOT NULL
 )
 GO
+
+-- TODO: Add 'InvoiceStatus' column
