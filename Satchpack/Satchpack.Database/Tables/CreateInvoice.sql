@@ -1,6 +1,7 @@
 USE Satchpack
 GO
 
+-- Creates the Invoice table if it doesn't exist.
 IF NOT EXISTS (SELECT 1
 		   FROM INFORMATION_SCHEMA.TABLES
 		   WHERE TABLE_NAME = 'Invoice')
@@ -13,4 +14,10 @@ CREATE TABLE Invoice (
 )
 GO
 
--- TODO: Add 'InvoiceStatus' column
+-- Adds the 'InvoiceStatus' column if it doesn't exist.
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+		   WHERE TABLE_NAME = 'ShippingMethod' AND
+				 COLUMN_NAME = 'TrackingNumber')
+ALTER TABLE Invoice
+ADD InvoiceStatusId INT NOT NULL REFERENCES InvoiceStatus(Id)
+GO

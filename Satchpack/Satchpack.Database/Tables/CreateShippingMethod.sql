@@ -1,6 +1,7 @@
 USE Satchpack
 GO
 
+-- Creates the ShippingMethod table if it doesn't exist.
 IF NOT EXISTS (SELECT 1
 		   FROM INFORMATION_SCHEMA.TABLES
 		   WHERE TABLE_NAME = 'ShippingMethod')
@@ -12,4 +13,6 @@ CREATE TABLE ShippingMethod (
 )
 GO
 
--- TODO: Change 'TrackingNumber' to 'TrackingUrl'
+-- Changing Column 'TrackingNumber' to 'TrackingUrl'
+sp_RENAME 'ShippingMethod.TrackingNumber', 'TrackingUrl', 'COLUMN'
+GO

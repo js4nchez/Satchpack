@@ -1,6 +1,7 @@
 USE Satchpack
 GO
 
+-- Creates the Inventory table if it doesn't exist.
 IF NOT EXISTS (SELECT 1
 		   FROM INFORMATION_SCHEMA.TABLES
 		   WHERE TABLE_NAME = 'Inventory')
