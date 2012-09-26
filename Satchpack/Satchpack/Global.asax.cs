@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Satchpack.Infrastructure;
 
 namespace Satchpack
 {
@@ -35,6 +36,9 @@ namespace Satchpack
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            // We tell the MVC Framework to use our implementation for servicing requests to the correct controller.
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }
