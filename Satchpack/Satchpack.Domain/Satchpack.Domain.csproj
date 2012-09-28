@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Abstract\IAdminDAL.cs" />
+    <Compile Include="DAL_Abstract\IInvoiceDAL.cs" />
+    <Compile Include="DAL_Abstract\IProductDAL.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\DAL_Object.cs" />
     <Compile Include="Entities\Inventory.cs" />
@@ -50,6 +53,9 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL_Implementation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
