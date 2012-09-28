@@ -52,6 +52,7 @@
     <Compile Include="Entities\InvoiceStatus.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingMethod.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
