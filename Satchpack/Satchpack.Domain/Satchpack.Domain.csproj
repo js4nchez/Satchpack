@@ -42,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\DAL_Object.cs" />
+    <Compile Include="Entities\Inventory.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceStatus.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ShippingMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

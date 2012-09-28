@@ -14,3 +14,11 @@ CREATE TABLE Product (
 	Price DECIMAL NOT NULL
 )
 GO
+
+-- Adds the 'Color' column if it doesn't exist.
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+		   WHERE TABLE_NAME = 'Product' AND
+				 COLUMN_NAME = 'Color')
+ALTER TABLE Invoice
+ADD Color NVARCHAR(30) NOT NULL
+GO

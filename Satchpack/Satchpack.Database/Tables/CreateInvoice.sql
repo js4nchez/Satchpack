@@ -16,8 +16,8 @@ GO
 
 -- Adds the 'InvoiceStatus' column if it doesn't exist.
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
-		   WHERE TABLE_NAME = 'ShippingMethod' AND
-				 COLUMN_NAME = 'TrackingNumber')
+		   WHERE TABLE_NAME = 'Invoice' AND
+				 COLUMN_NAME = 'InvoiceStatusId')
 ALTER TABLE Invoice
 ADD InvoiceStatusId INT NOT NULL REFERENCES InvoiceStatus(Id)
 GO

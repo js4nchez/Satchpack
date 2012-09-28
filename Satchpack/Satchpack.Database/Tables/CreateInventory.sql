@@ -12,3 +12,5 @@ CREATE TABLE Inventory (
 	Quantity SMALLINT NOT NULL
 )
 GO
+
+-- Get rid of color
