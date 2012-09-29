@@ -2,13 +2,39 @@
     ViewBag.Title = "Satchpack.com";
 }
 
+<link href="../../Content/css/HomeStyle.css" type="text/css" rel="Stylesheet"/>
+
+<script src="@Url.Content("~/Scripts/javascript/jquery.carouFredSel-6.0.2.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(
+        function ()
+        {
+            $("#mainSection").carouFredSel({
+                items: 1,
+                direction: "up",
+                scroll: {
+                    items: 1,
+                    easing: "elastic",
+                    duration: 1000,
+                    pauseOnHover: true
+                }
+            });
+        }
+    );
+</script>
+
 <div class="wrapper">
     <div id="mainSection">
-        
+        <img src="@Url.Content("~/Content/images/satchpack1.JPG")" class="mainPhotos" alt="satchpack1" />
+        <img src="@Url.Content("~/Content/images/satchpack2.JPG")" class="mainPhotos" alt="satchpack2" />
+        <img src="@Url.Content("~/Content/images/satchpack3.JPG")" class="mainPhotos" alt="satchpack3" />
+        <img src="@Url.Content("~/Content/images/satchpack4.JPG")" class="mainPhotos" alt="satchpack4" />
+        <img src="@Url.Content("~/Content/images/satchpack5.JPG")" class="mainPhotos" alt="satchpack5" />
+        <img src="@Url.Content("~/Content/images/satchpack6.JPG")" class="mainPhotos" alt="satchpack6" />
     </div>
 
     <div id="shoppingSection">
-
+        
     </div>
 
     <div id="productSpecsSection">
@@ -20,6 +46,6 @@
     </div>
 
     <div id="videoGallerySection">
-
+        
     </div>
 </div>
