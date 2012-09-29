@@ -2,21 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Satchpack.Domain.Entities;
 
-namespace Satchpack.Domain.AbstractRepository
+namespace Satchpack.Domain.DAL_Abstract
 {
     /// <summary>
-    /// Represents the data access layer for persisting Users.
-    /// 
-    /// Root Aggregate: User
+    /// Represents the operations that can be used for Admin persistence.
     /// </summary>
-    public interface IAdminDAL
+    public abstract class IAdminDAL : IDAL_Base
     {
-        bool CreateUser(DAL_Object user);
-        bool UpdateUser(DAL_Object user);
-        bool DeleteUser(DAL_Object user);
-        DAL_Object RetrieveUsers();
-        DAL_Object RetrieveUserById(int userId);
     }
 }

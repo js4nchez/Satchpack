@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Satchpack.Domain.Entities
 {
-    public class Invoice : DAL_Object
+    public class Invoice : DAL_Entity
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -17,7 +17,7 @@ namespace Satchpack.Domain.Entities
         public Customer Customer { get; set; }
 
         [Required(ErrorMessage = "Please provide the shipping method for this invoice.")]
-        public int ShippingMethodId { get; set; }
+        public ShippingMethod ShippingMethod { get; set; }
 
         [Required(ErrorMessage = "Please provide the date this order was placed on.")]
         public DateTime OrderDate { get; set; }
@@ -26,11 +26,26 @@ namespace Satchpack.Domain.Entities
         public double InvoiceTotal { get; set; }
 
         [Required(ErrorMessage = "Please provide the current status of this invoice.")]
-        public int InvoiceStatusId { get; set; }
+        public InvoiceStatus InvoiceStatus { get; set; }
 
+        public Invoice()
+        {
+            CreateSproc = "dbo.CreateInvoice";
+            RetrieveSproc = "dbo.RetrieveInvoice";
+            UpdateSproc = "dbo.UpdateInvoice";
+            DeleteSproc = "dbo.DeleteInvoice";
+        }
         public override List<SqlParameter> ToSqlParams()
         {
-            throw new NotImplementedException();
+            return new List<SqlParameter>()
+            {
+                new SqlParameter("@id", Id),
+                new SqlParameter("@customerId", Customer.Id),
+                new SqlParameter("@shippingMethodId", ShippingMethod.Id),
+                new SqlParameter("@orderDate", OrderDate),
+                new SqlParameter("@invoiceTotal", InvoiceTotal),
+                new SqlParameter("@invoiceStatusId", InvoiceStatus.Id)
+            };
         }
     }
 }

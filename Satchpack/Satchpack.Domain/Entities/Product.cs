@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Satchpack.Domain.Entities
 {
-    public class Product : DAL_Object
+    public class Product : DAL_Entity
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -31,9 +31,25 @@ namespace Satchpack.Domain.Entities
         [Required(ErrorMessage = "Please provide a color for this product")]
         public string Color { get; set; }
 
+        public Product()
+        {
+            CreateSproc = "dbo.CreateProduct";
+            RetrieveSproc = "dbo.RetrieveProduct";
+            UpdateSproc = "dbo.UpdateProduct";
+            DeleteSproc = "dbo.DeleteProduct";
+        }
         public override List<SqlParameter> ToSqlParams()
         {
-            throw new NotImplementedException();
+            return new List<SqlParameter>()
+            {
+                new SqlParameter("@id", Id),
+                new SqlParameter("@sku", SKU),
+                new SqlParameter("@name", Name),
+                new SqlParameter("@description", Description),
+                new SqlParameter("@weight", Weight),
+                new SqlParameter("@price", Price),
+                new SqlParameter("@color", Color)
+            };
         }
     }
 }

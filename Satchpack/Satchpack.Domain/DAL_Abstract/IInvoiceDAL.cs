@@ -2,24 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Satchpack.Domain.Entities;
 
-namespace Satchpack.Domain.AbstractRepository
+namespace Satchpack.Domain.DAL_Abstract
 {
     /// <summary>
-    /// Represents the data access layer for persisting Invoices.
-    /// 
-    /// Root Aggregate: Invoice
-    /// Aggregate Members: Customer
-    ///                    InvoiceStatus
-    ///                    ShippingMethod
+    /// Represents the operations that can be used for Invoice persistence.
     /// </summary>
-    public interface IInvoiceDAL
+    public abstract class IInvoiceDAL : IDAL_Base
     {
-        bool CreateInvoice(DAL_Object invoice);
-        bool UpdateInvoice(DAL_Object invoice);
-        bool DeleteInvoice(DAL_Object invoice);
-        DAL_Object RetrieveInvoices();
-        DAL_Object RetrieveInvoiceById(int invoiceId);
     }
 }

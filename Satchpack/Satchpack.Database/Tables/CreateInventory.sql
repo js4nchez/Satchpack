@@ -13,4 +13,9 @@ CREATE TABLE Inventory (
 )
 GO
 
--- Get rid of color
+-- Deletes the 'Color' column if it exists.
+IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+		   WHERE TABLE_NAME = 'Inventory' AND
+				 COLUMN_NAME = 'Color')
+ALTER TABLE Inventory DROP COLUMN Color
+GO

@@ -4,21 +4,13 @@ using System.Linq;
 using System.Text;
 using Satchpack.Domain.Entities;
 
-namespace Satchpack.Domain.AbstractRepository
+namespace Satchpack.Domain.DAL_Abstract
 {
     /// <summary>
-    /// Represents the data access layer for persisting Products.
-    /// 
-    /// Root Aggregate: Product
-    /// Aggregate Members: Inventory
+    /// Represents the operations that can be used for Product persistence.
     /// </summary>
-    public interface IProductDAL
+    public abstract class IProductDAL : IDAL_Base
     {
-        bool CreateProduct(DAL_Object product);
-        bool UpdateProduct(DAL_Object product);
-        bool UpdateInventory(DAL_Object productInventory);
-        bool DeleteProduct(DAL_Object product);
-        DAL_Object RetrieveProducts();
-        DAL_Object RetrieveProductById(int productId);
+        public abstract bool UpdateInventory(DAL_Entity entity);
     }
 }

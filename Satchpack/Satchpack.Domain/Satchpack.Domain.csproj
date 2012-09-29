@@ -43,10 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Abstract\IAdminDAL.cs" />
+    <Compile Include="DAL_Abstract\IDAL_Base.cs" />
     <Compile Include="DAL_Abstract\IInvoiceDAL.cs" />
     <Compile Include="DAL_Abstract\IProductDAL.cs" />
+    <Compile Include="DAL_Implementation\AdminDAL.cs" />
+    <Compile Include="DAL_Implementation\InvoiceDAL.cs" />
+    <Compile Include="DAL_Implementation\ProductDAL.cs" />
     <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\DAL_Object.cs" />
+    <Compile Include="Entities\DAL_Entity.cs" />
     <Compile Include="Entities\Inventory.cs" />
     <Compile Include="Entities\Invoice.cs" />
     <Compile Include="Entities\InvoiceStatus.cs" />
@@ -55,9 +59,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL_Implementation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

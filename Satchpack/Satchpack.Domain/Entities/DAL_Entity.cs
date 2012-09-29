@@ -9,7 +9,7 @@ namespace Satchpack.Domain.Entities
     /// <summary>
     /// Represents an object used for persistence.
     /// </summary>
-    public abstract class DAL_Object
+    public abstract class DAL_Entity
     {
         public string CreateSproc { get; set; }
         public string RetrieveSproc { get; set; }

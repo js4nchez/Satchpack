@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Ninject;
 using System.Web.Routing;
+using Satchpack.Domain.DAL_Implementation;
+using Satchpack.Domain.DAL_Abstract;
 
 namespace Satchpack.Infrastructure
 {
@@ -35,6 +37,9 @@ namespace Satchpack.Infrastructure
         /// </summary>
         private void AddBindings()
         {
+            ninjectKernel.Bind<IAdminDAL>().To<AdminDAL>();
+            ninjectKernel.Bind<IInvoiceDAL>().To<InvoiceDAL>();
+            ninjectKernel.Bind<IProductDAL>().To<ProductDAL>();
         }
     }
 }

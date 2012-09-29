@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Satchpack.Domain.Entities
 {
-    public class ShippingMethod : DAL_Object
+    public class ShippingMethod : DAL_Entity
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -22,9 +22,22 @@ namespace Satchpack.Domain.Entities
         [Required(ErrorMessage = "Please provide a tracking URL for this shipping method.")]
         public string TrackingUrl { get; set; }
 
+        public ShippingMethod()
+        {
+            CreateSproc = "dbo.CreateShippingMethod";
+            RetrieveSproc = "dbo.RetrieveShippingMethod";
+            UpdateSproc = "dbo.UpdateShippingMethod";
+            DeleteSproc = "dbo.DeleteShippingMethod";
+        }
         public override List<SqlParameter> ToSqlParams()
         {
-            throw new NotImplementedException();
+            return new List<SqlParameter>()
+            {
+                new SqlParameter("@id", Id),
+                new SqlParameter("@carrier", Carrier),
+                new SqlParameter("@method", Method),
+                new SqlParameter("@trackingUrl", TrackingUrl)
+            };
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Satchpack.Domain.Entities
 {
-    public class Customer : DAL_Object
+    public class Customer : DAL_Entity
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -38,9 +38,29 @@ namespace Satchpack.Domain.Entities
         public string Email { get; set; }
         public string Phone { get; set; }
 
+        public Customer()
+        {
+            CreateSproc = "dbo.CreateCustomer";
+            RetrieveSproc = "dbo.RetrieveCustomer";
+            UpdateSproc = "dbo.UpdateCustomer";
+            DeleteSproc = "dbo.DeleteCustomer";
+        }
         public override List<SqlParameter> ToSqlParams()
         {
-            throw new NotImplementedException();
+            return new List<SqlParameter>()
+            {
+                new SqlParameter("@id", Id),
+                new SqlParameter("@firstName", FirstName),
+                new SqlParameter("@lastName", LastName),
+                new SqlParameter("@address1", Address1),
+                new SqlParameter("@address2", Address2),
+                new SqlParameter("@city", City),
+                new SqlParameter("@state", State),
+                new SqlParameter("@postalCode", PostalCode),
+                new SqlParameter("@country", Country),
+                new SqlParameter("@email", Email),
+                new SqlParameter("@phone", Phone)
+            };
         }
     }
 }

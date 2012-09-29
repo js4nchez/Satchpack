@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Satchpack.Domain.Entities
 {
-    public class InvoiceStatus : DAL_Object
+    public class InvoiceStatus : DAL_Entity
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -19,9 +19,21 @@ namespace Satchpack.Domain.Entities
         [Required(ErrorMessage = "Please provide a description for this invoice status.")]
         public string Description { get; set; }
 
+        public InvoiceStatus()
+        {
+            CreateSproc = "dbo.CreateInvoiceStatus";
+            RetrieveSproc = "dbo.RetrieveInvoiceStatus";
+            UpdateSproc = "dbo.UpdateInvoiceStatus";
+            DeleteSproc = "dbo.DeleteInvoiceStatus";
+        }
         public override List<SqlParameter> ToSqlParams()
         {
-            throw new NotImplementedException();
+            return new List<SqlParameter>()
+            {
+                new SqlParameter("@id", Id),
+                new SqlParameter("@name", Name),
+                new SqlParameter("@description", Description)
+            };
         }
     }
 }
