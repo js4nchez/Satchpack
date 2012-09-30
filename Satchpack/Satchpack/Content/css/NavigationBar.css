@@ -1,14 +1,16 @@
-﻿#navigationBar ul
+﻿#navigationBar
 {
     margin: 0;
     padding: 5px;
     list-style-type: none;
     text-align: center;
     font-size: xx-large;
+    display: inline;
 }
 
 #navigationBar ul li
 {
+    width: 50px;
     display: inline;
 }
 
@@ -22,4 +24,9 @@
 {
     color: red;
     background-color: #000;
+}
+
+#nav_Logo
+{
+    padding: 100px, 0px, 0px, 0px;
 }
