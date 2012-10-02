@@ -1,8 +1,172 @@
 ﻿/** Styling for Home Controller **/
 
+div.wrapper
+{
+    
+}
+
+div#mainSection
+{
+    float: left;    
+}
+
+div#mainSection ul
+{
+    
+}
+
+div#mainSection ul > li
+{
+    
+}
+
+
 img.mainPhotos
 {
     width: 950px;
     height: 300px;          
 }
 
+div.caroufredsel_wrapper
+{
+        
+}
+
+div.clearfix
+{
+    float: none;
+    clear: both;    
+}
+
+#pagSection
+{
+    float: left;  
+    left: 445px;
+    position: relative;
+    bottom: 41px;  
+}
+
+#pagSection > a
+{
+    background: url("../images/idleDot.png");        
+    display: block;
+    width: 10px;
+    height: 10px;
+    float: left; 
+    margin: 3px;           
+}
+
+#pagSection > a.selected
+{
+    background: url("../images/selectedDot.png");        
+    display: block;
+    width: 10px;
+    height: 10px;         
+}
+
+#pagSection > a span
+{
+    display: none;    
+}
+
+#prevBtn
+{
+    bottom: 183px;
+    position: relative;
+    right: 36px;    
+}
+
+#nextBtn
+{
+    bottom: 219px;
+    float: right;
+    position: relative;
+    left: 35px;        
+}
+
+.leftArrow
+{
+    background: url("../images/leftArrow.png");        
+    display: block;
+    width: 30px;
+    height: 43px;
+}
+
+.rightArrow
+{
+    background: url("../images/rightArrow.png");        
+    display: block;
+    width: 30px;
+    height: 43px;        
+}
+
+div#shoppingSection
+{
+    background: url("../images/productSpecsSection.png");        
+    margin: 0 83px 47px 0;
+    display: block;
+    width: 430px;
+    height: 198px; 
+    float: left;       
+}
+
+div#shoppingSection span
+{
+    
+}
+
+div#productSpecsSection
+{
+    background: url("../images/productSpecsSection.png");        
+    display: block;
+    width: 430px;
+    height: 198px;  
+    float: left;  
+}
+
+div#productSpecsSection span
+{
+    
+}
+
+div#imageGallerySection
+{
+    background: url("../images/imageGallerySection.png");        
+    margin: 0 83px 10px 0;
+    display: block;
+    width: 430px;
+    height: 198px; 
+    float: left;       
+}
+
+div#imageGallerySection span
+{
+        
+}
+
+div#videoGallerySection
+{
+    background: url("../images/videoGallerySection.png");        
+    margin: 0 0 10px 0;
+    display: block;
+    width: 430px;
+    height: 198px;  
+    float: left;      
+}
+
+div#videoGallerySection span
+{
+        
+}
+
+div#shoppingSection span,
+div#productSpecsSection span,
+div#imageGallerySection span,
+div#videoGallerySection span
+{
+    font-weight: bold;
+    font-family: Tahoma;
+    font-size: 24px;
+    color: White;
+    margin: 10px;
+}

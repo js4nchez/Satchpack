@@ -70,8 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Footer.css" />
+    <Content Include="Content\css\HomeStyle.css" />
     <Content Include="Content\css\NavigationBar.css" />
     <Content Include="Content\css\Reset.css" />
+    <Content Include="Content\images\menuGradient.png" />
+    <Content Include="Content\images\satchpack1.JPG" />
+    <Content Include="Content\images\satchpack2.JPG" />
+    <Content Include="Content\images\satchpack3.JPG" />
+    <Content Include="Content\images\satchpack4.JPG" />
+    <Content Include="Content\images\satchpack5.JPG" />
+    <Content Include="Content\images\satchpack6.JPG" />
+    <Content Include="Content\images\satchpack7.JPG" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -87,6 +97,8 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\javascript\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\javascript\jquery.carouFredSel-6.0.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -119,9 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\javascript\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -135,9 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="app_code\Footer.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
