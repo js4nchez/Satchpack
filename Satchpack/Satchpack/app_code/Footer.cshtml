@@ -1,25 +1,34 @@
 ﻿@helper createFooter()
 {
     <div id="footer">
-                <img src="/Content/Images/customerSupport.png" />
-            <div id="customerSupportFooter">
-                <a href="#"><img src="/Content/Images/customerSupportTitle.png" /></a>
+    <hr />
+            <div class="footerDiv">
+                <label class="customerSupportImage"></label>
+                <label class="customerSupportTitleImage"></label>
                 <br />
-                Product Warranty
+                <a class="footerLink" href="/ProductWarranty">Product Warranty</a>
                 <br />
-                Returns Policy
+                <a class="footerLink" href="/ReturnsPolicy">Returns Policy</a>
             </div>
-            <div id="shoppingInfoFooter">
-                <a href="#">Shopping Info</a>
+
+            <div id="verticalRule"></div>
+
+            <div class="footerDiv">
+                <label class="shoppingInfoImage"></label>
+                <label class="shoppingInfoTitleImage"></label>
                 <br />
-                About Satchpack
+                <a class="footerLink" href="/ProductWarranty">About Satchpack</a>
             </div>
-            <div id="followUsFooter">
-                <a href="#">Follow Us</a>
+
+            <div id="verticalRule2"></div>
+
+            <div class="footerDiv">
+                <label class="twitterSocialImage"></label>
+                <label class="followUsTitleImage"></label>
                 <br />
-                Facebook
+                <a class="footerLink" href="www.Facebook.com/Satchpack">Facebook</a>
                 <br />
-                Twitter
+                <a class="footerLink" href="www.Twitter.com/Satchpack">Twitter</a>
             </div>
     </div>
 }

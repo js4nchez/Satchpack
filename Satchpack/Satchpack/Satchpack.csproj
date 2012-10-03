@@ -70,8 +70,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Footer.css" />
+    <Content Include="Content\css\HomeStyle.css" />
     <Content Include="Content\css\NavigationBar.css" />
     <Content Include="Content\css\Reset.css" />
+    <Content Include="Content\images\customerSupport.png" />
+    <Content Include="Content\images\customerSupportTitle.png" />
+    <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\FollowUsTitle.png" />
+    <Content Include="Content\images\menuGradient.png" />
+    <Content Include="Content\images\satchpack1.JPG" />
+    <Content Include="Content\images\satchpack2.JPG" />
+    <Content Include="Content\images\satchpack3.JPG" />
+    <Content Include="Content\images\satchpack4.JPG" />
+    <Content Include="Content\images\satchpack5.JPG" />
+    <Content Include="Content\images\satchpack6.JPG" />
+    <Content Include="Content\images\satchpack7.JPG" />
+    <Content Include="Content\images\SatchPackLogo.PNG" />
+    <Content Include="Content\images\shoppingInfo.png" />
+    <Content Include="Content\images\shoppingInfoTitle.png" />
+    <Content Include="Content\images\twitter.png" />
+    <Content Include="Content\images\twitterSocial.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -119,7 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\javascript\" />
   </ItemGroup>
