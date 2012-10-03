@@ -9,15 +9,14 @@
     $(document).ready(
         function ()
         {
-            $("#mainSection").carouFredSel({
-                items: 1,
-                direction: "up",
-                scroll: {
-                    items: 1,
-                    easing: "elastic",
-                    duration: 1000,
-                    pauseOnHover: true
-                }
+            $("#mainSection ul").carouFredSel(
+            {
+                prev: "#prevBtn",
+                next: "#nextBtn",
+                pagination: "#pagSection",
+                auto: true,
+                scroll: 700,
+                pauseOnHover: true
             });
         }
     );
@@ -25,27 +24,39 @@
 
 <div class="wrapper">
     <div id="mainSection">
-        <img src="@Url.Content("~/Content/images/satchpack1.JPG")" class="mainPhotos" alt="satchpack1" />
-        <img src="@Url.Content("~/Content/images/satchpack2.JPG")" class="mainPhotos" alt="satchpack2" />
-        <img src="@Url.Content("~/Content/images/satchpack3.JPG")" class="mainPhotos" alt="satchpack3" />
-        <img src="@Url.Content("~/Content/images/satchpack4.JPG")" class="mainPhotos" alt="satchpack4" />
-        <img src="@Url.Content("~/Content/images/satchpack5.JPG")" class="mainPhotos" alt="satchpack5" />
-        <img src="@Url.Content("~/Content/images/satchpack6.JPG")" class="mainPhotos" alt="satchpack6" />
+        <ul>
+            <li>
+                <img src="@Url.Content("~/Content/images/satchpack1.JPG")" class="mainPhotos" alt="satchpack1" />
+            </li>
+            <li>
+                <img src="@Url.Content("~/Content/images/satchpack2.JPG")" class="mainPhotos" alt="satchpack2" />
+            </li>
+            <li>
+                <img src="@Url.Content("~/Content/images/satchpack3.JPG")" class="mainPhotos" alt="satchpack3" />
+            </li>
+            <li>
+                <img src="@Url.Content("~/Content/images/satchpack4.JPG")" class="mainPhotos" alt="satchpack4" />
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+        <a id="prevBtn" class="prev" href="#"><span class="leftArrow"></span></a>
+        <a id="nextBtn" class="next" href="#"><span class="rightArrow"></span></a>
+        <div id="pagSection" class="pager"></div>
     </div>
 
     <div id="shoppingSection">
-        
+        <span>Shopping</span>        
     </div>
 
     <div id="productSpecsSection">
-
+        <span>Product Specs</span>
     </div>
 
     <div id="imageGallerySection">
-
+        <span>Image Gallery</span>
     </div>
 
     <div id="videoGallerySection">
-        
+        <span>Video Gallery</span>    
     </div>
 </div>
