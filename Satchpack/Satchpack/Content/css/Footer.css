@@ -1,32 +1,121 @@
 ﻿#footer
 {
-    margin: 0;
-    padding: 5px;
+    margin: 0 auto;
     list-style-type: none;
     text-align: center;
-    font-size: xx-large;
+    font-size: large;
+    position: relative;
+    top: 75px;
+    color: White;
 }
 
-#footer div
+#footer a:visited, a:link, a:hover
+{
+    color: White;
+    text-decoration: none;
+}
+
+.footerDiv
 {
     margin: 0;
-    padding: 5px;
+    padding-left: 15px;
     list-style-type: none;
-    font-size: xx-large;
-    width: 300px;
-}
-
-#customerSupportFooter
-{
+    text-align: center;
+    width: 315px;
     float: left;
 }
 
-#shoppingInfoFooter
+a
 {
-    float: left;
+    z-index: 1;
 }
 
-#followUsFooter
+.customerSupportImage
 {
+    background: url("../images/customerSupport.png");
+    display: block;
+    width: 51px;
+    height: 40px;
     float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.customerSupportTitleImage
+{
+    background: url("../Images/customerSupportTitle.png");
+    display: block;
+    width: 125px;
+    height: 23px;
+    float: left;
+    padding-left: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shoppingInfoImage
+{
+    background: url("../images/shoppingInfo.png");
+    display: block;
+    width: 89px;
+    height: 40px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shoppingInfoTitleImage
+{
+    background: url("../Images/shoppingInfoTitle.png");
+    display: block;
+    width: 86px;
+    height: 23px;
+    float: left;
+    padding-left: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.twitterSocialImage
+{
+    background: url("../images/twitterSocial.png");
+    display: block;
+    width: 76px;
+    height: 40px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 13px;
+}
+
+.followUsTitleImage
+{
+    background: url("../Images/FollowUstitle.png");
+    display: block;
+    width: 86px;
+    height: 21px;
+    float: left;
+    padding-left: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#verticalRule
+{
+    border-left:1px solid white;
+    height: 50px;
+    color: White;
+    position: absolute;
+    left: 310px;
+    width: 1px;
+}
+
+#verticalRule2
+{
+    border-left:1px solid white;
+    height: 50px;
+    color: White;
+    position: absolute;
+    left: 660px;
+    width: 1px;
 }

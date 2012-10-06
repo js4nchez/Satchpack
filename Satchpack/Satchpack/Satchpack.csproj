@@ -94,11 +94,13 @@
     <Content Include="Content\images\satchpackBackgroundTexture.png" />
     <Content Include="Content\images\satchPackLogo.PNG" />
     <Content Include="Content\images\selectedDot.png" />
+    <Content Include="Content\images\SatchPackLogo.PNG" />
     <Content Include="Content\images\shoppingInfo.png" />
     <Content Include="Content\images\shoppingInfoTitle.png" />
     <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\twitterSocial.png" />
     <Content Include="Content\images\videoGallerySection.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
