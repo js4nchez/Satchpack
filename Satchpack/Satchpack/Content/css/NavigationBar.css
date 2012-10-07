@@ -4,14 +4,27 @@
     padding: 5px;
     list-style-type: none;
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     display: inline;
+    position: relative;
+    top: -75px;
+}
+
+#navigationBar ul
+{
+    background-image: url("../images/menuGradient.png");
+    height: 61px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 #navigationBar ul li
 {
     width: 50px;
     display: inline;
+    position: relative;
+    top: 15px;
+    left: -50px;
 }
 
 #navigationBar ul li a
@@ -24,9 +37,56 @@
 {
     color: red;
     background-color: #000;
+    height: 30px;
+    width: 250px;
 }
 
 #nav_Logo
 {
-    padding: 100px, 0px, 0px, 0px;
+    position: relative;
+    top: 75px;
+    z-index: 1;
+}
+
+#nav_Cart
+{
+    left: 875px;
+    top: -45px;
+    position: relative;
+}
+
+#nav_verticalRule1
+{
+    border-left: 1px solid white;
+    height: 30px;
+    color: white;
+    position: absolute;
+    left: 320px;
+    width: 1px;
+    top: 45px;
+    z-index: 1;
+}
+
+#nav_verticalRule2
+{
+    border-left: 1px solid white;
+    height: 30px;
+    color: white;
+    position: absolute;
+    left: 430px;
+    width: 1px;
+    top: 45px;
+    z-index: 1;
+}
+
+#nav_verticalRule3
+{
+    border-left: 1px solid white;
+    height: 30px;
+    color: white;
+    position: absolute;
+    left: 600px;
+    width: 1px;
+    top: 45px;
+    z-index: 1;
 }
