@@ -87,10 +87,12 @@
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_cccccc_256x240.png" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\css\jquery-ui-1.8.24\jquery-ui-1.8.24.custom.css" />
+    <Content Include="Content\css\MasterStyle.css" />
     <Content Include="Content\css\NavigationBar.css" />
     <Content Include="Content\css\Reset.css" />
     <Content Include="Content\css\ShopStyle.css" />
     <Content Include="Content\images\blue.png" />
+    <Content Include="Content\images\cart.png" />
     <Content Include="Content\images\customerSupport.png" />
     <Content Include="Content\images\customerSupportTitle.png" />
     <Content Include="Content\images\defaultView.png" />

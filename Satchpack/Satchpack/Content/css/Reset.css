@@ -9,6 +9,7 @@
 	background: transparent;
 }
 
+/*
 body
 {
 	line-height: 1;
@@ -19,6 +20,13 @@ body
 	background-repeat: no-repeat;
 	left: 30px;
 	font-family: Tahoma;
+}
+*/
+
+body
+{
+    line-height: 1;
+	font-family: Tahoma, Arial, Times New Roman;        
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
