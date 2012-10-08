@@ -1,0 +1,25 @@
+﻿body
+{
+    background: url(../images/satchpackBackgroundTexture.png);
+    width: 960px;  
+    margin: 0 auto;
+}
+
+#wrapper
+{
+    width: 960px;
+    background-color: White;
+    height: 100%;
+    display: inline-block; 
+    border-left: 3px solid;
+    border-right: 3px solid;
+    padding: 3px;       
+}
+
+.boxShadow
+{
+    background: #ccc;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);        
+}

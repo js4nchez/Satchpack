@@ -72,17 +72,40 @@
   <ItemGroup>
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_gloss-wave_16_ffffff_500x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_highlight-hard_15_000000_1x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_highlight-hard_15_ffffff_1x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_highlight-hard_55_555555_1x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_highlight-soft_60_ffffff_1x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_inset-soft_35_000000_1x100.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_000000_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_aaaaaa_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.24\jquery-ui-1.8.24.custom.css" />
     <Content Include="Content\css\NavigationBar.css" />
     <Content Include="Content\css\Reset.css" />
+    <Content Include="Content\css\ShopStyle.css" />
+    <Content Include="Content\images\blue.png" />
     <Content Include="Content\images\customerSupport.png" />
     <Content Include="Content\images\customerSupportTitle.png" />
+    <Content Include="Content\images\defaultView.png" />
     <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\FollowUsTitle.png" />
+    <Content Include="Content\images\green.png" />
     <Content Include="Content\images\idleDot.png" />
     <Content Include="Content\images\imageGallerySection.png" />
     <Content Include="Content\images\leftArrow.png" />
     <Content Include="Content\images\menuGradient.png" />
+    <Content Include="Content\images\more.png" />
+    <Content Include="Content\images\photos.png" />
     <Content Include="Content\images\productSpecsSection.png" />
+    <Content Include="Content\images\purple.png" />
+    <Content Include="Content\images\red.png" />
     <Content Include="Content\images\rightArrow.png" />
     <Content Include="Content\images\satchpack1.JPG" />
     <Content Include="Content\images\satchpack2.JPG" />
@@ -92,15 +115,23 @@
     <Content Include="Content\images\satchpack6.JPG" />
     <Content Include="Content\images\satchpack7.JPG" />
     <Content Include="Content\images\satchpackBackgroundTexture.png" />
+    <Content Include="Content\images\satchpackBg.png" />
     <Content Include="Content\images\satchPackLogo.PNG" />
     <Content Include="Content\images\selectedDot.png" />
-    <Content Include="Content\images\SatchPackLogo.PNG" />
     <Content Include="Content\images\shoppingInfo.png" />
     <Content Include="Content\images\shoppingInfoTitle.png" />
+    <Content Include="Content\images\silver.png" />
     <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\twitterSocial.png" />
     <Content Include="Content\images\videoGallerySection.png" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\images\videos.png" />
+    <Content Include="Content\images\viewFive.png" />
+    <Content Include="Content\images\viewFour.png" />
+    <Content Include="Content\images\viewOne.png" />
+    <Content Include="Content\images\viewSix.png" />
+    <Content Include="Content\images\viewThree.png" />
+    <Content Include="Content\images\viewTwo.png" />
+    <Content Include="Content\images\yellow.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -117,6 +148,7 @@
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Scripts\javascript\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\javascript\jquery-ui-1.8.24.custom.min.js" />
     <Content Include="Scripts\javascript\jquery.carouFredSel-6.0.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -125,8 +157,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-1.4.4.js" />
-    <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -135,8 +165,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\MicrosoftAjax.js" />
     <Content Include="Scripts\MicrosoftAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.js" />
@@ -170,9 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shopping\Product.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
