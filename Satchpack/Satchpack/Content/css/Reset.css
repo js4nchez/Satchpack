@@ -51,6 +51,11 @@ a
 	background: transparent;
 }
 
+a:visited
+{
+    color:White;
+}
+
 /* change colours to suit your needs */
 ins
 {

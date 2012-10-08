@@ -1,13 +1,16 @@
 ﻿@helper createNav()
     {
     <div id="navigationBar">
-        <img id="nav_Logo" src="/Content/images/SatchPackLogo.png" alt="yousuck"/>
+        <div id="nav_verticalRule1"></div>
+        <div id="nav_verticalRule2"></div>
+        <div id="nav_verticalRule3"></div>
+        <img id="nav_Logo" src="/Content/images/SatchPackLogo.png" alt="yousuck" />
         <ul>
             <li id="nav_Home"><a href="/">Home</a></li>
             <li id="nav_Shop"><a href="/Shopping/Product">Shop</a></li>
             <li id="nav_Contact"><a href="/ContactUs.asp">Contact Us</a></li>
             <li id="nav_Faq"><a href="/FAQ.asp">FAQ</a></li>
-            <li id="nav_Cart"><a href="/CheckOut.asp">Checkout</a></li>
         </ul>
+        <a id="nav_Cart" href="/CheckOut.asp">Checkout</a>
     </div>
 }
