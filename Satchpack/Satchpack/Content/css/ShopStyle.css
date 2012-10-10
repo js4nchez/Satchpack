@@ -1,0 +1,311 @@
+﻿/** Styling for Shop Controller **/
+
+#shopTopSection
+{
+    float: left;
+    margin: 0 0 25px 0; 
+    width: 100%;   
+}
+
+#shopTopHeader
+{
+    
+}
+
+#shopTopHeader h2
+{
+    font-size: 30px;
+    margin: 12px 12px 21px 68px;    
+}
+
+/** SHOP LEFT SECTION **/
+
+#shopLeft
+{
+    float: left;   
+    padding: 0 60px; 
+    border-right: 1px solid;
+}
+
+.bigSatchpack
+{
+    width: 199px;
+    height: 212px;
+    display: block;        
+}
+
+#productThumbnailsSection
+{
+    float: left; 
+    margin: 10px 0;   
+}
+
+#productThumbnailsSection label
+{
+    float: left;   
+}
+
+.full-width
+{
+    
+}
+
+.productThumb
+{
+    width: 33px;
+    height: 37px;
+    display: block;
+    cursor: pointer;         
+}
+
+.colorThumb
+{
+    width: 24px;
+    height: 22px;  
+    display: block; 
+    cursor: pointer;    
+}
+
+#productViewDefault
+{
+    background: url(../images/defaultView.png);            
+}
+
+#productViewOne
+{
+    background: url(../images/viewOne.png);        
+}
+
+#productViewTwo
+{
+    background: url(../images/viewTwo.png);    
+}
+
+#productViewThree
+{
+    background: url(../images/viewThree.png);    
+}
+
+#productViewFour
+{   
+    background: url(../images/viewFour.png);    
+}
+
+#productViewFive
+{
+    background: url(../images/viewFive.png);    
+}
+
+#productViewSix
+{
+    background: url(../images/viewSix.png);    
+}
+
+#productColorSection
+{
+    float: left;
+    clear: left;        
+}
+
+#productColorSection label
+{
+    float: left;
+    margin: 0 4px 0 0;
+}
+
+#productColorOne
+{
+    background: url(../images/red.png);          
+}
+
+#productColorTwo
+{
+    background: url(../images/silver.png);     
+}
+
+#productColorThree
+{
+    background: url(../images/blue.png);     
+}
+
+#productColorFour
+{
+    background: url(../images/purple.png);         
+}
+
+#productColorFive
+{
+    background: url(../images/yellow.png);     
+}
+
+#productColorSix
+{
+    background: url(../images/green.png);     
+}
+
+#productCustomColors
+{
+    background: url(../images/more.png);         
+}
+
+/** SHOP MIDDLE SECTION **/
+
+#shopMiddle
+{
+    float: left;   
+    padding: 0 20px; 
+    border-right: 1px solid;    
+}
+
+
+
+#shopMiddle div
+{
+    
+}
+
+#productFeaturesTable
+{
+    margin: 11px 0;    
+}
+
+#productFeaturesTable tr
+{
+    border-bottom: 1px solid lightgray;        
+}
+
+#productFeaturesTable tr td
+{
+    padding: 5px 0;
+    width: 140px;    
+}
+
+/** SHOP RIGHT SECTION **/
+
+#shopRight
+{
+    float: left;      
+}
+
+#shopRight h3
+{
+    margin: 0 0 0 15px;            
+}
+
+#shopRight div
+{
+    float: left;
+    padding: 5px;        
+}
+
+.text
+{
+    font-size: 19px;        
+}
+
+.red
+{
+    color: #D80000;    
+}
+
+.moneySign
+{
+    font-weight: bold;
+    position: relative;
+    bottom: 11px;
+    left: 4px;    
+}
+
+.price
+{
+    font-size: 29px;    
+}
+
+#pricingText
+{
+    position: relative;
+    top: 74px;
+    left: 31px;        
+}
+
+#cartBtn
+{
+    position: relative;
+    top: 90px;
+    left: 83px;
+    background-color: #3B942A;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}
+
+#cartBtn:hover
+{
+    background-color: #3BC92A;    
+}
+
+.cartIcon
+{
+    background: url(../images/cart.png); 
+    display: block;
+    width: 33px;
+    height: 28px;
+    float: left;
+}
+
+/** SHOP BOTTOM SECTION **/
+
+#shopBottomSection
+{
+    float: left;
+    clear: left;
+    width: 94%;
+    margin: 0 31px;                  
+}
+
+#productTabs
+{
+        
+}
+
+#priceTagContainer
+{
+    position: relative;
+    top: 78px;        
+}
+
+.photosIcon
+{
+    background: url(../images/photos.png); 
+    float: left;                
+}
+
+.videosIcon
+{
+    background: url(../images/videos.png); 
+    float: left;          
+}
+
+.tabThumbnail
+{
+    width: 48px;
+    height: 46px;  
+    display: block;  
+    position: relative;
+    top: 4px;
+    left: 8px;
+}
+
+.btnText
+{
+    color: White;
+        
+}
+
+.cartText
+{
+    position: relative;
+    top: 5px;   
+    font-size: 18px; 
+}

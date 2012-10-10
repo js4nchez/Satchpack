@@ -8,6 +8,8 @@ namespace Satchpack.Controllers
 {
     public class HomeController : Controller
     {
+
+
         //
         // GET: /Home/
 
@@ -15,6 +17,5 @@ namespace Satchpack.Controllers
         {
             return View();
         }
-
     }
 }
