@@ -35,10 +35,8 @@
 
 #navigationBar ul li a:hover
 {
-    color: red;
+    color: white;
     background-color: #000;
-    height: 30px;
-    width: 250px;
 }
 
 #nav_Logo
