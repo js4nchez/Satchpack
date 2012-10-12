@@ -70,6 +70,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -149,6 +153,8 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\javascript\bootstrap.js" />
+    <Content Include="Scripts\javascript\bootstrap.min.js" />
     <Content Include="Scripts\javascript\jquery-1.8.2.min.js" />
     <Content Include="Scripts\javascript\jquery-ui-1.8.24.custom.min.js" />
     <Content Include="Scripts\javascript\jquery.carouFredSel-6.0.2.js" />
