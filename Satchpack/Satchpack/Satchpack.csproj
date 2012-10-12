@@ -70,6 +70,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Ninject.dll" />
+    <Content Include="bin\Ninject.xml" />
+    <Content Include="bin\Satchpack.dll" />
+    <Content Include="bin\Satchpack.Domain.dll" />
+    <Content Include="bin\Satchpack.Domain.pdb" />
+    <Content Include="bin\Satchpack.pdb" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -134,6 +144,7 @@
     <Content Include="Content\images\viewThree.png" />
     <Content Include="Content\images\viewTwo.png" />
     <Content Include="Content\images\yellow.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -220,7 +231,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4377</DevelopmentServerPort>
+          <DevelopmentServerPort>25540</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

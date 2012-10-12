@@ -1,13 +1,29 @@
 ﻿@helper createNav()
     {
     <div class="navbar">
+        <a class="navbar_Logo" href="#">
+            <img src="Content/images/satchPackLogo.png" alt="HOSA!" />
+        </a>
         <div class="navbar-inner">
-            <a class="brand" href="#">Title</a>
             <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="#">Home</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Shop</a></li>
+                <li class="divider-vertical"></li>
+                <li class="active"><a href="#">Contact Us</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">FAQ</a></li>
             </ul>
+        </div>
+        <div class="navbar_cartLogo">
+            <a href="shoppingCart">
+                <img src="Content/images/cart.png" alt="Hosa2!" />
+                <b id="cartTotal">$173.98</b>
+                <b id="itemCount">2 items</b>
+            </a>
+        </div>
+        <div id="navbar_checkout">
+        <a href="Checkout">Checkout</a>
         </div>
     </div>
 }

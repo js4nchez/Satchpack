@@ -4143,33 +4143,24 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar {
-  *position: relative;
-  *z-index: 2;
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 50px;
+  margin-top: -60px;
   overflow: visible;
-  color: #777777;
+  color: #333333;
 }
 
 .navbar-inner {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-color: #333333;
   background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
   *zoom: 1;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  height: 60px;
+  text-align: center;
 }
 
 .navbar-inner:before,
@@ -4198,7 +4189,7 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #777777;
+  color: #FFFFFF;
   text-shadow: 0 1px 0 #ffffff;
 }
 
@@ -4220,10 +4211,10 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar .divider-vertical {
-  height: 40px;
+  height: 60px;
   margin: 0 9px;
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #f2f2f2;
+  border-right: 2px solid #666666;
+  border-left: 1px solid #666666;
 }
 
 .navbar .btn,
@@ -4374,6 +4365,7 @@ input[type="submit"].btn.btn-mini {
   left: 0;
   display: block;
   float: left;
+  padding-left: 220px;
   margin: 0 10px 0 0;
 }
 
@@ -4389,9 +4381,10 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: #777777;
+  color: #FFFFFF;
+  font-size: x-large;
   text-decoration: none;
-  text-shadow: 0 1px 0 #ffffff;
+  margin-top: 10px;
 }
 
 .navbar .nav .dropdown-toggle .caret {
@@ -4400,7 +4393,6 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4408,12 +4400,12 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: #555555;
+  color: #FFFFFF;
   text-decoration: none;
-  background-color: #e5e5e5;
-  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-     -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-          box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  background-color: #999999;
+  margin-top: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navbar .btn-navbar {
@@ -4561,6 +4553,52 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse {
   color: #999999;
+}
+
+.navbar_Logo
+{
+    position: relative;
+    top: 65px;
+    z-index: 1;
+}
+
+.navbar_cartLogo
+{
+    position: relative;
+    top: -52px;
+    float: right;
+    z-index: 1;
+}
+
+#itemCount
+{
+    top: 12px;
+    left: -45px;
+    position: relative;
+    text-decoration: underline;
+}
+
+#cartTotal
+{
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+}
+
+#navbar_checkout
+{
+    background-color: #333;
+    height: 25px;
+    width: 130px;
+    z-index: 1;
+    position: relative;
+    left: 120px;
+    float: right;
+    text-align: center;
+    font-size: large;
+
+    border-bottom-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
 }
 
 .navbar-inverse .navbar-inner {
