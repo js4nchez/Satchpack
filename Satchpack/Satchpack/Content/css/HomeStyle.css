@@ -17,8 +17,8 @@ div#mainSection ul > li
 
 img.mainPhotos
 {
-    width: 950px;
-    height: 300px;          
+    width: 850px;
+    height: 350px;         
 }
 
 div.caroufredsel_wrapper
@@ -78,30 +78,9 @@ div.clearfix
     left: 35px;        
 }
 
-.leftArrow
-{
-    background: url("../images/leftArrow.png");        
-    display: block;
-    width: 30px;
-    height: 43px;
-}
-
-.rightArrow
-{
-    background: url("../images/rightArrow.png");        
-    display: block;
-    width: 30px;
-    height: 43px;        
-}
-
 div#shoppingSection
 {
-    background: url("../images/productSpecsSection.png");        
-    margin: 0 83px 47px 0;
-    display: block;
-    width: 430px;
-    height: 198px; 
-    float: left;       
+           
 }
 
 div#shoppingSection span
@@ -111,11 +90,7 @@ div#shoppingSection span
 
 div#productSpecsSection
 {
-    background: url("../images/productSpecsSection.png");        
-    display: block;
-    width: 430px;
-    height: 198px;  
-    float: left;  
+     
 }
 
 div#productSpecsSection span
@@ -125,12 +100,7 @@ div#productSpecsSection span
 
 div#imageGallerySection
 {
-    background: url("../images/imageGallerySection.png");        
-    margin: 0 83px 10px 0;
-    display: block;
-    width: 430px;
-    height: 198px; 
-    float: left;       
+          
 }
 
 div#imageGallerySection span
@@ -140,12 +110,7 @@ div#imageGallerySection span
 
 div#videoGallerySection
 {
-    background: url("../images/videoGallerySection.png");        
-    margin: 0 0 10px 0;
-    display: block;
-    width: 430px;
-    height: 198px;  
-    float: left;      
+          
 }
 
 div#videoGallerySection span
