@@ -1,6 +1,11 @@
-﻿body
+﻿html, body
 {
-    background: url(../images/satchpackBackgroundTexture.png);
+    height: 100%;        
+}
+
+body
+{
+    background: url(../images/satchpackOuterBg.png);
     width: 960px;  
     margin: 0 auto;
 }
@@ -8,12 +13,11 @@
 #wrapper
 {
     width: 960px;
-    background-color: White;
     height: 100%;
+    background: url(../images/satchpackInnerBg.png);
     display: inline-block; 
     border-left: 3px solid;
-    border-right: 3px solid;
-    padding: 3px;       
+    border-right: 3px solid;     
 }
 
 .boxShadow
@@ -22,4 +26,10 @@
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
     -moz-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
     -webkit-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);        
+}
+
+.clearfix
+{
+    float: none;
+    clear: both;    
 }

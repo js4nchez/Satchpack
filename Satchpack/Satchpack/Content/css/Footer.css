@@ -1,128 +1,151 @@
 ﻿#footer
 {
-    margin: 0 auto;
-    list-style-type: none;
-    text-align: center;
-    font-size: large;
-    position: relative;
-    top: 40px;
     color: White;
+    background-color: #333333;
+    float: left;
+    position:absolute;
+    bottom: 25px;
+    width: 960px;    
 }
 
-#footer a:visited, a:link, a:hover
+#footer h2
 {
-    color: White;
+    font-size: 25px;
+    font-weight: normal;
+    margin: 0 0 15px 0;
+}
+
+#footer a
+{
+    color: #6D6E71;
     text-decoration: none;
+    font-size: 18px;
+    font-weight: normal; 
+    margin: 0 0 10px 15px;
+    display: inline-block;   
 }
 
-.footerDiv
+#footer a:hover
 {
-    margin: 0;
-    padding-left: 15px;
-    list-style-type: none;
-    text-align: center;
-    width: 315px;
+    color: White;    
+}
+
+#AboutSection,
+#ProductSection
+{
+    width: 310px;
+    margin: 15px 0 0 15px;    
+}
+
+#FollowUsSection
+{
+    width: 200px;  
+    margin: 15px 0 0 15px;   
+}
+
+#AboutSection
+{
     float: left;
+    border-right: 1px solid gray;    
 }
 
-a
+#AboutSection h2
 {
-    z-index: 1;
+    
 }
 
-.customerSupportImage
+#AboutSection a
 {
-    background: url("../images/customerSupport.png");
-    display: block;
-    width: 51px;
-    height: 40px;
+    
+}
+
+#ProductSection
+{
     float: left;
-    background-position: center;
-    background-repeat: no-repeat;
+    border-right: 1px solid gray;    
 }
 
-.customerSupportTitleImage
+#ProductSection a
 {
-    background: url("../Images/customerSupportTitle.png");
-    display: block;
-    width: 125px;
-    height: 23px;
+    
+}
+
+#ProductSection h2
+{
+    
+}
+
+#FollowUsSection
+{
+    float: left;    
+}
+
+#FollowUsSection label
+{
+    margin: 0 10px;
+}
+
+#copyrightSection
+{
     float: left;
-    padding-left: 100px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.shoppingInfoImage
-{
-    background: url("../images/shoppingInfo.png");
-    display: block;
-    width: 89px;
-    height: 40px;
-    float: left;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.shoppingInfoTitleImage
-{
-    background: url("../Images/shoppingInfoTitle.png");
-    display: block;
-    width: 86px;
-    height: 23px;
-    float: left;
-    padding-left: 140px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.twitterSocialImage
-{
-    background: url("../images/twitterSocial.png");
-    display: block;
-    width: 76px;
-    height: 40px;
-    float: left;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-left: 13px;
-}
-
-.followUsTitleImage
-{
-    background: url("../Images/FollowUstitle.png");
-    display: block;
-    width: 86px;
-    height: 21px;
-    float: left;
-    padding-left: 140px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#verticalRule
-{
-    border-left: 1px solid white;
-    height: 50px;
-    color: White;
+    padding: 5px 0; 
+    width: 960px;
     position: absolute;
-    left: 310px;
-    width: 1px;
+    bottom: 0;       
 }
 
-#verticalRule2
+#copyrightSection a
 {
-    border-left: 1px solid white;
-    height: 50px;
-    color: White;
-    position: absolute;
-    left: 660px;
-    width: 1px;
+    color: Black;
 }
 
-#footer hr
+.copyright
 {
-    width: 1040px;
-    left: -20px;
-    position: relative;
+    font-weight: bold; 
+    margin: 0 0 0 6px;       
+}
+
+.webmasters
+{
+    float: right;
+    margin: 0 6px 0 0;
+    font-weight: bold;    
+}
+
+.footerLink
+{
+        
+}
+
+.facebook,
+.twitter
+{
+    float: left; 
+    cursor: pointer;   
+}
+
+.facebook
+{
+    background: url(../images/facebook.png);
+    width: 22px;
+    height: 45px;
+    display: block;    
+}
+
+.facebook:hover
+{
+    background: url(../images/facebook_hover.png);        
+}
+
+.twitter
+{
+    background: url(../images/twitter.png);
+    width: 61px;
+    height: 42px;
+    display: block;        
+}
+
+.twitter:hover
+{
+    background: url(../images/twitter_hover.png);         
 }

@@ -7,15 +7,13 @@
     $(document).ready(
         function ()
         {
-            $("#mainSection ul").carouFredSel(
-            {
-                prev: "#prevBtn",
-                next: "#nextBtn",
-                pagination: "#pagSection",
-                auto: true,
-                scroll: 700,
-                pauseOnHover: true
-            });
+//            $("#mainSection ul").carouFredSel(
+//            {
+//                pagination: "#pagSection",
+//                auto: true,
+//                scroll: 1000,
+//                pauseOnHover: true
+//            });
         }
     );
 </script>
@@ -25,7 +23,7 @@
         <li>
             <img src="@Url.Content("~/Content/images/satchpack1.JPG")" class="mainPhotos" alt="satchpack1" />
         </li>
-        <li>
+@*        <li>
             <img src="@Url.Content("~/Content/images/satchpack2.JPG")" class="mainPhotos" alt="satchpack2" />
         </li>
         <li>
@@ -33,20 +31,17 @@
         </li>
         <li>
             <img src="@Url.Content("~/Content/images/satchpack4.JPG")" class="mainPhotos" alt="satchpack4" />
-        </li>
+        </li>*@
     </ul>
-    <div class="clearfix">
-    </div>
-    <a id="prevBtn" class="prev" href="#"><span class="leftArrow"></span></a><a id="nextBtn"
-        class="next" href="#"><span class="rightArrow"></span></a>
+    <div class="clearfix"></div>
     <div id="pagSection" class="pager">
     </div>
 </div>
 <div id="shoppingSection">
-    <span>Shopping</span>
+    <span>SATCHPACK Store</span>
 </div>
 <div id="productSpecsSection">
-    <span>Product Specs</span>
+    <span>Product Features</span>
 </div>
 <div id="imageGallerySection">
     <span>Image Gallery</span>
