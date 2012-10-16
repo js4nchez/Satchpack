@@ -35,13 +35,15 @@ namespace Satchpack.Domain.Entities
         [Required(ErrorMessage = "Please provide the country this item will be shipped to.")]
         public string Country { get; set; }
 
+        [Required(ErrorMessage = "Please provide yout email.")]
         public string Email { get; set; }
         public string Phone { get; set; }
 
         public Customer()
         {
             CreateSproc = "dbo.CreateCustomer";
-            RetrieveSproc = "dbo.RetrieveCustomer";
+            RetrieveAllSproc = "dbo.RetrieveAllCustomers";
+            RetrieveSingleSproc = "dbo.RetrieveCustomerById";
             UpdateSproc = "dbo.UpdateCustomer";
             DeleteSproc = "dbo.DeleteCustomer";
         }
@@ -60,6 +62,23 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@country", Country),
                 new SqlParameter("@email", Email),
                 new SqlParameter("@phone", Phone)
+            };
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new Customer()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                FirstName = reader["FirstName"].ToString(),
+                LastName = reader["LastName"].ToString(),
+                Address1 = reader["Address1"].ToString(),
+                Address2 = reader["Address2"].ToString(),
+                City = reader["City"].ToString(),
+                State = reader["State"].ToString(),
+                PostalCode = reader["PostalCode"].ToString(),
+                Country = reader["Country"].ToString(),
+                Email = reader["Email"].ToString(),
+                Phone = reader["Phone"].ToString()
             };
         }
     }

@@ -22,7 +22,8 @@ namespace Satchpack.Domain.Entities
         public InvoiceStatus()
         {
             CreateSproc = "dbo.CreateInvoiceStatus";
-            RetrieveSproc = "dbo.RetrieveInvoiceStatus";
+            RetrieveAllSproc = "dbo.RetrieveAllInvoiceStatus";
+            RetrieveSingleSproc = "dbo.RetrieveInvoiceStatusById";
             UpdateSproc = "dbo.UpdateInvoiceStatus";
             DeleteSproc = "dbo.DeleteInvoiceStatus";
         }
@@ -33,6 +34,15 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@id", Id),
                 new SqlParameter("@name", Name),
                 new SqlParameter("@description", Description)
+            };
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new InvoiceStatus()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                Name = reader["Name"].ToString(),
+                Description = reader["Description"].ToString()
             };
         }
     }

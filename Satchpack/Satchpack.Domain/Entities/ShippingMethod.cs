@@ -22,10 +22,14 @@ namespace Satchpack.Domain.Entities
         [Required(ErrorMessage = "Please provide a tracking URL for this shipping method.")]
         public string TrackingUrl { get; set; }
 
+        [Required(ErrorMessage = "Please provide a shipping rate for this method.")]
+        public double Price { get; set; }
+
         public ShippingMethod()
         {
             CreateSproc = "dbo.CreateShippingMethod";
-            RetrieveSproc = "dbo.RetrieveShippingMethod";
+            RetrieveAllSproc = "dbo.RetrieveAllShippingMethods";
+            RetrieveSingleSproc = "dbo.RetrieveShippingMethodById";
             UpdateSproc = "dbo.UpdateShippingMethod";
             DeleteSproc = "dbo.DeleteShippingMethod";
         }
@@ -37,6 +41,17 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@carrier", Carrier),
                 new SqlParameter("@method", Method),
                 new SqlParameter("@trackingUrl", TrackingUrl)
+            };
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new ShippingMethod()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                Carrier = reader["Carrier"].ToString(),
+                Method = reader["Method"].ToString(),
+                TrackingUrl = reader["TrackingUrl"].ToString(),
+                Price = double.Parse(reader["Price"].ToString())
             };
         }
     }

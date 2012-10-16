@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Satchpack.Domain.Entities;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Satchpack.Domain.DAL_Abstract
 {
@@ -11,6 +13,8 @@ namespace Satchpack.Domain.DAL_Abstract
     /// </summary>
     public abstract class IDAL_Base
     {
+        private readonly string ConnectionString = @"";
+
         /// <summary>
         /// Creates a new entity in the database.
         /// </summary>
@@ -18,7 +22,7 @@ namespace Satchpack.Domain.DAL_Abstract
         /// <returns>Determines whether the operation was successful.</returns>
         public virtual bool CreateEntity(DAL_Entity entity)
         {
-            throw new NotImplementedException();
+            return ExecuteSproc(entity.CreateSproc, entity.ToSqlParams().ToArray());
         }
 
         /// <summary>
@@ -28,36 +32,91 @@ namespace Satchpack.Domain.DAL_Abstract
         /// <returns>Determines whether the operation was successful.</returns>
         public virtual bool UpdateEntity(DAL_Entity entity)
         {
-            throw new NotImplementedException();
+            return ExecuteSproc(entity.UpdateSproc, entity.ToSqlParams().ToArray());
         }
 
         /// <summary>
         /// Deletes an entity in the database.
         /// </summary>
         /// <param name="entity">The entity being deleted.</param>
-        /// <returns>Determines whether the operation was successful</returns>
+        /// <returns>Determines whether the operation was successful.</returns>
         public virtual bool DeleteEntity(DAL_Entity entity)
         {
-            throw new NotImplementedException();
+            return ExecuteSproc(entity.DeleteSproc, entity.ToSqlParams().ToArray());
         }
 
         /// <summary>
         /// Retrieves all entities in the database.
         /// </summary>
+        /// <param name="entity">The entity being used for retrieving all entities.</param>
         /// <returns>A list of entities found in the database.</returns>
-        public virtual List<DAL_Entity> RetrieveEntities()
+        public virtual List<DAL_Entity> RetrieveEntities(DAL_Entity entity)
         {
-            throw new NotImplementedException();
+            List<DAL_Entity> entities = new List<DAL_Entity>();
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(entity.RetrieveAllSproc, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(entity.ToSqlParams().ToArray());
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                        entities.Add(entity.ConvertToEntity(reader));
+                }
+            }
+            return entities;
         }
 
         /// <summary>
         /// Retrieves an entity with the specified Id in the database.
         /// </summary>
-        /// <param name="entityId">The Id of the entity we are querying for.</param>
-        /// <returns>An enity</returns>
-        public virtual DAL_Entity RetrieveEntityById(int entityId)
+        /// <param name="entity">The entity that contains the Id to query by.</param>
+        /// <returns>An single enity.</returns>
+        public virtual DAL_Entity RetrieveEntityById(DAL_Entity entity)
         {
-            throw new NotImplementedException();
+            DAL_Entity dal_entity = null;
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(entity.RetrieveSingleSproc, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(entity.ToSqlParams().ToArray());
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                        dal_entity = entity.ConvertToEntity(reader);
+                }
+            }
+            return dal_entity;
+        }
+
+        /// <summary>
+        /// Executes the specified sproc.
+        /// </summary>
+        /// <param name="sproc">The sproc that you want to execute.</param>
+        /// <param name="sqlParameters">The parameters that the given sproc requires.</param>
+        /// <returns>Determines whether the operation was successful.</returns>
+        private bool ExecuteSproc(string sproc, params SqlParameter[] sqlParameters)
+        {
+            bool operationSucceeded = true;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sproc, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(sqlParameters);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch { operationSucceeded = false; }
+            return operationSucceeded;
         }
     }
 }

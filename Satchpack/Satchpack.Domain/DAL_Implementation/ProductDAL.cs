@@ -9,9 +9,5 @@ namespace Satchpack.Domain.DAL_Implementation
 {
     public class ProductDAL : IProductDAL
     {
-        public override bool UpdateInventory(DAL_Entity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

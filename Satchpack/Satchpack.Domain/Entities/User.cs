@@ -23,7 +23,8 @@ namespace Satchpack.Domain.Entities
         public User()
         {
             CreateSproc = "dbo.CreateUser";
-            RetrieveSproc = "dbo.RetrieveUser";
+            RetrieveAllSproc = "dbo.RetrieveAllUsers";
+            RetrieveSingleSproc = "dbo.RetrieveUserById";
             UpdateSproc = "dbo.UpdateUser";
             DeleteSproc = "dbo.DeleteUser";
         }
@@ -35,6 +36,16 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@username", Username),
                 new SqlParameter("@password", Password),
                 new SqlParameter("@lock", Lock),
+            };
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new User()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                Username = reader["Username"].ToString(),
+                Password = reader["Password"].ToString(),
+                Lock = bool.Parse(reader["Lock"].ToString())
             };
         }
     }

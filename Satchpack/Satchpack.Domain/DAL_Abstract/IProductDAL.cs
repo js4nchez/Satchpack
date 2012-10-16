@@ -11,6 +11,5 @@ namespace Satchpack.Domain.DAL_Abstract
     /// </summary>
     public abstract class IProductDAL : IDAL_Base
     {
-        public abstract bool UpdateInventory(DAL_Entity entity);
     }
 }

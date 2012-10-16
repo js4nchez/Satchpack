@@ -44,18 +44,57 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\CreateDatabase.sql" />
-    <Content Include="Tables\CreateInvoiceStatus.sql" />
-    <Content Include="Tables\CreateProductList.sql" />
-    <Content Include="Tables\CreateUser.sql" />
-    <Content Include="Tables\CreateCustomer.sql" />
-    <Content Include="Tables\CreateInventory.sql" />
-    <Content Include="Tables\CreateInvoice.sql" />
-    <Content Include="Tables\CreateProduct.sql" />
-    <Content Include="Tables\CreateShippingMethod.sql" />
+    <Content Include="Database\InitializeData.sql" />
+    <Content Include="Sprocs\Create\CreateOrderItem.sql" />
+    <Content Include="Sprocs\Create\CreateUser.sql" />
+    <Content Include="Sprocs\Create\CreateProduct.sql" />
+    <Content Include="Sprocs\Create\CreateInvoice.sql" />
+    <Content Include="Sprocs\Create\CreateShippingMethod.sql" />
+    <Content Include="Sprocs\Create\CreateInvoiceStatus.sql" />
+    <Content Include="Sprocs\Create\CreateInventory.sql" />
+    <Content Include="Sprocs\Create\CreateCustomer.sql" />
+    <Content Include="Sprocs\Delete\DeleteCustomer.sql" />
+    <Content Include="Sprocs\Delete\DeleteInventory.sql" />
+    <Content Include="Sprocs\Delete\DeleteInvoice.sql" />
+    <Content Include="Sprocs\Delete\DeleteInvoiceStatus.sql" />
+    <Content Include="Sprocs\Delete\DeleteOrderItem.sql" />
+    <Content Include="Sprocs\Delete\DeleteProduct.sql" />
+    <Content Include="Sprocs\Delete\DeleteShippingMethod.sql" />
+    <Content Include="Sprocs\Delete\DeleteUser.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllCustomers.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllInventory.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllInvoices.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllInvoiceStatus.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllOrderItems.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllProducts.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllShippingMethods.sql" />
+    <Content Include="Sprocs\RetrieveAll\RetrieveAllUsers.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveProductById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveUserById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveShippingMethodById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveOrderItemById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveInvoiceStatusById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveInvoiceById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveInventoryById.sql" />
+    <Content Include="Sprocs\RetrieveSingle\RetrieveCustomerById.sql" />
+    <Content Include="Sprocs\Update\UpdateCustomer.sql" />
+    <Content Include="Sprocs\Update\UpdateInventory.sql" />
+    <Content Include="Sprocs\Update\UpdateInvoice.sql" />
+    <Content Include="Sprocs\Update\UpdateInvoiceStatus.sql" />
+    <Content Include="Sprocs\Update\UpdateOrderItem.sql" />
+    <Content Include="Sprocs\Update\UpdateProduct.sql" />
+    <Content Include="Sprocs\Update\UpdateShippingMethod.sql" />
+    <Content Include="Sprocs\Update\UpdateUser.sql" />
+    <Content Include="Tables\OrderItem.sql" />
+    <Content Include="Tables\InvoiceStatus.sql" />
+    <Content Include="Tables\User.sql" />
+    <Content Include="Tables\Customer.sql" />
+    <Content Include="Tables\Inventory.sql" />
+    <Content Include="Tables\Invoice.sql" />
+    <Content Include="Tables\Product.sql" />
+    <Content Include="Tables\ShippingMethod.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sprocs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Satchpack_DatabaseGenerator.bat" />
   </ItemGroup>

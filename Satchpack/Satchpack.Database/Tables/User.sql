@@ -1,0 +1,14 @@
+USE Satchpack
+GO
+
+-- Creates the User table if it doesn't exist.
+IF NOT EXISTS (SELECT 1
+		   FROM INFORMATION_SCHEMA.TABLES
+		   WHERE TABLE_NAME = 'User')
+CREATE TABLE [User] (
+	Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Username NVARCHAR(30) NOT NULL,
+	Password NVARCHAR(30) NOT NULL,
+	Lock BIT NULL
+)
+GO

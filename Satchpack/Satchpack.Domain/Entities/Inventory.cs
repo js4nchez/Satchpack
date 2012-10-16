@@ -22,17 +22,28 @@ namespace Satchpack.Domain.Entities
         public Inventory()
         {
             CreateSproc = "dbo.CreateInventory";
-            RetrieveSproc = "dbo.RetrieveInventory";
+            RetrieveAllSproc = "dbo.RetrieveAllInventory";
+            RetrieveSingleSproc = "dbo.RetrieveInventoryById";
             UpdateSproc = "dbo.UpdateInventory";
             DeleteSproc = "dbo.DeleteInventory";
         }
         public override List<SqlParameter> ToSqlParams()
         {
-            return new List<SqlParameter>()
+            List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@id", Id),
-                new SqlParameter("@productId", Product.Id),
                 new SqlParameter("@quantity", Quantity)
+            };
+            parameters.AddRange(Product.ToSqlParams());
+            return parameters;
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new Inventory()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                Product = (Product)new Product().ConvertToEntity(reader),
+                Quantity = int.Parse(reader["Quantity"].ToString())
             };
         }
     }

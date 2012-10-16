@@ -18,8 +18,6 @@ namespace Satchpack.Domain.Entities
 
         [Required(ErrorMessage = "Please provide a name for this product.")]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "Please provide a description for this product.")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Please provide a weight in lbs. for this product.")]
@@ -34,7 +32,8 @@ namespace Satchpack.Domain.Entities
         public Product()
         {
             CreateSproc = "dbo.CreateProduct";
-            RetrieveSproc = "dbo.RetrieveProduct";
+            RetrieveAllSproc = "dbo.RetrieveAllProducts";
+            RetrieveSingleSproc = "dbo.RetrieveProductById";
             UpdateSproc = "dbo.UpdateProduct";
             DeleteSproc = "dbo.DeleteProduct";
         }
@@ -49,6 +48,19 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@weight", Weight),
                 new SqlParameter("@price", Price),
                 new SqlParameter("@color", Color)
+            };
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new Product()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                SKU = reader["SKU"].ToString(),
+                Name = reader["Name"].ToString(),
+                Description = reader["Description"].ToString(),
+                Weight = double.Parse(reader["Weight"].ToString()),
+                Price = double.Parse(reader["Price"].ToString()),
+                Color = reader["Color"].ToString()
             };
         }
     }

@@ -31,20 +31,34 @@ namespace Satchpack.Domain.Entities
         public Invoice()
         {
             CreateSproc = "dbo.CreateInvoice";
-            RetrieveSproc = "dbo.RetrieveInvoice";
+            RetrieveAllSproc = "dbo.RetrieveAllInvoices";
+            RetrieveSingleSproc = "dbo.RetrieveInvoiceById";
             UpdateSproc = "dbo.UpdateInvoice";
             DeleteSproc = "dbo.DeleteInvoice";
         }
         public override List<SqlParameter> ToSqlParams()
         {
-            return new List<SqlParameter>()
+            List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@id", Id),
-                new SqlParameter("@customerId", Customer.Id),
-                new SqlParameter("@shippingMethodId", ShippingMethod.Id),
                 new SqlParameter("@orderDate", OrderDate),
-                new SqlParameter("@invoiceTotal", InvoiceTotal),
-                new SqlParameter("@invoiceStatusId", InvoiceStatus.Id)
+                new SqlParameter("@invoiceTotal", InvoiceTotal)
+            };
+            parameters.AddRange(Customer.ToSqlParams());
+            parameters.AddRange(ShippingMethod.ToSqlParams());
+            parameters.AddRange(InvoiceStatus.ToSqlParams());
+            return parameters;
+        }
+        public override DAL_Entity ConvertToEntity(SqlDataReader reader)
+        {
+            return new Invoice()
+            {
+                Id = int.Parse(reader["Id"].ToString()),
+                Customer = (Customer)new Customer().ConvertToEntity(reader),
+                ShippingMethod = (ShippingMethod)new ShippingMethod().ConvertToEntity(reader),
+                OrderDate = DateTime.Parse(reader["OrderDate"].ToString()),
+                InvoiceTotal = double.Parse(reader["InvoiceTotal"].ToString()),
+                InvoiceStatus = (InvoiceStatus)new InvoiceStatus().ConvertToEntity(reader)
             };
         }
     }
