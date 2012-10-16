@@ -39,7 +39,7 @@ namespace Satchpack.Infrastructure
         {
             ninjectKernel.Bind<IAdminDAL>().To<AdminDAL>();
             ninjectKernel.Bind<IInvoiceDAL>().To<InvoiceDAL>();
-            ninjectKernel.Bind<IProductDAL>().To<ProductDAL>();
+            ninjectKernel.Bind<IInventoryDAL>().To<InventoryDAL>();
         }
     }
 }

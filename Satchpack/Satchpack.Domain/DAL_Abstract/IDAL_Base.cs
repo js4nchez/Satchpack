@@ -19,10 +19,14 @@ namespace Satchpack.Domain.DAL_Abstract
         /// Creates a new entity in the database.
         /// </summary>
         /// <param name="entity">The entity being created.</param>
-        /// <returns>Determines whether the operation was successful.</returns>
-        public virtual bool CreateEntity(DAL_Entity entity)
+        /// <returns>The created entity's Id.</returns>
+        public virtual int CreateEntity(DAL_Entity entity)
         {
-            return ExecuteSproc(entity.CreateSproc, entity.ToSqlParams().ToArray());
+            int entityId = 0;
+            object obj = ExecuteScalar(entity.CreateSproc, entity.ToSqlParams().ToArray());
+            if (obj is int)
+                entityId = (int)obj;
+            return entityId;
         }
 
         /// <summary>
@@ -117,6 +121,32 @@ namespace Satchpack.Domain.DAL_Abstract
             }
             catch { operationSucceeded = false; }
             return operationSucceeded;
+        }
+
+        /// <summary>
+        /// Executes the specified sproc, returning a scalar.
+        /// </summary>
+        /// <param name="sproc">The sproc that you want to execute.</param>
+        /// <param name="sqlParameters">The parameters that the given sproc requires.</param>
+        /// <returns></returns>
+        private object ExecuteScalar(string sproc, params SqlParameter[] sqlParameters)
+        {
+            object obj = new object();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sproc, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(sqlParameters);
+                        obj = cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch { }
+            return obj;
         }
     }
 }

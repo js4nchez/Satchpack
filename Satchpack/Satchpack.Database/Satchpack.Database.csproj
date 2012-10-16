@@ -47,12 +47,10 @@
     <Content Include="Database\InitializeData.sql" />
     <Content Include="Sprocs\Create\CreateOrderItem.sql" />
     <Content Include="Sprocs\Create\CreateUser.sql" />
-    <Content Include="Sprocs\Create\CreateProduct.sql" />
+    <Content Include="Sprocs\Create\CreateInventory.sql" />
     <Content Include="Sprocs\Create\CreateInvoice.sql" />
     <Content Include="Sprocs\Create\CreateShippingMethod.sql" />
     <Content Include="Sprocs\Create\CreateInvoiceStatus.sql" />
-    <Content Include="Sprocs\Create\CreateInventory.sql" />
-    <Content Include="Sprocs\Create\CreateCustomer.sql" />
     <Content Include="Sprocs\Delete\DeleteCustomer.sql" />
     <Content Include="Sprocs\Delete\DeleteInventory.sql" />
     <Content Include="Sprocs\Delete\DeleteInvoice.sql" />
