@@ -1,24 +1,36 @@
 ﻿@helper createFooter()
 {
+    <div class="clearfix">
+        &nbsp;</div>
     <div id="footer">
-            <div id="customerSupportFooter">
-                <a href="#">Customer Support</a>
-                <br />
-                Product Warranty
-                <br />
-                Returns Policy
-            </div>
-            <div id="shoppingInfoFooter">
-                <a href="#">Shopping Info</a>
-                <br />
-                About Satchpack
-            </div>
-            <div id="followUsFooter">
-                <a href="#">Follow Us</a>
-                <br />
-                Facebook
-                <br />
-                Twitter
-            </div>
+        <div id="AboutSection">
+            <h2>
+                About</h2>
+            <a href="#" class="footerLink">Return policy</a>
+            <br />
+            <a href="#" class="footerLink">Product warranty</a>
+        </div>
+        <div id="ProductSection">
+            <h2>
+                Product</h2>
+            <a href="#" class="footerLink">Satchpack</a>
+            <br />
+            <a href="#" class="footerLink">Product Features</a>
+        </div>
+        <div id="FollowUsSection">
+            <h2>
+                Follow us</h2>
+            <label>
+                <a href="http://www.facebook.com" class="facebook"></a>
+            </label>
+            <label>
+                <a href="http://www.twitter.com" class="twitter"></a>
+            </label>
+        </div>
+    </div>
+    <div id="copyrightSection">
+        <label class="copyright">
+            &copy; SATCHPACK 2012</label>
+        <a href="#" class="webmasters">Webmasters</a>
     </div>
 }

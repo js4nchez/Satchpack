@@ -1,8 +1,144 @@
 ﻿/** Styling for Home Controller **/
+div#mainSection
+{
+    float: left;
+    background-color: White;
+    padding: 15px;
+    margin: 0 40px;
+}
+
+div#mainSection ul
+{
+    margin: 0; 
+    list-style: none;   
+}
+
+div#mainSection ul > li
+{
+       
+}
+
+.horSpacing
+{
+    margin: 0 0 0 15px;  
+}
+
+.verSpacing
+{
+    margin: 15px 0 0 0;    
+}
 
 img.mainPhotos
 {
-    width: 950px;
-    height: 300px;          
+    width: 850px;
+    height: 350px;         
 }
 
+div.caroufredsel_wrapper
+{
+        
+}
+
+div.clearfix
+{
+    float: none;
+    clear: both;    
+}
+
+#pagSection
+{
+    position: relative;
+    bottom: 16px;
+    width: 100%;  
+}
+
+#pagSection > a
+{
+    background: url("../images/idleDot.png") no-repeat;
+    border: none;
+    /*display: block;
+    width: 10px;
+    height: 10px;
+    float: left; 
+    margin: 3px;*/           
+}
+
+#pagSection > a.selected
+{
+    background: url("../images/selectedDot.png") no-repeat;        
+    /*display: block;
+    width: 10px;
+    height: 10px;*/         
+}
+
+#pagSection > a span
+{
+    display: none;    
+}
+
+div#shoppingSection
+{
+    float: left; 
+    width: 553px;
+    height: 240px;
+    background-color: White;   
+    margin-left: 40px;         
+}
+
+div#shoppingSection span
+{
+    
+}
+
+div#productSpecsSection
+{
+    float: left;  
+    width: 310px;
+    height: 240px;
+    background-color: White;   
+}
+
+div#productSpecsSection span
+{
+        
+}
+
+div#imageGallerySection
+{
+    float: left;
+    width: 431px;
+    height: 240px;
+    background-color: White;
+    margin-left: 40px;               
+}
+
+div#imageGallerySection span
+{
+    
+}
+
+div#videoGallerySection
+{
+    float: left; 
+    width: 430px;
+    height: 240px;
+    background-color: White;   
+    margin-left: 15px;           
+}
+
+div#videoGallerySection span
+{
+        
+}
+
+div#shoppingSection span,
+div#productSpecsSection span,
+div#imageGallerySection span,
+div#videoGallerySection span
+{
+    font-weight: bold;
+    font-family: Tahoma;
+    font-size: 24px;
+    color: White;
+    margin: 10px;
+}

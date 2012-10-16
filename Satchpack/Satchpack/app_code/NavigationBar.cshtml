@@ -1,13 +1,30 @@
 ﻿@helper createNav()
-    {
-    <div id="navigationBar">
-        <img id="nav_Logo" src="/Content/images/SatchPackLogo.png" alt="yousuck"/>
-        <ul>
-            <li id="nav_Home"><a href="/">Home</a></li>
-            <li id="nav_Shop"><a href="/Shop.asp">Shop</a></li>
-            <li id="nav_Contact"><a href="/ContactUs.asp">Contact Us</a></li>
-            <li id="nav_Faq"><a href="/FAQ.asp">FAQ</a></li>
-            <li id="nav_Cart"><a href="/CheckOut.asp">Checkout</a></li>
-        </ul>
+{
+    <div class="navbar">
+        <a class="navbar_Logo" href="#">
+            <label class="satchpackLogo"></label>
+        </a>
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a id="homePortal" href="@Href("/")">Home</a></li>
+                <li class="divider-vertical"></li>
+                <li><a id="storePortal" href="@Href("~/Shopping/Product")">Store</a></li>
+                <li class="divider-vertical"></li>
+                <li><a id="contactUsPortal" href="#">Contact Us</a></li>
+                <li class="divider-vertical"></li>
+                <li><a id="faqPortal" href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="navbar_cartLogo">
+            <a href="shoppingCart">
+                <label class="cart"></label>
+                <b id="cartTotal">$173.98</b>
+                <br />
+                <b id="itemCount">2 items</b>
+            </a>
+        </div>
+        <div id="navbar_checkout">
+        <a href="Checkout">Checkout</a>
+        </div>
     </div>
 }

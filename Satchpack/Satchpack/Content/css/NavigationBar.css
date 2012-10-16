@@ -1,32 +1,80 @@
-﻿#navigationBar
+﻿.navbar_Logo
 {
-    margin: 0;
-    padding: 5px;
-    list-style-type: none;
+    position: relative;
+    top: 65px;
+}
+
+.navbar_cartLogo
+{
+    position: relative;
+    top: -52px;
+    float: right;
+}
+
+.navbar_cartLogo a
+{
+    float: left;
+    margin: 0 40px 0 0;
+    color: White;        
+}
+
+.navbar_cartLogo a:hover
+{
+    color: #999;
+    text-decoration: none;
+}
+
+#itemCount
+{
+    text-decoration: underline;
+    float: left;
+}
+
+#cartTotal
+{
+     
+}
+
+#navbar_checkout
+{
+    background-color: #333;
+    height: 25px;
+    width: 130px;
+    position: relative;
+    left: 120px;
+    float: right;
     text-align: center;
-    font-size: xx-large;
-    display: inline;
+    font-size: large;
+
+    border-bottom-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
 }
 
-#navigationBar ul li
+#navbar_checkout a
 {
-    width: 50px;
-    display: inline;
+    color: White;
 }
 
-#navigationBar ul li a
+#navbar_checkout a:hover
 {
     text-decoration: none;
-    padding: .2em 1em;
+    color: #999;
 }
 
-#navigationBar ul li a:hover
+.satchpackLogo
 {
-    color: red;
-    background-color: #000;
+    background: url(../images/satchPackLogo.png);
+    width: 176px;
+    height: 75px;   
+    position: relative;
+    top: 7px;     
 }
 
-#nav_Logo
+.cart
 {
-    padding: 100px, 0px, 0px, 0px;
+    background: url(../images/cart.png);
+    width: 38px;
+    height: 38px;
+    float: left; 
+    margin: 0 5px 0 0;         
 }

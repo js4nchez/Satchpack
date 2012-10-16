@@ -1,29 +1,32 @@
 ﻿<!DOCTYPE html>
-
 <html>
-
-
-
 <head>
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/css/Reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/MasterStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/NavigationBar.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/MasterStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/Footer.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/jquery-ui-1.8.24/jquery-ui-1.8.24.custom.css")" rel="stylesheet" type="text/css" />
+    
+    <!-- Script libraries -->
+
     <script src="@Url.Content("~/Scripts/javascript/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/javascript/jquery-ui-1.8.24.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/javascript/bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/javascript/bootstrap.min.js")" type="text/javascript"></script>
+
+    <!-- Page-related scripts -->
+    
+    <script src="@Url.Content("~/Scripts/javascript/pageScripts/masterScript.js")" type="text/javascript"></script>
+
 </head>
-
 <body>
-    @NavigationBar.createNav()
-    @RenderBody()
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae magna quis arcu malesuada faucibus. Donec ac ipsum neque, eu iaculis mauris. Integer gravida lacinia interdum. Integer ultricies mauris quam. Ut condimentum ornare magna, vitae gravida eros malesuada eu. Vivamus elit massa, auctor nec tincidunt vel, faucibus eu leo. Aliquam posuere enim ac libero pulvinar ut molestie tellus pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc malesuada ipsum et urna malesuada vel faucibus mi accumsan. Nam iaculis, turpis a consectetur varius, libero nisl pulvinar quam, ut condimentum diam urna nec turpis. Praesent ipsum sapien, tincidunt at suscipit a, mollis vel risus.
-
-Nam id aliquet risus. Nam dapibus congue risus, ut mattis tellus condimentum non. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vitae ante erat, a volutpat leo. Sed sed augue nec massa adipiscing posuere. Donec auctor fermentum lacus, vel egestas sem varius vestibulum. Fusce elit nulla, consectetur eu tempor ut, fringilla sit amet mauris.
-
-Pellentesque non neque malesuada nisi porta dapibus sit amet quis erat. Phasellus eu vulputate lacus. Curabitur elementum dolor feugiat magna tempor eleifend. Proin arcu arcu, adipiscing quis iaculis a, blandit a ante. Nam ac urna non metus semper sollicitudin. Nulla facilisi. Curabitur scelerisque, erat a aliquam molestie, nibh lectus tristique urna, sed ultrices diam ipsum sed lorem. Etiam a ligula eget quam egestas mollis. Ut pharetra, erat tempor malesuada porttitor, nisi arcu tempus sem, ac porttitor dolor lectus vel massa. Vivamus lacinia nisi in justo rutrum elementum. Donec faucibus nibh ac sapien porttitor in dapibus odio laoreet. Nullam placerat urna sed neque pretium varius.
-
-Donec vel turpis augue. Nam pharetra diam id metus tempus adipiscing ut quis purus. Fusce luctus eros sit amet nisl cursus posuere. Quisque consectetur commodo condimentum. Nullam et augue in ante faucibus sollicitudin. Suspendisse commodo libero non quam feugiat euismod. Maecenas vestibulum justo vel enim tempor ultricies. Vestibulum a euismod orci. Quisque in nibh lorem, sit amet ornare sapien. Mauris vestibulum pulvinar tortor. Morbi dignissim, lacus ut pharetra dapibus, felis urna pellentesque urna, eu vulputate nisl magna id elit.
-
-Vestibulum sed auctor augue. Phasellus ultrices eros a ligula ultricies et fringilla ante congue. Aenean erat nulla, semper et semper vel, convallis non enim. Duis eget tempor felis. Etiam lobortis varius nisl, id lacinia mauris lacinia id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent ut neque eu nisl elementum lobortis non a risus. Vivamus rutrum feugiat eros. Morbi iaculis imperdiet semper. Cras vel neque vitae justo tincidunt mattis. Nam malesuada porttitor luctus. Nunc nisi lacus, convallis non sodales a, dapibus a metus. Fusce id mi vel augue blandit tincidunt.
-    @Footer.createFooter()
+    <div id="wrapper" class="boxShadow">
+        @NavigationBar.createNav()
+        @RenderBody()
+        @Footer.createFooter()
+    </div>
 </body>
 </html>

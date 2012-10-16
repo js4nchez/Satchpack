@@ -6,14 +6,17 @@ using System.Web.Mvc;
 
 namespace Satchpack.Controllers
 {
-    public class HomeController : Controller
+    public class ShoppingController : Controller
     {
-
-
         //
-        // GET: /Home/
+        // GET: /Shopping/
 
-        public ActionResult Index()
+        public ActionResult Product()
+        {
+            return View();
+        }
+
+        public ActionResult Checkout()
         {
             return View();
         }

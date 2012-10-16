@@ -1,0 +1,48 @@
+﻿html, body
+{
+    height: 100%;        
+}
+
+body
+{
+    background: url(../images/satchpackOuterBg.png);
+    width: 960px;  
+    margin: 0 auto;
+}
+
+#wrapper
+{
+    background: url(../images/satchpackInnerBg.png);
+    border-left: 3px solid;
+    border-right: 3px solid;     
+}
+
+.boxShadow
+{
+    background: #ccc;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.85);        
+}
+
+.clearfix
+{
+    float: none;
+    clear: both;    
+}
+
+.radius
+{
+    /* Border radius */
+    -webkit-border-radius: 15px;
+    -moz-border-radius:    15px;
+    border-radius:         15px;        
+}
+
+.shadow
+{
+    /* Box shadow */
+    -webkit-box-shadow: 0px 0px 13px rgba(38, 41, 41, 0.7);
+    -moz-box-shadow:    0px 0px 13px rgba(38, 41, 41, 0.7);
+    box-shadow:         0px 0px 13px rgba(38, 41, 41, 0.7);        
+}
