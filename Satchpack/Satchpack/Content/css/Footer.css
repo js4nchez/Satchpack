@@ -3,9 +3,8 @@
     color: White;
     background-color: #333333;
     float: left;
-    position:absolute;
-    bottom: 25px;
-    width: 960px;    
+    position: relative;
+    width: 100%;    
 }
 
 #footer h2
@@ -87,11 +86,7 @@
 
 #copyrightSection
 {
-    float: left;
-    padding: 5px 0; 
-    width: 960px;
-    position: absolute;
-    bottom: 0;       
+    height: 150px;     
 }
 
 #copyrightSection a
@@ -102,7 +97,8 @@
 .copyright
 {
     font-weight: bold; 
-    margin: 0 0 0 6px;       
+    margin: 0 0 0 6px;
+    float: left;       
 }
 
 .webmasters

@@ -16,6 +16,9 @@ namespace Satchpack.Controllers
             return View();
         }
 
-        
+        public ActionResult Checkout()
+        {
+            return View();
+        }
     }
 }

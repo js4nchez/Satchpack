@@ -8,6 +8,9 @@
         function ()
         {
             $("#productTabs").tabs();
+
+            $('ul.nav li').removeClass('active');
+            $('#storePortal').parent().addClass('active');
         }
     );
 </script>
@@ -94,12 +97,17 @@
     <div id="productTabs">
         <ul>
             <li>
-                <label class="photosIcon tabThumbnail"></label>
-                <a href="#productPhotoGallery">Photo Gallery</a>
+                
+                <a href="#productPhotoGallery">
+                    <label class="photosIcon tabThumbnail"></label>
+                    Photo Gallery
+                </a>
             </li>
             <li>
-                <label class="videosIcon tabThumbnail"></label>
-                <a href="#productVideoGallery">Video Gallery</a>
+                <a href="#productVideoGallery">
+                    <label class="videosIcon tabThumbnail"></label>                
+                    Video Gallery
+                </a>
             </li>
         </ul>
         <div id="productPhotoGallery">

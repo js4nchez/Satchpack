@@ -7,23 +7,34 @@
     $(document).ready(
         function ()
         {
-//            $("#mainSection ul").carouFredSel(
-//            {
-//                pagination: "#pagSection",
-//                auto: true,
-//                scroll: 1000,
-//                pauseOnHover: true
-//            });
+            $('ul.nav li').removeClass('active');
+            $('#homePortal').parent().addClass('active');
+
+            $("#mainSection ul").caroufredsel(
+            {
+                pagination: "#pagSection",
+                auto: true,
+                scroll:
+                    {
+                        items: null,
+                        fx: "fade",
+                        easing: "linear",
+                        pauseOnHover: true,
+                        duration: 1100
+                    },
+                direction: "down",
+                pauseonhover: true
+            });
         }
     );
 </script>
 
-<div id="mainSection">
+<div id="mainSection" class="radius shadow">
     <ul>
         <li>
             <img src="@Url.Content("~/Content/images/satchpack1.JPG")" class="mainPhotos" alt="satchpack1" />
         </li>
-@*        <li>
+        <li>
             <img src="@Url.Content("~/Content/images/satchpack2.JPG")" class="mainPhotos" alt="satchpack2" />
         </li>
         <li>
@@ -31,21 +42,22 @@
         </li>
         <li>
             <img src="@Url.Content("~/Content/images/satchpack4.JPG")" class="mainPhotos" alt="satchpack4" />
-        </li>*@
+        </li>
     </ul>
-    <div class="clearfix"></div>
-    <div id="pagSection" class="pager">
-    </div>
+
 </div>
-<div id="shoppingSection">
+<div class="clearfix"></div>
+<div id="pagSection" class="pager"></div>
+
+<div id="shoppingSection" class="radius shadow horSpacing">
     <span>SATCHPACK Store</span>
 </div>
-<div id="productSpecsSection">
+<div id="productSpecsSection" class="radius shadow horSpacing">
     <span>Product Features</span>
 </div>
-<div id="imageGallerySection">
+<div id="imageGallerySection" class="radius shadow verSpacing horSpacing">
     <span>Image Gallery</span>
 </div>
-<div id="videoGallerySection">
+<div id="videoGallerySection" class="radius shadow verSpacing">
     <span>Video Gallery</span>
 </div>

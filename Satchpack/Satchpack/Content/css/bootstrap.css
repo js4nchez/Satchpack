@@ -4212,8 +4212,8 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .divider-vertical {
   height: 60px;
-  margin: 0 9px;
-  border-right: 2px solid #666666;
+  /*margin: 0 9px;*/
+  /*border-right: 2px solid #666666;*/
   border-left: 1px solid #666666;
 }
 
@@ -4553,52 +4553,6 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse {
   color: #999999;
-}
-
-.navbar_Logo
-{
-    position: relative;
-    top: 65px;
-    z-index: 1;
-}
-
-.navbar_cartLogo
-{
-    position: relative;
-    top: -52px;
-    float: right;
-    z-index: 1;
-}
-
-#itemCount
-{
-    top: 12px;
-    left: -45px;
-    position: relative;
-    text-decoration: underline;
-}
-
-#cartTotal
-{
-    position: relative;
-    left: 10px;
-    bottom: 5px;
-}
-
-#navbar_checkout
-{
-    background-color: #333;
-    height: 25px;
-    width: 130px;
-    z-index: 1;
-    position: relative;
-    left: 120px;
-    float: right;
-    text-align: center;
-    font-size: large;
-
-    border-bottom-right-radius: 10px 10px;
-    border-bottom-left-radius: 10px 10px;
 }
 
 .navbar-inverse .navbar-inner {

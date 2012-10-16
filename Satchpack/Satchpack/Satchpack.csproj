@@ -165,6 +165,7 @@
     <Content Include="Scripts\javascript\jquery-1.8.2.min.js" />
     <Content Include="Scripts\javascript\jquery-ui-1.8.24.custom.min.js" />
     <Content Include="Scripts\javascript\jquery.carouFredSel-6.0.2.js" />
+    <Content Include="Scripts\javascript\pageScripts\masterScript.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
