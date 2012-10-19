@@ -109,7 +109,8 @@ namespace Satchpack.Controllers
                 {
                     DoExpressCheckoutPaymentRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType()
                     {
-                        Token = transactionDetails.Token
+                        Token = transactionDetails.Token,
+                        PayerID = transactionDetails.PayerId
                     }
                 }
             });
