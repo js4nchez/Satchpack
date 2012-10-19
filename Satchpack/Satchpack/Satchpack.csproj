@@ -80,6 +80,8 @@
     <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\ContactUs.css" />
+    <Content Include="Content\css\Faq.css" />
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -214,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shopping\Product.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Faq.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ContactUs.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,0 +1,20 @@
+﻿.Faq
+{
+    padding-left: 50px;
+}
+
+.accordion
+{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.accordion-group
+{
+    font-size: medium;
+}
+
+a:visited
+{
+    color: #08C;
+}

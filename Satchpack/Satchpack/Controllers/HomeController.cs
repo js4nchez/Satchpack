@@ -17,5 +17,15 @@ namespace Satchpack.Controllers
         {
             return View();
         }
+
+        public ActionResult Faq()
+        {
+            return View();
+        }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
     }
 }
