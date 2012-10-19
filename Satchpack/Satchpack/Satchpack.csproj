@@ -380,6 +380,8 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Content Include="Views\Shopping\EditCart.cshtml" />
+    <Content Include="Views\Shopping\CancelTransaction.cshtml" />
+    <Content Include="Views\Shopping\ReviewTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />

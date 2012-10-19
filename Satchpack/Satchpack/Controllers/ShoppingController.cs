@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Satchpack.PayPalSandbox;
 using Satchpack.Models;
+using Satchpack.Domain.Entities;
 
 namespace Satchpack.Controllers
 {
@@ -48,6 +49,7 @@ namespace Satchpack.Controllers
                         ReturnURL = "http://localhost:25540/Shopping/ReviewTransaction",
                         CancelURL = "http://localhost:25540/Shopping/CancelTransaction",
                         OrderDescription = "Satchpack Order",
+                        PaymentAction = PaymentActionCodeType.Sale,
                         OrderTotal = new BasicAmountType()
                         {
                             currencyID = CurrencyCodeType.USD,
@@ -83,9 +85,43 @@ namespace Satchpack.Controllers
             CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             GetExpressCheckoutDetailsResponseType response = sandboxApi.GetExpressCheckoutDetails(ref creds, checkoutDetails);
             string payerId = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo.PayerID;
-            TransactionDetails transactionDetails = new TransactionDetails();
 
-            return View(transactionDetails);
+            double orderTotal;
+            PayerInfoType payer = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo;
+            PaymentDetailsType paymentDetails = response.GetExpressCheckoutDetailsResponseDetails.PaymentDetails[0];
+
+            if (Double.TryParse(paymentDetails.OrderTotal.Value, out orderTotal))
+            {
+                Invoice invoice = new Invoice()
+                {
+                    Customer = new Customer()
+                    {
+                        Address1 = payer.Address.Street1,
+                        Address2 = payer.Address.Street2,
+                        City = payer.Address.CityName,
+                        State = payer.Address.StateOrProvince,
+                        PostalCode = payer.Address.PostalCode,
+                        FirstName = payer.PayerName.FirstName,
+                        LastName = payer.PayerName.LastName,
+                        Country = payer.Address.CountryName,
+                        Email = payer.Payer,
+                        Phone = payer.ContactPhone
+                    },
+                    InvoiceTotal = orderTotal
+                };
+
+                TransactionDetails transactionDetails = new TransactionDetails()
+                {
+                    Invoice = invoice,
+                    PayerId = payerId,
+                    Token = token
+                };
+                return View(transactionDetails);
+            }
+            else
+            {
+                throw new Exception("Error processing the order total");
+            }
         }
 
         /// <summary>
@@ -100,7 +136,7 @@ namespace Satchpack.Controllers
         /// Submits the payment to PayPal as confirmed by the user.
         /// </summary>
         /// <param name="token">The string that identifies the user's session for a transaction.</param>
-        public ActionResult SubmitOrder(TransactionDetails transactionDetails)
+        public ActionResult OrderSubmitted(TransactionDetails transactionDetails)
         {
             CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             DoExpressCheckoutPaymentResponseType response = sandboxApi.DoExpressCheckoutPayment(ref creds, new DoExpressCheckoutPaymentReq()
@@ -110,7 +146,9 @@ namespace Satchpack.Controllers
                     DoExpressCheckoutPaymentRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType()
                     {
                         Token = transactionDetails.Token,
-                        PayerID = transactionDetails.PayerId
+                        PayerID = transactionDetails.PayerId,
+                        PaymentAction = PaymentActionCodeType.Sale,
+                        PaymentDetails = new PaymentDetailsType[] { new PaymentDetailsType() { OrderTotal = new BasicAmountType() { Value = transactionDetails.Invoice.InvoiceTotal.ToString() } } }
                     }
                 }
             });
