@@ -87,6 +87,8 @@
     <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\ContactUs.css" />
+    <Content Include="Content\css\Faq.css" />
     <Content Include="Content\css\CheckoutStyle.css" />
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
@@ -402,6 +404,10 @@
     <Content Include="Views\Shopping\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Home\Faq.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ContactUs.cshtml" />
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
