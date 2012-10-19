@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Satchpack.PayPalSandbox;
+using Satchpack.Models;
 
 namespace Satchpack.Controllers
 {
@@ -82,8 +83,9 @@ namespace Satchpack.Controllers
             CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             GetExpressCheckoutDetailsResponseType response = sandboxApi.GetExpressCheckoutDetails(ref creds, checkoutDetails);
             string payerId = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo.PayerID;
+            TransactionDetails transactionDetails = new TransactionDetails();
 
-            return View();
+            return View(transactionDetails);
         }
 
         /// <summary>
@@ -98,7 +100,7 @@ namespace Satchpack.Controllers
         /// Submits the payment to PayPal as confirmed by the user.
         /// </summary>
         /// <param name="token">The string that identifies the user's session for a transaction.</param>
-        public ActionResult SubmitOrder(string token)
+        public ActionResult SubmitOrder(TransactionDetails transactionDetails)
         {
             CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             DoExpressCheckoutPaymentResponseType response = sandboxApi.DoExpressCheckoutPayment(ref creds, new DoExpressCheckoutPaymentReq()
@@ -107,7 +109,7 @@ namespace Satchpack.Controllers
                 {
                     DoExpressCheckoutPaymentRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType()
                     {
-                        Token = token
+                        Token = transactionDetails.Token
                     }
                 }
             });
