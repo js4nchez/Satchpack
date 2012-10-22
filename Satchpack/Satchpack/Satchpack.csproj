@@ -64,7 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ShoppingController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -379,9 +380,9 @@
     <None Include="Service References\PayPalSandbox\Satchpack.PayPalSandbox.UpdateRecurringPaymentsProfileResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <Content Include="Views\Shopping\EditCart.cshtml" />
-    <Content Include="Views\Shopping\CancelTransaction.cshtml" />
-    <Content Include="Views\Shopping\ReviewTransaction.cshtml" />
+    <Content Include="Views\ShoppingCart\EditCart.cshtml" />
+    <Content Include="Views\Checkout\CancelTransaction.cshtml" />
+    <Content Include="Views\Checkout\ReviewTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />
@@ -403,7 +404,7 @@
     <Content Include="app_code\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shopping\Product.cshtml" />
+    <Content Include="Views\ShoppingCart\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Faq.cshtml" />

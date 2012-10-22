@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "EditCart";
+}
+
+<link href="@Url.Content("~/Content/css/CheckoutStyle.css")" type="text/css" rel="Stylesheet" />
+
+<h2>Checkout</h2>
+@using (Html.BeginForm("Checkout", "Checkout"))
+{
+<div id="ProductsSection">
+<div id="ProductDescription">
+<label>
+Satchpack</label>
+<br />
+<label>
+Color: <span>Blue</span></label>
+<br />
+<label>
+<a href="#">Remove from cart</a></label>
+</div>
+<div id="ItemPrice">
+</div>
+<div id="Quantity">
+<textarea rows="1">2</textarea>
+</div>
+<div id="Total">
+<label>
+$89.00</label>
+</div>
+<div id="CartTotal">
+<label>
+Subtotal: <span>$89.00</span></label>
+<label>
+Shipping: <span>$9.99</span></label>
+<label>
+Total: <span>$97.99</span></label>
+@*<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right: 7px;">*@
+<input id="PayPayCheckoutBtn" type="submit" value="" />
+</div>
+</div>
+}
+
