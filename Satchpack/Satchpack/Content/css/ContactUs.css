@@ -1,8 +1,12 @@
-﻿body
+﻿.contactUs
 {
-    font-size: large;
+    padding-left: 50px;
+    font-size: x-large;
+    font-weight: bold;
 }
 
-a:visited {
-color: #08C;
+.contactUsText
+{
+    font-size: large;
+    font-weight: bold;
 }

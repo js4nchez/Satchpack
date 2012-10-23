@@ -1,4 +1,25 @@
 ﻿<!DOCTYPE html>
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+            $('ul.nav li').removeClass('active');
+            $('#faqPortal').parent().addClass('active');
+            $('.accordion-toggle').click(
+                function () {
+                    $('.accordion-toggle').children().removeClass('minusButton');
+                    $('.accordion-toggle').children().addClass('plusButton');
+                    if ($(this).hasClass('collapsed')) {
+                        $(this).children().removeClass('minusButton');
+                        $(this).children().addClass('plusButton');
+                    } else {
+                        $(this).children().removeClass('plusButton');
+                        $(this).children().addClass('minusButton');
+                    }
+                }
+             );
+        }
+    );
+</script>
 <html>
 <head>
     <link href="@Url.Content("~/Content/css/Faq.css")" rel="stylesheet" type="text/css" />
@@ -6,12 +27,33 @@
 </head>
 <body>
     <div class="Faq">
+        <h2>
+            Frequently Asked Questions</h2>
+        <div class="emailSupport">
+            <ul>
+                <li class="divider-vertical"></li>
+            </ul>
+            <ul class="emailSupportList">
+                <li id="emailSupport">Email Support</li>
+                <br />
+                <li>Can't find the answer to your</li>
+                <li>question? Send us an email</li>
+                <li>with your question to:</li>
+                <br />
+                <a class="emailLink" href="mailto:support@satchpack.com">support@satchpack.com</a>
+            </ul>
+        </div>
         <div class="accordion" id="accordion2">
+            <br />
             Product:
+            <br />
+            <br />
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                        What is a Satchpack? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; What is a Satchpack? </a>
                 </div>
                 <div id="collapseOne" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -27,7 +69,9 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                        Made in the USA? Do you get the materials from the USA also? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; Made in the USA? Do you get the materials from the USA also? </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -38,7 +82,9 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                        Can I buy a backpack here? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; Can I buy a backpack here? </a>
                 </div>
                 <div id="collapseThree" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -46,11 +92,17 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
             Customization:
+            <br />
+            <br />
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                        What colors are available?</a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; What colors are available?</a>
                 </div>
                 <div id="collapseFour" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -68,7 +120,9 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-                        May I order my own custom color? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; May I order my own custom color? </a>
                 </div>
                 <div id="collapseFive" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -77,11 +131,17 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
             Returns:
+            <br />
+            <br />
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-                        What type of warranty does it come with? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; What type of warranty does it come with? </a>
                 </div>
                 <div id="collapseSix" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -106,7 +166,9 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
-                        So may I put an angry cat in it? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; So may I put an angry cat in it? </a>
                 </div>
                 <div id="collapseSeven" class="accordion-body collapse">
                     <div class="accordion-inner">
@@ -118,7 +180,9 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
-                        Where do I send my satchpack to be fixed? </a>
+                        <label class="plusButton">
+                        </label>
+                        &nbsp; Where do I send my satchpack to be fixed? </a>
                 </div>
                 <div id="collapseEight" class="accordion-body collapse">
                     <div class="accordion-inner">

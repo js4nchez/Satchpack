@@ -2,35 +2,35 @@
     ViewBag.Title = "ContactUs";
 }
 <!DOCTYPE html>
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+            $('ul.nav li').removeClass('active');
+            $('#contactUsPortal').parent().addClass('active');
+        }
+    );
+</script>
 <html>
 <head>
     <link href="@Url.Content("~/Content/css/ContactUs.css")" rel="stylesheet" type="text/css" />
-    <title>Faq</title>
+    <title>Contact Us</title>
 </head>
 <body>
-    <h2>
-        Contact Us
-    </h2>
-    <br />
-    For sales, or sales questions, please email us at: <a href="mailto:sales@satchpack.com">
-        sales@satchpack.com</a>
-    <br />
-    <br />
-    For Help relating to the Satchpack, or Customer Support, please email us at: <a href="mailto:support@satchpack.com">
-        support@satchpack.com</a>
-    <br />
-    <br />
-    Send all products that need to be fixed to:
-    <br />
-    <br />
-    4416 N Half Mile Rd.
-    <br />
-    Enoch, Utah 84121
-    <br />
-    <br />
-    Please include your name, address, email, phone number (including area code) and
-    product receipt with the item along with a description of the problem. State law
-    requires that items be clean before being returned for repair or replacement. Products
-    repaired or replaced under warranty will be returned free of charge.
+    <div class="contactUs">
+        <h2>
+            Contact Us
+        </h2>
+        <div class="contactUsText">
+            If you have comments, questions or concerns, do not hesitate to let us know: 
+            <b class="messageText">Message:</b>
+            <input id="mainText" />
+            <b class="nameText">Name:</b>
+            <input id="nameText" />
+            <b class="emailText">Email:</b>
+            <input id="emailText" />
+            <button id="submitButton" type="submit">
+                Send Message</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -123,8 +123,10 @@
     <Content Include="Content\images\idleDot.png" />
     <Content Include="Content\images\imageGallerySection.png" />
     <Content Include="Content\images\menuGradient.png" />
+    <Content Include="Content\images\minusBtn.png" />
     <Content Include="Content\images\more.png" />
     <Content Include="Content\images\photos.png" />
+    <Content Include="Content\images\plusBtn.png" />
     <Content Include="Content\images\productSpecsSection.png" />
     <Content Include="Content\images\purple.png" />
     <Content Include="Content\images\red.png" />
@@ -442,7 +444,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>25540</DevelopmentServerPort>
+          <DevelopmentServerPort>42155</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
