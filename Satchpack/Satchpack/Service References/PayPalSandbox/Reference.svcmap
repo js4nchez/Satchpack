@@ -18,7 +18,7 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://www.sandbox.paypal.com/wsdl/PayPalSvc.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://www.sandbox.paypal.com/wsdl/PayPalSvc.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="eBLBaseComponents.xsd" MetadataType="Schema" ID="dc00a9fe-cd6a-472e-8722-3dafb00ef651" SourceId="1" SourceUrl="https://www.sandbox.paypal.com/wsdl/eBLBaseComponents.xsd" />

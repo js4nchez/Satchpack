@@ -7,6 +7,7 @@
 {
     font-size: x-large;
     font-weight: bold;
+    width: 650px;
 }
 
 .accordion-group
@@ -14,7 +15,70 @@
     font-size: medium;
 }
 
-a:visited
+.Faq a:visited
 {
     color: #08C;
+}
+
+.Faq .emailSupport
+{
+    position: relative;
+    float: right;
+}
+
+.Faq a:hover
+{
+    text-decoration: none;
+}
+
+.Faq .emailSupport ul .divider-vertical
+{
+    list-style-type: none;
+    height: 250px;
+    border-left: 1px solid black;
+}
+
+.emailSupport
+{
+    position: relative;
+    float: right;
+    right: 60px;
+}
+
+.emailSupportList li
+{
+    list-style-type: none;
+    font-weight: bold;
+    font-size: normal;
+}
+
+#emailSupport
+{
+    font-weight: bold;
+    font-size: large;
+}
+
+.emailSupportList
+{
+    position: relative;
+    top: -250px;
+    left: 25px;
+}
+
+.plusButton
+{
+    background: url(../images/plusBtn.png);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    float: left;
+}
+
+.minusButton
+{
+    background: url(../images/minusBtn.png);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    float: left;
 }
