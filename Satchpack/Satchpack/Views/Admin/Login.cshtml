@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+@model Satchpack.Domain.Entities.User
+
+<h2>Login</h2>
+
+@using(Html.BeginForm("Login", "Admin")){
+<div id="signInBox">
+    <label>Username:</label>
+    @Html.TextBoxFor(x => x.Username)
+    
+    <label>Password:</label>
+    @Html.PasswordFor(x => x.Password)
+    <input type="submit" value="Submit" />
+</div>
+}
