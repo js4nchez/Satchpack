@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ShoppingController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\TransactionDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\PayPalSandbox\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -380,11 +382,12 @@
     <None Include="Service References\PayPalSandbox\Satchpack.PayPalSandbox.UpdateRecurringPaymentsProfileResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <Content Include="Views\Shopping\EditCart.cshtml" />
+    <Content Include="Views\ShoppingCart\EditCart.cshtml" />
+    <Content Include="Views\Checkout\CancelTransaction.cshtml" />
+    <Content Include="Views\Checkout\ReviewTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -403,7 +406,7 @@
     <Content Include="app_code\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shopping\Product.cshtml" />
+    <Content Include="Views\ShoppingCart\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Faq.cshtml" />
