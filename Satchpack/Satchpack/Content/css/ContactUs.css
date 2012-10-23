@@ -9,4 +9,70 @@
 {
     font-size: large;
     font-weight: bold;
+    position: relative;
+    right: 80px;
+}
+
+.messageText
+{
+    position: relative;
+    top: 50px;
+    float: left;
+    left: 80px;
+}
+.mainInput
+{
+    position: relative;
+    height: 300px;
+    width: 500px;
+    top: 60px;
+    left: 80px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.nameText
+{
+    position: relative;
+    left: 143px;
+    top: -110px;
+}
+.nameInput
+{
+    position: relative;
+    left: -23px;
+    top: -75px;
+    height: 30px;
+    left: 80px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.emailText
+{
+    position: relative;
+    right: 135px;
+    top: -30px;
+}
+.emailInput
+{
+    position: relative;
+    float: right;
+    right: 43px;
+    top: -160px;
+    height: 30px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.submitButton
+{
+    position: relative;
+    float: right;
+    right: -132px;
+    top: -90px;
+    font-size: x-large;
+    height: 35px;
+}
+
+#footer
+{
+    top: 150px;
 }
