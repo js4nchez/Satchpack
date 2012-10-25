@@ -90,6 +90,7 @@
     <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\CheckOut.css" />
     <Content Include="Content\css\ContactUs.css" />
     <Content Include="Content\css\Faq.css" />
     <Content Include="Content\css\CheckoutStyle.css" />

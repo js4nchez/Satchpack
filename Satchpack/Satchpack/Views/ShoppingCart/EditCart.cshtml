@@ -1,42 +1,74 @@
 ﻿@{
     ViewBag.Title = "EditCart";
 }
-
-<link href="@Url.Content("~/Content/css/CheckoutStyle.css")" type="text/css" rel="Stylesheet" />
-
-<h2>Checkout</h2>
+<link href="@Url.Content("~/Content/css/Checkout.css")" type="text/css" rel="Stylesheet" />
 @using (Html.BeginForm("Checkout", "Checkout"))
 {
-<div id="ProductsSection">
-<div id="ProductDescription">
-<label>
-Satchpack</label>
-<br />
-<label>
-Color: <span>Blue</span></label>
-<br />
-<label>
-<a href="#">Remove from cart</a></label>
-</div>
-<div id="ItemPrice">
-</div>
-<div id="Quantity">
-<textarea rows="1" cols="1">2</textarea>
-</div>
-<div id="Total">
-<label>
-$89.00</label>
-</div>
-<div id="CartTotal">
-<label>
-Subtotal: <span>$89.00</span></label>
-<label>
-Shipping: <span>$9.99</span></label>
-<label>
-Total: <span>$97.99</span></label>
-@*<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right: 7px;">*@
-<input id="PayPayCheckoutBtn" type="submit" value="" />
-</div>
-</div>
+    <div id="ProductsSection">
+        <h2>
+            Checkout</h2>
+        <table id="productsCheckoutTable" width="800">
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Item Price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Totals
+                </th>
+            </tr>
+            <tr>
+                <td id="checkoutProduct">
+                    Satchpack
+                </td>
+                <td id="checkoutDescription">
+                    Red durable satchel/backpack
+                </td>
+                <td id="checkoutPrice">
+                    $90
+                </td>
+                <td id="checkoutQuantity">
+                    2
+                </td>
+                <td id="checkoutTotal">
+                    $180
+                </td>
+            </tr>
+            <tr>
+                <td id="checkoutProduct">
+                    Satchpack
+                </td>
+                <td id="checkoutDescription">
+                    Blue durable satchel/backpack
+                </td>
+                <td id="checkoutPrice">
+                    $90
+                </td>
+                <td id="checkoutQuantity">
+                    3
+                </td>
+                <td id="checkoutTotal">
+                    $270
+                </td>
+            </tr>
+        </table>
+        <div id="cartFinals">
+            <ul id="shoppingCartTotal">
+                <li id="checkoutSubTotal">Subtotal: $450</li>
+                <li id="checkoutShipping">Shipping: $30</li>
+                <li id="checkoutTax">Sales Tax: $20</li>
+                <hr id="rule" />
+                <li id="checkoutTotalCost">Total: $500</li>
+            </ul>
+            <img id="paypalCheckout" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right: 7px;">
+        </div>
+    </div>
 }
-
