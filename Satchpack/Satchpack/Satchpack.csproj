@@ -71,6 +71,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\AvailableProducts.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\TransactionDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\PayPalSandbox\Reference.cs">
@@ -388,6 +390,7 @@
     <Content Include="Views\Checkout\ReviewTransaction.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\GenerateHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\docs\" />

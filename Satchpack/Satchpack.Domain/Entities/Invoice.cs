@@ -40,13 +40,13 @@ namespace Satchpack.Domain.Entities
         {
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@id", Id),
+                new SqlParameter("@invoiceId", Id),
                 new SqlParameter("@orderDate", OrderDate),
-                new SqlParameter("@invoiceTotal", InvoiceTotal)
+                new SqlParameter("@invoiceTotal", InvoiceTotal),
+                new SqlParameter("@shippingMethodId", ShippingMethod.Id),
+                new SqlParameter("@invoiceStatusId", InvoiceStatus.Id)
             };
             parameters.AddRange(Customer.ToSqlParams());
-            parameters.AddRange(ShippingMethod.ToSqlParams());
-            parameters.AddRange(InvoiceStatus.ToSqlParams());
             return parameters;
         }
         public override DAL_Entity ConvertToEntity(SqlDataReader reader)

@@ -13,7 +13,7 @@ namespace Satchpack.Domain.DAL_Abstract
     /// </summary>
     public abstract class IDAL_Base
     {
-        private readonly string ConnectionString = @"";
+        private readonly string ConnectionString = @"Data Source=.;Initial Catalog=Satchpack;User Id=SatchpackUser;Password=1qaz2wsx;";
 
         /// <summary>
         /// Creates a new entity in the database.
@@ -63,7 +63,6 @@ namespace Satchpack.Domain.DAL_Abstract
                 using (SqlCommand cmd = new SqlCommand(entity.RetrieveAllSproc, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddRange(entity.ToSqlParams().ToArray());
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())

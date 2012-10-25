@@ -1,8 +1,9 @@
 ﻿@helper createNav()
-{
+    {
     <div class="navbar">
         <a class="navbar_Logo" href="#">
-            <label class="satchpackLogo"></label>
+            <label class="satchpackLogo">
+            </label>
         </a>
         <div class="navbar-inner">
             <ul class="nav">
@@ -17,14 +18,14 @@
         </div>
         <div class="navbar_cartLogo">
             <a href="@Href("~/ShoppingCart/EditCart")">
-                <label class="cart"></label>
+                <label class="cart">
+                </label>
                 <b id="cartTotal">$173.98</b>
                 <br />
-                <b id="itemCount">2 items</b>
-            </a>
+                <b id="itemCount">2 items</b> </a>
         </div>
         <div id="navbar_checkout">
-        <a href="@Href("~/ShoppingCart/EditCart")">Checkout</a>
+            <a href="@Href("~/ShoppingCart/EditCart")">Checkout</a>
         </div>
     </div>
 }

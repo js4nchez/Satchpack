@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "Satchpack.com ~ Satchpack";
 }
+@model Satchpack.Models.AvailableProducts
+
 <link href="@Url.Content("~/Content/css/ShopStyle.css")" type="text/css" rel="Stylesheet" />
 
 <script type="text/javascript">
@@ -17,7 +19,7 @@
 
 <div id="shopTopSection">
     <div id="shopTopHeader">
-        <h2>Satchpack</h2>    
+        <h2>@Model.Products.First().Product.Name</h2>    
     </div>
     <div id="shopLeft">
         <label id="productViewDefault" class="bigSatchpack"></label>
@@ -58,7 +60,7 @@
             </tr>
             <tr>
                 <td>Weight:</td>
-                <td>3 lbs, 1 oz</td>
+                <td>@Model.Products.First().Product.Weight oz</td>
             </tr>
             <tr>
                 <td>Capacity:</td>
@@ -82,13 +84,18 @@
         <br />
         <div id="priceTagContainer">
             <label class="moneySign red">$</label>
-            <label class="price red">99.00</label>
+            <label class="price red">@string.Format("{0:0.00}", Model.Products.First().Product.Price)</label>
             <label class="text red">USD</label>
         </div>
 
         <div id="cartBtn">
+        @using (Html.BeginForm("AddToCart", "ShoppingCart"))
+        {
+            @Html.Hidden("productId", Model.Products.First().Product.Id)
             <label class="cartIcon"></label>
             <label class="cartText btnText">&nbsp; Add to cart</label>
+            <input type="submit" value="Add to Cart" />
+        }
         </div>     
     </div>
 </div>

@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="wrapper" class="boxShadow">
-        @NavigationBar.createNav()
+        @{Html.RenderAction("GenerateHeader", "ShoppingCart");}
         @RenderBody()
         @Footer.createFooter()
     </div>

@@ -2,6 +2,7 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateOrderItem]
+	@id INT,
 	@invoiceId INT,
 	@productId INT,
 	@quantity INT
@@ -10,6 +11,8 @@ BEGIN
 
 	INSERT INTO dbo.OrderItem (InvoiceId, ProductId, Quantity)
 	VALUES (@invoiceId, @productId, @quantity)
+
+	SELECT SCOPE_IDENTITY();
 
 END
 GO

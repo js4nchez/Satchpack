@@ -39,11 +39,11 @@ EXEC dbo.CreateUser 'Jeworge', 'lame', 0
 EXEC dbo.CreateUser 'ArrolingR', 'giant', 1
 
 -- Inserts Products
---EXEC dbo.CreateProduct 'RED', 'Satchpack', 'A very durable backpack/satchel.', 1, 89.00, 'Red'
---EXEC dbo.CreateProduct 'BLUE', 'Satchpack', 'A very durable backpack/satchel.', 1, 89.00, 'Blue'
---EXEC dbo.CreateProduct 'OILGREEN', 'Satchpack', 'A very durable backpack/satchel.', 1, 89.00, 'Oil Green'
---EXEC dbo.CreateProduct 'SILVER', 'Satchpack', NULL, 1, 98.99, 'Silver'
---EXEC dbo.CreateProduct 'PURPLE', 'Satchpack', 'A very durable backpack/satchel.', 1, 98.99, 'Purple'
+EXEC dbo.CreateInventory 'RED', 'Satchpack', 'A very durable backpack/satchel.', 1, 90.00, 'Red'
+EXEC dbo.CreateInventory 'BLUE', 'Satchpack', 'A very durable backpack/satchel.', 1, 90.00, 'Blue'
+EXEC dbo.CreateInventory 'OILGREEN', 'Satchpack', 'A very durable backpack/satchel.', 1, 90.00, 'Oil Green'
+EXEC dbo.CreateInventory 'SILVER', 'Satchpack', NULL, 1, 90.99, 'Silver'
+EXEC dbo.CreateInventory 'PURPLE', 'Satchpack', 'A very durable backpack/satchel.', 1, 90.99, 'Purple'
 
 -- Inserts Customers
 --EXEC dbo.CreateCustomer 'Jorge', 'Sanchez', 'In da Hoodz!', 'Murray', 'UT', '84121', 'USA', 'jsanchez@yahoo.com', '891-793-1111'
@@ -51,17 +51,17 @@ EXEC dbo.CreateUser 'ArrolingR', 'giant', 1
 --EXEC dbo.CreateCustomer 'Ruddy', 'Arroliga', 'Some place in the CH', 'SLC', 'UT', '84121', 'USA', 'rarroligajr@gmail.com', '555-555-5551'
 
 -- Insert Inventory
-EXEC dbo.CreateInventory 1, 100
-EXEC dbo.CreateInventory 2, 10
-EXEC dbo.CreateInventory 3, 20
-EXEC dbo.CreateInventory 4, 30
+--EXEC dbo.CreateInventory 1, 100
+--EXEC dbo.CreateInventory 2, 10
+--EXEC dbo.CreateInventory 3, 20
+--EXEC dbo.CreateInventory 4, 30
 
--- Insert Invoice
-EXEC dbo.CreateInvoice 1, 1, '2012-10-01', 99.10, 1
-EXEC dbo.CreateInvoice 2, 3, '2012-10-01', 20.01, 1
-EXEC dbo.CreateInvoice 3, 2, '2012-10-01', 5.00, 1
+---- Insert Invoice
+--EXEC dbo.CreateInvoice 1, 1, '2012-10-01', 99.10, 1
+--EXEC dbo.CreateInvoice 2, 3, '2012-10-01', 20.01, 1
+--EXEC dbo.CreateInvoice 3, 2, '2012-10-01', 5.00, 1
 
--- Insert OrderItem
-EXEC dbo.CreateOrderItem 1, 1, 5
-EXEC dbo.CreateOrderItem 2, 5, 10
+---- Insert OrderItem
+--EXEC dbo.CreateOrderItem 1, 1, 5
+--EXEC dbo.CreateOrderItem 2, 5, 10
 GO

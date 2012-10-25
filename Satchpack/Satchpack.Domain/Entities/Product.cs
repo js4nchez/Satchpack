@@ -41,7 +41,7 @@ namespace Satchpack.Domain.Entities
         {
             return new List<SqlParameter>()
             {
-                new SqlParameter("@id", Id),
+                new SqlParameter("@productId", Id),
                 new SqlParameter("@sku", SKU),
                 new SqlParameter("@name", Name),
                 new SqlParameter("@description", Description),

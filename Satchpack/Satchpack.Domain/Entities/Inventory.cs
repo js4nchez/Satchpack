@@ -31,7 +31,7 @@ namespace Satchpack.Domain.Entities
         {
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@id", Id),
+                new SqlParameter("@inventoryId", Id),
                 new SqlParameter("@quantity", Quantity)
             };
             parameters.AddRange(Product.ToSqlParams());

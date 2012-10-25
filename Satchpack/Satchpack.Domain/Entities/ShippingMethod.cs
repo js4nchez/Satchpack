@@ -40,7 +40,8 @@ namespace Satchpack.Domain.Entities
                 new SqlParameter("@id", Id),
                 new SqlParameter("@carrier", Carrier),
                 new SqlParameter("@method", Method),
-                new SqlParameter("@trackingUrl", TrackingUrl)
+                new SqlParameter("@trackingUrl", TrackingUrl),
+                new SqlParameter("@price", Price)
             };
         }
         public override DAL_Entity ConvertToEntity(SqlDataReader reader)
