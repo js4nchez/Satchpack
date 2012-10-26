@@ -2,10 +2,10 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateUser]
-	@id INT,
 	@username NVARCHAR(30),
 	@password NVARCHAR(30),
-	@lock BIT = 0
+	@lock BIT = 0,
+	@id INT = 0
 AS
 BEGIN
 

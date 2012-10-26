@@ -16,7 +16,7 @@ namespace Satchpack.Models
                 return OrderItems.Count;
             }
         }
-        public double TotalCost
+        public double SubtotalCost
         {
             get
             {
@@ -26,10 +26,19 @@ namespace Satchpack.Models
                     return 0;
             }
         }
+        public double TotalCost
+        {
+            get
+            {
+                return SubtotalCost + ShippingCost;
+            }
+        }
+        public double ShippingCost { get; private set; }
 
         public ShoppingCart()
         {
             OrderItems = new List<OrderItem>();
+            ShippingCost = 10.00;
         }
     }
 }

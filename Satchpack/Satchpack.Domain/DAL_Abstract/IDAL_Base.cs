@@ -13,7 +13,7 @@ namespace Satchpack.Domain.DAL_Abstract
     /// </summary>
     public abstract class IDAL_Base
     {
-        private readonly string ConnectionString = @"Data Source=.;Initial Catalog=Satchpack;User Id=SatchpackUser;Password=1qaz2wsx;";
+        private readonly string ConnectionString = @"Data Source=tcp:mssql1.cloudsites.gearhost.com;Initial Catalog=satchpack;User ID=satchpack;Pwd=w7ddrb84;";
 
         /// <summary>
         /// Creates a new entity in the database.

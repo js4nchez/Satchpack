@@ -2,9 +2,9 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateInvoiceStatus]
-	@id INT,
 	@name NVARCHAR(30),
-	@description NVARCHAR(MAX)
+	@description NVARCHAR(MAX),
+	@id INT = 0
 AS
 BEGIN
 

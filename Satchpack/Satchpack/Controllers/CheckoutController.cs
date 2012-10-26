@@ -30,8 +30,8 @@ namespace Satchpack.Controllers
                 {
                     SetExpressCheckoutRequestDetails = new SetExpressCheckoutRequestDetailsType()
                     {
-                        ReturnURL = "http://localhost:25540/Shopping/ReviewTransaction",
-                        CancelURL = "http://localhost:25540/Shopping/CancelTransaction",
+                        ReturnURL = "http://localhost:42155/Shopping/ReviewTransaction",
+                        CancelURL = "http://localhost:42155/Shopping/CancelTransaction",
                         OrderDescription = "Satchpack Order",
                         PaymentAction = PaymentActionCodeType.Sale,
                         OrderTotal = new BasicAmountType()
@@ -149,8 +149,8 @@ namespace Satchpack.Controllers
             securityHeader.Credentials = new UserIdPasswordType()
             {
                 Username = "bus_1350451002_biz_api1.satchpack.com",
-                Password = "1350451057",
-                Signature = "An5ns1Kso7MWUdW4ErQKJJJ4qi4-AAJIh61ld-z-TGnvds8gBpPq6JQU"
+                Password = "PXJETSRJJ6WL4RKR",
+                Signature = "AyaWC-VIEFt3wjkZSGZjNNB9w3.ZAaME9WaCBnipDjy--8Y.gK01MGeI"
             };
             return securityHeader;
         }

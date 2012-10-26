@@ -2,11 +2,11 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateShippingMethod]
-	@id INT,
 	@carrier NVARCHAR(100),
 	@method NVARCHAR(100),
 	@trackingUrl NVARCHAR(100),
-	@price DECIMAL(18, 2) 
+	@price DECIMAL(18, 2),
+	@id INT = 0
 AS
 BEGIN
 

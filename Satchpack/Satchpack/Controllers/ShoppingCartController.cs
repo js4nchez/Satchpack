@@ -35,13 +35,13 @@ namespace Satchpack.Controllers
         /// </summary>
         public ActionResult EditCart()
         {
-            return View();
+            return View(GetCart());
         }
 
         /// <summary>
-        /// 
+        /// Adds a product to the user's ShoppingCart.
         /// </summary>
-        /// <param name="productId"></param>
+        /// <param name="productId">The Id of the product being added to the cart.</param>
         public ActionResult AddToCart(int productId)
         {
             ShoppingCart cart = GetCart();
@@ -51,11 +51,11 @@ namespace Satchpack.Controllers
                 Product = product,
                 Quantity = 1,
             });
-            return View("EditCart");
+            return View("EditCart", GetCart());
         }
 
         /// <summary>
-        /// 
+        /// Removes a product from the user's ShoppingCart
         /// </summary>
         public ActionResult RemoveFromCart()
         {
@@ -63,7 +63,7 @@ namespace Satchpack.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Generates the header of the website (This includes the shopping cart).
         /// </summary>
         public PartialViewResult GenerateHeader()
         {
@@ -71,9 +71,9 @@ namespace Satchpack.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Retrieves the current session's ShoppingCart.
+        /// If there currently is no ShoppingCart, then one is created for this session.
         /// </summary>
-        /// <returns></returns>
         private ShoppingCart GetCart()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];

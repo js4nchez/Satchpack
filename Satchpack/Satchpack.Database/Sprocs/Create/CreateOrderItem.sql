@@ -2,10 +2,10 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateOrderItem]
-	@id INT,
 	@invoiceId INT,
 	@productId INT,
-	@quantity INT
+	@quantity INT,
+	@id INT = 0
 AS
 BEGIN
 

@@ -2,7 +2,6 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateInventory]
-	@productId INT,
 	@sku NVARCHAR(30),
 	@name NVARCHAR(30),
 	@description NVARCHAR(200) = '',
@@ -10,8 +9,9 @@ CREATE PROCEDURE [dbo].[CreateInventory]
 	@price DECIMAL(18, 2),
 	@color NVARCHAR(30),
 
-	@inventoryId INT,
-	@quantity INT = 1
+	@quantity INT = 1,
+	@inventoryId INT = 0,
+	@productId INT = 0
 AS
 BEGIN
 

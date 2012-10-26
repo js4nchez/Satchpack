@@ -2,7 +2,6 @@ USE Satchpack
 GO
 
 CREATE PROCEDURE [dbo].[CreateInvoice]
-	@customerId INT,
 	@firstName NVARCHAR(30),
 	@lastName NVARCHAR(30),
 	@address1 NVARCHAR(200),
@@ -13,13 +12,15 @@ CREATE PROCEDURE [dbo].[CreateInvoice]
 	@country NVARCHAR(30),
 	@email NVARCHAR(200),
 	@phone NVARCHAR(30) = '',
-
-	@invoiceId INT,
+	
 	@orderDate DATETIME,
 	@invoiceTotal DECIMAL(18, 2),
 
 	@shippingMethodId INT,
-	@invoiceStatusId INT
+	@invoiceStatusId INT,
+
+	@customerId INT = 0,
+	@invoiceId INT = 0
 AS
 BEGIN
 
