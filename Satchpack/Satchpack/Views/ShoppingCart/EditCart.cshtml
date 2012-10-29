@@ -22,7 +22,7 @@
                 Quantity
             </th>
             <th>
-                Totals
+                Color
             </th>
         </tr>
         @foreach (var item in Model.OrderItems)
@@ -35,13 +35,13 @@
                     @item.Product.Description
                 </td>
                 <td id="checkoutPrice">
-                    $@item.Product.Price
+                    @String.Format("{0:C}", item.Product.Price)
                 </td>
                 <td id="checkoutQuantity">
                     @item.Quantity
                 </td>
                 <td id="checkoutTotal">
-                    $@Math.BigMul(item.Quantity, (int)item.Product.Price)
+                    @item.Product.Color
                 </td>
             </tr>
         }

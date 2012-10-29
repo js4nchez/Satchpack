@@ -92,8 +92,8 @@
         @using (Html.BeginForm("AddToCart", "ShoppingCart"))
         {
             @Html.Hidden("productId", Model.Products.First().Product.Id)
-            <label class="cartIcon"></label>
-            <label class="cartText btnText">&nbsp; Add to cart</label>
+            @*<label class="cartIcon"></label>
+            <label class="cartText btnText">&nbsp; Add to cart</label>*@
             <input type="submit" value="Add to Cart" />
         }
         </div>     

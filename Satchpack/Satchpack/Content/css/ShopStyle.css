@@ -24,7 +24,6 @@
 {
     float: left;   
     padding: 0 60px; 
-    border-right: 1px solid;
 }
 
 .bigSatchpack
@@ -154,7 +153,8 @@
 {
     float: left;   
     padding: 0 20px; 
-    border-right: 1px solid;    
+    border-right: 1px solid;
+    border-left: 1px solid;    
 }
 
 #shopMiddle div
@@ -236,7 +236,7 @@
 {
     position: relative;
     top: 90px;
-    left: 83px;
+    left: 93px;
     background-color: #3B942A;
     float: left;
     clear: both;
@@ -249,15 +249,6 @@
 #cartBtn:hover
 {
     background-color: #3BC92A;    
-}
-
-.cartIcon
-{
-    background: url(../images/cart.png); 
-    display: block;
-    width: 38px;
-    height: 38px;
-    float: left;
 }
 
 /** SHOP BOTTOM SECTION **/
@@ -279,7 +270,7 @@
 {
     position: relative;
     top: 78px;
-    left: 7px;
+    left: 93px;
     float: left;        
 }
 
@@ -303,16 +294,19 @@
     margin: 0 5px 0 0;
 }
 
-.btnText
+input[value*='Cart']
 {
-    color: White;
-        
+    border: none;
+    background-color: transparent;
+    color: White;  
+    background: url(../images/cart.png) no-repeat; 
+    display: block;
+    width: 125px;
+    height: 38px;  
+    padding: 0 0 0 35px;
 }
 
-.cartText
+form
 {
-    position: relative;
-    top: 12px;   
-    font-size: 18px; 
-    float: left;
+    margin: 0;    
 }
