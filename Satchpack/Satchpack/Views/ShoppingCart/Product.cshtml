@@ -13,13 +13,39 @@
 
             $('ul.nav li').removeClass('active');
             $('#storePortal').parent().addClass('active');
+
+            $('#userColor').text($('.colorSelected input').attr('value'));
+
+            $('.colorThumb').click(
+                function ()
+                {
+                    $('.colorThumb').removeClass('colorSelected');
+                    $(this).addClass('colorSelected');
+                    var selectedColor = $(this).children()[0].value;
+                    $('#userColor').text(selectedColor);
+
+                    $.ajax(
+                    {
+                        url: '@Url.Action("GetProductIdByColor", "ShoppingCart")',
+                        data: { color: selectedColor },
+                        type: 'POST',
+                        success: function (data)
+                        {
+                            $("#productId").attr("value", data);
+                        }
+                    });
+                }
+            );
+
+
         }
     );
 </script>
-
+@using (Html.BeginForm("AddToCart", "ShoppingCart"))
+{
 <div id="shopTopSection">
     <div id="shopTopHeader">
-        <h2>@Model.Products.First().Product.Name</h2>    
+        <h2>@Model.Products.First().Product.Name</h2>
     </div>
     <div id="shopLeft">
         <label id="productViewDefault" class="bigSatchpack"></label>
@@ -32,13 +58,25 @@
             <label id="productViewSix" class="productThumb"></label>
         </div>
         <div id="productColorSection" class="full-width">
-            <label id="productColorOne" class="colorThumb"></label>
-            <label id="productColorTwo" class="colorThumb"></label>
-            <label id="productColorThree" class="colorThumb"></label>
-            <label id="productColorFour" class="colorThumb"></label>
-            <label id="productColorFive" class="colorThumb"></label>
-            <label id="productColorSix" class="colorThumb"></label>
-            <label id="productCustomColors" class="colorThumb"></label>
+            <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
+                <input type="hidden" value="Red" />
+            </label>
+            <label id="productColorTwo" class="radiusBorder colorThumb">
+                <input type="hidden" value="Silver" />
+            </label>
+            <label id="productColorThree" class="radiusBorder colorThumb">
+                <input type="hidden" value="Blue" />    
+            </label>
+            <label id="productColorFour" class="radiusBorder colorThumb">
+                <input type="hidden" value="Purple" />
+            </label>
+            <label id="productColorFive" class="radiusBorder colorThumb">
+                <input type="hidden" value="Gold" />    
+            </label>
+            <label id="productColorSix" class="radiusBorder colorThumb">
+                <input type="hidden" value="Oil Green" />
+            </label>
+            @*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
         </div>    
     </div>
     <div id="shopMiddle">
@@ -71,6 +109,12 @@
                 <td>420D nylon / 1680 Ballistics</td>
             </tr>
             <tr>
+                <td>Color</td>
+                <td>
+                    <span id="userColor"></span>
+                </td>
+            </tr>
+            <tr>
                 <td>Warranty:</td>
                 <td><a href="#">See warranty document.</a></td>
             </tr>
@@ -88,23 +132,17 @@
             <label class="text red">USD</label>
         </div>
 
-        <div id="cartBtn">
-        @using (Html.BeginForm("AddToCart", "ShoppingCart"))
-        {
-            @Html.Hidden("productId", Model.Products.First().Product.Id)
-            @*<label class="cartIcon"></label>
-            <label class="cartText btnText">&nbsp; Add to cart</label>*@
-            <input type="submit" value="Add to Cart" />
-        }
+        <div id="cartBtn" class="radiusBorder">
+        <input name="productId" id="productId" value="@Model.Products.First().Product.Id" type="hidden" />
+        <input type="submit" value="Add to Cart" />
         </div>     
     </div>
 </div>
-
+}
 <div id="shopBottomSection">
     <div id="productTabs">
         <ul>
             <li>
-                
                 <a href="#productPhotoGallery">
                     <label class="photosIcon tabThumbnail"></label>
                     Photo Gallery

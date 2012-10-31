@@ -3,10 +3,9 @@
 }
 @model Satchpack.Models.ShoppingCart
 <link href="@Url.Content("~/Content/css/Checkout.css")" type="text/css" rel="Stylesheet" />
--<link href="@Url.Content("~/Content/css/CheckoutStyle.css")" type="text/css" rel="Stylesheet" />
+<link href="@Url.Content("~/Content/css/CheckoutStyle.css")" type="text/css" rel="Stylesheet" />
 <div id="ProductsSection">
-    <h2>
-        Checkout</h2>
+    <h2>Checkout</h2>
     <table id="productsCheckoutTable" width="800">
         <tr>
             <th>
@@ -52,11 +51,9 @@
             <ul id="shoppingCartTotal">
                 <li id="checkoutSubTotal">Subtotal: $@Model.SubtotalCost</li>
                 <li id="checkoutShipping">Shipping: $@Model.ShippingCost</li>
-                @*<li id="checkoutTax">Sales Tax: $20</li>*@
                 <hr id="rule" />
                 <li id="checkoutTotalCost">Total: $@Model.TotalCost</li>
             </ul>
-            @*<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right: 7px;">*@
             <input id="PayPayCheckoutBtn" type="submit" value="" />
         </div>
     }

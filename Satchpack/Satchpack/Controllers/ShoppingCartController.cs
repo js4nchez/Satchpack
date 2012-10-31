@@ -70,6 +70,15 @@ namespace Satchpack.Controllers
             return PartialView(GetCart());    
         }
 
+        [HttpPost]
+        public JsonResult GetProductIdByColor(string color)
+        {
+            List<DAL_Entity> entities = _dal.RetrieveEntities(new Inventory());
+            IEnumerable<Inventory> productInventory = entities.Cast<Inventory>();
+            Inventory product = productInventory.FirstOrDefault(x => x.Product.Color.Equals(color, StringComparison.OrdinalIgnoreCase));
+            return Json(product.Product.Id);
+        }
+
         /// <summary>
         /// Retrieves the current session's ShoppingCart.
         /// If there currently is no ShoppingCart, then one is created for this session.

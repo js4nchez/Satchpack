@@ -23,7 +23,8 @@
 #shopLeft
 {
     float: left;   
-    padding: 0 60px; 
+    width: 270px;
+    margin: 0 0 0 55px;
 }
 
 .bigSatchpack
@@ -63,6 +64,16 @@
     height: 22px;  
     display: block; 
     cursor: pointer;    
+}
+
+.colorThumb:hover
+{
+    border: 3px solid #FF7700;
+}
+
+#productCustomColors:hover
+{
+    border: none;    
 }
 
 #productViewDefault
@@ -232,6 +243,13 @@
     display: inline-block;       
 }
 
+.radiusBorder
+{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;         
+}
+
 #cartBtn
 {
     position: relative;
@@ -239,11 +257,7 @@
     left: 93px;
     background-color: #3B942A;
     float: left;
-    clear: both;
-    
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;    
+    clear: both; 
 }
 
 #cartBtn:hover
@@ -309,4 +323,9 @@ input[value*='Cart']
 form
 {
     margin: 0;    
+}
+
+.colorSelected
+{
+    border: 3px solid black;
 }
