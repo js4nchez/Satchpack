@@ -13,7 +13,7 @@ namespace Satchpack.Models
         {
             get
             {
-                return OrderItems.Count;
+                return OrderItems.Sum(item => item.Quantity);
             }
         }
         public double SubtotalCost

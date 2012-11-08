@@ -2,6 +2,10 @@
 {
     position: relative;
     top: 65px;
+    width: 180px;
+    display: block;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .navbar_cartLogo
@@ -15,8 +19,8 @@
 {
     float: left;
     margin: 0 40px 0 0;
-    color: White;   
-    width: 100px;     
+    color: White;
+    width: 100px;
 }
 
 .navbar_cartLogo a:hover
@@ -41,7 +45,6 @@
     float: right;
     text-align: center;
     font-size: large;
-
     border-bottom-right-radius: 10px 10px;
     border-bottom-left-radius: 10px 10px;
 }
@@ -61,9 +64,11 @@
 {
     background: url(../images/satchPackLogo.png);
     width: 176px;
-    height: 75px;   
+    height: 75px;
     position: relative;
-    top: 7px;     
+    top: 7px;
+    cursor: pointer;
+    
 }
 
 .cart
@@ -71,6 +76,6 @@
     background: url(../images/cart.png);
     width: 38px;
     height: 38px;
-    float: left; 
-    margin: 0 5px 0 0;         
+    float: left;
+    margin: 0 5px 0 0;
 }

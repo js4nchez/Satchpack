@@ -16,7 +16,15 @@ namespace Satchpack.Controllers
         public ActionResult Update(int quantity, int productId)
         {
             ShoppingCart cart = GetCart();
-            
+
+            foreach (var item in cart.OrderItems)
+            {
+                if (item.Product.Id == productId)
+                {
+                    item.Quantity = quantity;
+                }
+            }
+            Session["Cart"] = cart;
             return View("EditCart", GetCart());
         }
 
