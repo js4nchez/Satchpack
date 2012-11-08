@@ -12,6 +12,7 @@ namespace Satchpack.Controllers
     public class CheckoutController : Controller
     {
         private PayPalAPIAAInterfaceClient sandboxApi;
+
         public CheckoutController()
         {
             sandboxApi = new PayPalAPIAAInterfaceClient();

@@ -12,6 +12,14 @@ namespace Satchpack.Controllers
     public class ShoppingCartController : Controller
     {
         private IInventoryDAL _dal;
+
+        public ActionResult Update(int quantity, int productId)
+        {
+            ShoppingCart cart = GetCart();
+            
+            return View("EditCart", GetCart());
+        }
+
         public ShoppingCartController(IInventoryDAL dal)
         {
             _dal = dal;
@@ -46,11 +54,29 @@ namespace Satchpack.Controllers
         {
             ShoppingCart cart = GetCart();
             Product product = (Product)_dal.RetrieveEntityById(new Product() { Id = productId });
-            cart.OrderItems.Add(new OrderItem()
+            bool itemExisting = false;
+            foreach (var item in cart.OrderItems)
             {
-                Product = product,
-                Quantity = 1,
-            });
+                if (item.Product.Id == product.Id && item.Product.Color == product.Color)
+                {
+                    item.Quantity++;
+                    itemExisting = true;
+                    break;
+                }
+                else
+                {
+                    itemExisting = false;
+                }
+            }
+            if (!itemExisting)
+            {
+                cart.OrderItems.Add(new OrderItem()
+                {
+                    Product = product,
+                    Quantity = 1,
+                });
+            }
+
             return View("EditCart", GetCart());
         }
 

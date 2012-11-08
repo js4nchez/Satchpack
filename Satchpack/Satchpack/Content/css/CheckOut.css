@@ -54,7 +54,7 @@ th
 
 #shoppingCartTotal li
 {
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 #rule
@@ -70,3 +70,12 @@ th
     float: right;
     right: -15px;
 }
+
+#checkoutQuantityBox
+{
+    width: 25px;
+    text-align: center;
+    position: relative;
+    top: -5px;
+}
+
