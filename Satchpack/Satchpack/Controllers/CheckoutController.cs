@@ -150,8 +150,8 @@ namespace Satchpack.Controllers
             securityHeader.Credentials = new UserIdPasswordType()
             {
                 Username = "bus_1350451002_biz_api1.satchpack.com",
-                Password = "PXJETSRJJ6WL4RKR",
-                Signature = "AyaWC-VIEFt3wjkZSGZjNNB9w3.ZAaME9WaCBnipDjy--8Y.gK01MGeI"
+                Password = "FA2S9MMBHWMY76TD",
+                Signature = "A4RmMU72o2OSLnQJknNAH.OeoTCVAHppt1-eJu.j.639RvKkMcvT6-bW"
             };
             return securityHeader;
         }

@@ -439,10 +439,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="PayPalAPI" contract="PayPalSandbox.PayPalAPIInterface" bindingType="basicHttpBinding" address="https://api.sandbox.paypal.com/2.0/" bindingConfiguration="PayPalAPISoapBinding">
+    <endpoint name="PayPalAPI" contract="PayPalSandbox.PayPalAPIInterface" bindingType="basicHttpBinding" address="https://api-3t.sandbox.paypal.com/2.0/" bindingConfiguration="PayPalAPISoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://api.sandbox.paypal.com/2.0/</serializedValue>
+          <serializedValue>https://api-3t.sandbox.paypal.com/2.0/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -527,7 +527,7 @@
     <endpoint name="PayPalAPIAA" contract="PayPalSandbox.PayPalAPIAAInterface" bindingType="basicHttpBinding" address="https://api-aa.sandbox.paypal.com/2.0/" bindingConfiguration="PayPalAPIAASoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://api-aa.sandbox.paypal.com/2.0/</serializedValue>
+          <serializedValue>https://api-aa-3t.sandbox.paypal.com/2.0/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
