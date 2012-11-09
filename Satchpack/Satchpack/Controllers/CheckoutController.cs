@@ -31,8 +31,8 @@ namespace Satchpack.Controllers
                 {
                     SetExpressCheckoutRequestDetails = new SetExpressCheckoutRequestDetailsType()
                     {
-                        ReturnURL = "http://localhost:42155/Shopping/ReviewTransaction",
-                        CancelURL = "http://localhost:42155/Shopping/CancelTransaction",
+                        ReturnURL = "http://localhost:42155/ShoppingCart/ReviewTransaction",
+                        CancelURL = "http://localhost:42155/ShoppingCart/CancelTransaction",
                         OrderDescription = "Satchpack Order",
                         PaymentAction = PaymentActionCodeType.Sale,
                         OrderTotal = new BasicAmountType()
