@@ -7,50 +7,57 @@
 <div id="ProductsSection">
     <h2>
         Shopping Cart</h2>
-    @using (Html.BeginForm("Update", "ShoppingCart"))
-    {
-        <table id="productsCheckoutTable" width="800">
+    <table id="productsCheckoutTable" width="800">
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Item Price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Color
+            </th>
+        </tr>
+        @foreach (var item in Model.OrderItems)
+        {
             <tr>
-                <th>
-                    Product
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Item Price
-                </th>
-                <th>
-                    Quantity
-                </th>
-                <th>
-                    Color
-                </th>
-            </tr>
-            @foreach (var item in Model.OrderItems)
-            {
-                <tr>
-                    <td id="checkoutProduct">
-                        @item.Product.Name
-                    </td>
-                    <td id="checkoutDescription">
-                        @item.Product.Description
-                    </td>
-                    <td id="checkoutPrice">
-                        @String.Format("{0:C}", item.Product.Price)
-                    </td>
-                    <td id="checkoutQuantity">
+                <td id="checkoutProduct">
+                    @item.Product.Name
+                </td>
+                <td id="checkoutDescription">
+                    @item.Product.Description
+                </td>
+                <td id="checkoutPrice">
+                    @String.Format("{0:C}", item.Product.Price)
+                </td>
+                <td id="checkoutQuantity">
+                    @using (Html.BeginForm("Update", "ShoppingCart"))
+                    {
                         <input id="checkoutQuantityBox" type="text" name="quantity" value="@item.Quantity" />
                         <input type="hidden" name="productId" value="@item.Product.Id"/>
-                        <button id="update">Update</button>
-                    </td>
-                    <td id="checkoutTotal">
-                        @item.Product.Color
-                    </td>
-                </tr>
-            }
-        </table>
-    }
+                        <button id="update">
+                            Update</button>
+                    }
+                    @using (Html.BeginForm("Remove", "ShoppingCart"))
+                    {
+                        <input type="hidden" name="productId" value="@item.Product.Id"/>
+                        <button id="remove">
+                            Remove</button>
+                    }
+                </td>
+                <td id="checkoutTotal">
+                    @item.Product.Color
+                </td>
+            </tr>
+        }
+    </table>
     @using (Html.BeginForm("Checkout", "Checkout"))
     {
         <div id="cartFinals">

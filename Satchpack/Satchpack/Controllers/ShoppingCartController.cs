@@ -28,6 +28,22 @@ namespace Satchpack.Controllers
             return View("EditCart", GetCart());
         }
 
+        public ActionResult Remove(int productId)
+        {
+            ShoppingCart cart = GetCart();
+            foreach (var item in cart.OrderItems)
+            {
+                if (item.Product.Id == productId)
+                {
+                    cart.OrderItems.Remove(item);
+                    break;
+                }
+            }
+
+            Session["Cart"] = cart;
+            return View("EditCart", GetCart());
+        }
+
         public ShoppingCartController(IInventoryDAL dal)
         {
             _dal = dal;
