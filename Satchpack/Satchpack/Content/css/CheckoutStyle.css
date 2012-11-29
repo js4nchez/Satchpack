@@ -1,6 +1,6 @@
 ﻿#PayPayCheckoutBtn
 {
-    background: url(https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif);     
+    background: url(https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif);
     width: 145px;
     height: 42px;
     border: none;
@@ -21,14 +21,14 @@
     -moz-border-radius: 8px;
     border-radius: 8px;
     -webkit-border-radius: 10px;
+    table-layout: fixed;
 }
 
 td
 {
     text-align: center;
     border-bottom: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    vertical-align: middle;
 }
 
 th
@@ -84,6 +84,54 @@ th
     width: 25px;
     text-align: center;
     position: relative;
-    top: -5px;
+    top: 5px;
+    right: 58px;
 }
 
+button
+{
+    border: none;
+    color: white;
+    display: block;
+    width: 60px;
+    height: 25px;
+    position: relative;
+    float: left;
+    clear: both;
+    font-size: 13px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    left: 82px;
+}
+
+#update
+{
+    background-color: #3B942A;
+    top: -6px;
+}
+
+#update:hover
+{
+    background-color: #3BC92A;
+}
+
+#remove
+{
+    background-color: #A80000;
+    text-align: left;
+    top: -18px;
+}
+
+#remove:hover
+{
+    background-color: #FF0000;
+}
+
+form
+{
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    top: 12px;
+}
