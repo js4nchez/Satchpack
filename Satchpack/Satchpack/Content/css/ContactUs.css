@@ -29,44 +29,51 @@
     left: 80px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    font-size: 24px;
+    text-indent: 12px;
+    padding-top: 12px;
+    color: Black;
 }
 .nameText
 {
     position: relative;
-    left: 143px;
-    top: -110px;
+    left: 130px;
+    top: 30px;
 }
 .nameInput
 {
     position: relative;
     left: -23px;
-    top: -75px;
+    top: 60px;
     height: 30px;
-    left: 80px;
+    left: 67px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    font-size: 24px;
+    width: 250px;
 }
 .emailText
 {
     position: relative;
-    right: 135px;
-    top: -30px;
+    right: 191px;
+    top: 120px;
 }
 .emailInput
 {
     position: relative;
     float: right;
-    right: 43px;
     top: -160px;
     height: 30px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    font-size: 24px;
+    width: 250px;    
 }
 .submitButton
 {
     position: relative;
     float: right;
-    right: -132px;
+    right: -202px;
     top: -90px;
     font-size: x-large;
     height: 35px;
