@@ -1,0 +1,48 @@
+﻿div#mainSection
+{
+    width: 850px;
+}
+
+div.contactUsText .mainInput
+{
+    position: relative;
+    top: 67px;
+    left: 81px;
+    width: 500px;
+    height: 300px;    
+}
+
+.nameText
+{
+    position: relative;
+    top: -113px;
+    left: 124px;          
+}
+
+.nameInput
+{
+    position: relative;
+    top: -71px;
+    left: 62px;      
+}
+
+.emailText
+{
+    position: relative;
+    top: -26px;
+    left: -161px;     
+}
+
+.emailInput
+{
+    position: relative;
+    top: -158px;
+    left: -46px;  
+}
+
+.submitButton
+{
+    position: relative;
+    top: -108px;
+    left: 133px;      
+}

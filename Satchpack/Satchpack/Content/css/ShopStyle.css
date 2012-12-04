@@ -23,13 +23,13 @@
 #shopLeft
 {
     float: left;   
-    width: 270px;
-    margin: 0 0 0 55px;
+    width: 253px;
+    margin: 53px 0 0 53px;
 }
 
 .bigSatchpack
 {
-    width: 199px;
+    width: 177px;
     height: 212px;
     display: block;        
 }
@@ -78,7 +78,7 @@
 
 #productViewDefault
 {
-    background: url(../images/defaultView.png);            
+    background: url(../images/Satchpack_Red_Product.png);            
 }
 
 #productViewOne
@@ -114,7 +114,8 @@
 #productColorSection
 {
     float: left;
-    clear: left;        
+    clear: left;  
+    margin: 10px 0 0 10px;      
 }
 
 #productColorSection label
@@ -199,7 +200,7 @@
 #shopMiddle h3,
 #shopRight h3
 {
-    margin: 0 0 0 15px;
+    /*margin: 0 0 0 15px;*/
     font-size: 16px;            
 }
 

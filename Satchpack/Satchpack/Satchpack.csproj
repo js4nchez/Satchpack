@@ -101,6 +101,7 @@
     <Content Include="Content\css\CheckoutStyle.css" />
     <Content Include="Content\css\Footer.css" />
     <Content Include="Content\css\HomeStyle.css" />
+    <Content Include="Content\css\IE8Style.css" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_glass_95_fef1ec_1x400.png" />
     <Content Include="Content\css\jquery-ui-1.8.24\images\ui-bg_gloss-wave_16_ffffff_500x100.png" />
@@ -124,7 +125,6 @@
     <Content Include="Content\images\cart.png" />
     <Content Include="Content\images\customerSupport.png" />
     <Content Include="Content\images\customerSupportTitle.png" />
-    <Content Include="Content\images\defaultView.png" />
     <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\facebook_hover.png" />
     <Content Include="Content\images\FollowUsTitle.png" />

@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    
+    <!-- CSS styling pages -->
+
     <link href="@Url.Content("~/Content/css/Reset.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/MasterStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/NavigationBar.css")" rel="stylesheet" type="text/css" />
@@ -9,7 +12,9 @@
     <link href="@Url.Content("~/Content/css/MasterStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/Footer.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/css/jquery-ui-1.8.24/jquery-ui-1.8.24.custom.css")" rel="stylesheet" type="text/css" />
-    
+
+
+
     <!-- Script libraries -->
 
     <script src="@Url.Content("~/Scripts/javascript/jquery-1.8.2.min.js")" type="text/javascript"></script>
@@ -21,12 +26,39 @@
     
     <script src="@Url.Content("~/Scripts/javascript/pageScripts/masterScript.js")" type="text/javascript"></script>
 
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35845446-1']);
+    _gaq.push(['_setDomainName', 'satchpack.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function ()
+    {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
 </head>
 <body>
     <div id="wrapper" class="boxShadow">
-        @{Html.RenderAction("GenerateHeader", "ShoppingCart");}
-        @RenderBody()
-        @Footer.createFooter()
+        <div class="main">
+            @{Html.RenderAction("GenerateHeader", "ShoppingCart");}
+            @RenderBody()
+        </div>
     </div>
+    @Footer.createFooter()
+
+    <!--[if gte IE 9]>
+	    
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+	    <link href="@Url.Content("~/Content/css/IE8Style.css")" rel="stylesheet" type="text/css" />
+    <![endif]-->
 </body>
+
 </html>
