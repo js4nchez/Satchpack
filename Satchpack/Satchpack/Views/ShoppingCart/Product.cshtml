@@ -61,34 +61,24 @@
         </div>*@
         <div id="productColorSection" class="full-width">
 
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Red">
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[0].Product.Color">
                 <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
-                    <input type="hidden" value="Red" />
+                    <input type="hidden" value="@Model.Products[0].Product.Color" />
                 </label>
             </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Silver">
-                <label id="productColorTwo" class="radiusBorder colorThumb">
-                    <input type="hidden" value="Silver" />
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Blue">
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[1].Product.Color">
                 <label id="productColorThree" class="radiusBorder colorThumb">
-                    <input type="hidden" value="Blue" />    
+                    <input type="hidden" value="@Model.Products[1].Product.Color" />
                 </label>
             </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Purple">
-                <label id="productColorFour" class="radiusBorder colorThumb">
-                    <input type="hidden" value="Purple" />
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Gold">
-                <label id="productColorFive" class="radiusBorder colorThumb">
-                    <input type="hidden" value="Gold" />    
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Oil Green">
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[2].Product.Color">
                 <label id="productColorSix" class="radiusBorder colorThumb">
-                    <input type="hidden" value="Oil Green" />
+                    <input type="hidden" value="@Model.Products[2].Product.Color" />    
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[5].Product.Color">
+                <label id="productColorFive" class="radiusBorder colorThumb">
+                    <input type="hidden" value="@Model.Products[5].Product.Color" />
                 </label>
             </a>
             @*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
