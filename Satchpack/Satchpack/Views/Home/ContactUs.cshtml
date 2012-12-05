@@ -25,13 +25,13 @@
             @using (Html.BeginForm("ContactUsSendEmail", "Email"))
             {
                 <b class="messageText">Message:</b>
-                <div class="mainInput">@Html.TextArea("body")</div>
+                @Html.TextArea("body")
                 
                 <b class="nameText">Name:</b>
-                <div class="nameInput">@Html.TextBox("name")</div>
+                @Html.TextBox("name")
                 
                 <b class="emailText">Email:</b>
-                <div class="emailInput">@Html.TextBox("email")</div>
+                @Html.TextBox("email")
                 
                 <button class="submitButton radius" type="submit">
                     Send Message</button>
