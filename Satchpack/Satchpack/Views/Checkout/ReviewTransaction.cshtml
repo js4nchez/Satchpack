@@ -16,23 +16,38 @@
     @using (Html.BeginForm("OrderSubmitted", "Checkout"))
     {
         <h3 class="orderSummaryHeader">Shipping Info</h3>
-        
         <div id="shippingInfo">
-            <span>@Html.EditorFor(x => x.Invoice.Customer.FirstName) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.LastName) </span><br />
-            <span>@Html.EditorFor(x => x.Invoice.Customer.Address1) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.Address2)</span><br />
-            <span>@Html.EditorFor(x => x.Invoice.Customer.City),&nbsp; @Html.EditorFor(x => x.Invoice.Customer.State) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.PostalCode)</span>
-            <span>@Html.EditorFor(x => x.Invoice.Customer.Country)</span>
-        </div>  
-        
-        <h3 class="orderSummaryHeader">Contact Info</h3>
-        
-        <div id="contactInfo">
-            <span><label>Email: </label>@Html.EditorFor(x => x.Invoice.Customer.Email)</span>    
-            <span><label>Phone: </label>@Html.EditorFor(x => x.Invoice.Customer.Phone)</span>  
+            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.FirstName) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.LastName) </span><br />
+            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Address1) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.Address2)</span><br />
+            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.City),&nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.State) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.PostalCode)</span>
+            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Country)</span>
         </div>
         
-        @Html.HiddenFor(x => x.PayerId);
-        @Html.HiddenFor(x => x.Token);
+        <h3 class="orderSummaryHeader">Contact Info</h3>
+        <div id="contactInfo">
+            <span><label>Email: </label>@Html.DisplayTextFor(x => x.Invoice.Customer.Email)</span>    
+            <span><label>Phone: </label>@Html.DisplayTextFor(x => x.Invoice.Customer.Phone)</span>  
+        </div>
+        
+        <h3 class="orderSummaryHeader">Total Cost</h3>
+        <div id="invoiceTotal">
+            <span><label>Invoice Total: </label>@Html.DisplayTextFor(x => x.Invoice.InvoiceTotal)</span>
+        </div>
+        
+        @Html.HiddenFor(x => x.Invoice.Customer.FirstName)
+        @Html.HiddenFor(x => x.Invoice.Customer.LastName)
+        @Html.HiddenFor(x => x.Invoice.Customer.Address1)
+        @Html.HiddenFor(x => x.Invoice.Customer.Address2)
+        @Html.HiddenFor(x => x.Invoice.Customer.City)
+        @Html.HiddenFor(x => x.Invoice.Customer.State)
+        @Html.HiddenFor(x => x.Invoice.Customer.PostalCode)
+        @Html.HiddenFor(x => x.Invoice.Customer.Country)
+        @Html.HiddenFor(x => x.Invoice.Customer.Email)
+        @Html.HiddenFor(x => x.Invoice.Customer.Phone)
+
+        @Html.HiddenFor(x => x.Invoice.InvoiceTotal)
+        @Html.HiddenFor(x => x.PayerId)
+        @Html.HiddenFor(x => x.Token)
         
         <input id="confirmPayment" type="submit" value="Confirm Payment" />
     }
