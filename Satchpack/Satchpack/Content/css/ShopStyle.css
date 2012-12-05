@@ -118,6 +118,12 @@
     margin: 10px 0 0 10px;      
 }
 
+#productColorSection a
+{
+    display: block; 
+    float: left;      
+}
+
 #productColorSection label
 {
     float: left;
@@ -331,8 +337,6 @@ form
     border: 3px solid black;
 }
 
-
-
 /****   Review Transaction Page   ****/
 
 .orderSummaryHeader
@@ -375,3 +379,7 @@ form
     
 }
 
+#warrantyLink:visited
+{
+    color: Red;
+}

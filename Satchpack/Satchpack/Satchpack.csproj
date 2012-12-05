@@ -406,7 +406,7 @@
     <Content Include="Views\ShoppingCart\GenerateHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\docs\" />
+    <Folder Include="Scripts\docs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
