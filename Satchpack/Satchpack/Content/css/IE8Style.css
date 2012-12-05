@@ -15,15 +15,15 @@ div.contactUsText .mainInput
 .nameText
 {
     position: relative;
-    top: -113px;
-    left: 124px;          
+    top: 39px;
+    left: -41px;          
 }
 
 .nameInput
 {
     position: relative;
-    top: -71px;
-    left: 62px;      
+    top: -39px;
+    left: 38px;      
 }
 
 .emailText
@@ -45,4 +45,18 @@ div.contactUsText .mainInput
     position: relative;
     top: -108px;
     left: 133px;      
+}
+
+.messageText
+{
+    position: relative;
+    top: 130px;
+    left: 562px;    
+}
+
+.emailText
+{
+    position: relative;
+    top: 294px;
+    left: -201px;   
 }
