@@ -1,5 +1,24 @@
 ﻿.orderSummaryHeader
 {
-    left: 40px; 
-    position: relative; 
+    left: 40px;
+    position: relative;
+}
+
+table
+{
+    position: relative;
+    left: 90px;
+    text-align: left;
+}
+
+p
+{
+    position: relative;
+    left: 45px;
+    color: Red;
+}
+
+#invoiceTotal
+{
+    top: 20px;
 }
