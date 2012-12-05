@@ -21,15 +21,21 @@
             Contact Us
         </h2>
         <div class="contactUsText">
-            If you have comments, questions or concerns, do not hesitate to let us know: 
-            <b class="messageText">Message:</b>
-            <textarea class="mainInput"></textarea>
-            <b class="nameText">Name:</b>
-            <input class="nameInput" />
-            <b class="emailText">Email:</b>
-            <input class="emailInput" />
-            <button class="submitButton radius" type="submit">
-                Send Message</button>
+            If you have comments, questions or concerns, do not hesitate to let us know:
+            @using (Html.BeginForm("ContactUsSendEmail", "Email"))
+            {
+                <b class="messageText">Message:</b>
+                <div class="mainInput">@Html.TextArea("body")</div>
+                
+                <b class="nameText">Name:</b>
+                <div class="nameInput">@Html.TextBox("name")</div>
+                
+                <b class="emailText">Email:</b>
+                <div class="emailInput">@Html.TextBox("email")</div>
+                
+                <button class="submitButton radius" type="submit">
+                    Send Message</button>
+            }
         </div>
     </div>
 </body>

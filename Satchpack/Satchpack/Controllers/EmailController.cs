@@ -11,18 +11,12 @@ namespace Satchpack.Controllers
 {
     public class EmailController : Controller
     {
-        /// <summary>
-        /// Sends an email to the emails located in the 'dbo.DistributionEmails' table
-        /// </summary>
-        /// <param name="from"></param>
-        /// <param name="subject"></param>
-        /// <param name="body"></param>
-        private static void SendEmail(string from, string subject, string body)
+        public ActionResult ContactUsSendEmail(string body, string email, string name)
         {
             MailMessage message = new MailMessage();
-            message.From = new MailAddress(from);
-            message.Subject = subject;
-            message.Body = body;
+            message.From = new MailAddress(ConfigurationManager.AppSettings["SupportEmail"]);
+            message.Subject = string.Format("Satchpack Complaint From: {0}", name);
+            message.Body = string.Format("Message from email: {0}\n\n{1}", email, body);
             message.To.Add(new MailAddress(ConfigurationManager.AppSettings["SupportEmail"]));
             message.To.Add(new MailAddress(ConfigurationManager.AppSettings["PersonalEmail"]));
 
@@ -34,6 +28,7 @@ namespace Satchpack.Controllers
                 ConfigurationManager.AppSettings["SupportEmail"].ToString(),
                 ConfigurationManager.AppSettings["SupportEmailPassword"].ToString());
             server.Send(message);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
