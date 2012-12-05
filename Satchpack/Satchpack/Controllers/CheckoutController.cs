@@ -118,9 +118,7 @@ namespace Satchpack.Controllers
         /// </summary>
         public ActionResult CancelTransaction()
         {
-            ShoppingCart cart = GetCart();
-            cart = new ShoppingCart();
-            Session["Cart"] = cart;
+            ClearCart();
             return View();
         }
 
@@ -166,6 +164,7 @@ namespace Satchpack.Controllers
                 ViewBag.Message = "Your order has been successfully submitted.";
                 SendEmail(transaction);
             }
+            ClearCart();
             return View();
         }
 
@@ -201,6 +200,16 @@ namespace Satchpack.Controllers
         }
 
         /// <summary>
+        /// Clears the Shopping Cart for the current session.
+        /// </summary>
+        private void ClearCart()
+        {
+            ShoppingCart cart = GetCart();
+            cart = new ShoppingCart();
+            Session["Cart"] = cart;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="details"></param>
@@ -210,18 +219,18 @@ namespace Satchpack.Controllers
             MailMessage message = new MailMessage();
             message.From = new MailAddress(ConfigurationManager.AppSettings["SupportEmail"]);
             message.Subject = "New Order";
-            message.Body = string.Format(@"Transaction Details:\n\r\n\r
-                                          \tFirst Name:  {0}\n\r
-                                          \tLast Name:   {1}\n\r
-                                          \tAddress 1:   {2}\n\r
-                                          \tAddress 2:   {3}\n\r
-                                          \tCity:        {4}\n\r
-                                          \tState:       {5}\n\r
-                                          \tPostal Code: {6}\n\r
-                                          \tCountry:     {7}\n\r
-                                          \tEmail:       {8}\n\r
-                                          \tPhone:       {9}\n\r\n\r
-                                          \tOrder Total: {10}",
+            message.Body = string.Format("Transaction Details:\n\r\n\r\n\r\n\r" +
+                                         "\tFirst Name:  {0}\n\r\n\r" +
+                                         "\tLast Name:   {1}\n\r\n\r" +
+                                         "\tAddress 1:   {2}\n\r\n\r" +
+                                         "\tAddress 2:   {3}\n\r\n\r" +
+                                         "\tCity:        {4}\n\r\n\r" +
+                                         "\tState:       {5}\n\r\n\r" +
+                                         "\tPostal Code: {6}\n\r\n\r" +
+                                         "\tCountry:     {7}\n\r\n\r" +
+                                         "\tEmail:       {8}\n\r\n\r" +
+                                         "\tPhone:       {9}\n\r\n\r\n\r\n\r" +
+                                         "\tOrder Total: {10}",
                                                               customer.FirstName,
                                                               customer.LastName,
                                                               customer.Address1,

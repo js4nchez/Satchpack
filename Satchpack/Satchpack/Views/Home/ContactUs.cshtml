@@ -22,7 +22,7 @@
         </h2>
         <div class="contactUsText">
             If you have comments, questions or concerns, do not hesitate to let us know:
-            @using (Html.BeginForm("ContactUsSendEmail", "Email"))
+            @using (Html.BeginForm("ContactUsSendEmail", "Home"))
             {
                 <b class="messageText">Message:</b>
                 @Html.TextArea("body")
