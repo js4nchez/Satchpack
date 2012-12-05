@@ -1,37 +1,102 @@
 ﻿@{
     ViewBag.Title = "ReviewTransaction";
 }
-
-<link href="@Url.Content("~/Content/css/ShopStyle.css")" type="text/css" rel="Stylesheet" />
-
+<link href="@Url.Content("~/Content/css/ReviewStyle.css")" type="text/css" rel="Stylesheet" />
 @using Satchpack.Models
 @model Satchpack.Models.TransactionDetails
-
-<h2 class="orderSummaryHeader">Order Summary</h2>
-
+<h2 class="orderSummaryHeader">
+    Order Summary</h2>
 <div id="orderSummary">
-    <p>Please review the following order: </p>
-    
-    
+    <p>
+        Please review the following order:
+    </p>
     @using (Html.BeginForm("OrderSubmitted", "Checkout"))
     {
-        <h3 class="orderSummaryHeader">Shipping Info</h3>
         <div id="shippingInfo">
-            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.FirstName) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.LastName) </span><br />
-            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Address1) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.Address2)</span><br />
-            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.City),&nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.State) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.PostalCode)</span>
-            <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Country)</span>
+            <table>
+                <tr>
+                    <th>
+                        Shipping Info
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <span>@Html.DisplayTextFor(x => x.Invoice.Customer.FirstName) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.LastName)
+                        </span>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address:
+                    </td>
+                    <td>
+                        <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Address1) &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.Address2)</span><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State & Zip:
+                    </td>
+                    <td>
+                        <span>@Html.DisplayTextFor(x => x.Invoice.Customer.City),&nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.State)
+                            &nbsp; @Html.DisplayTextFor(x => x.Invoice.Customer.PostalCode)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Country:
+                    </td>
+                    <td>
+                        <span>@Html.DisplayTextFor(x => x.Invoice.Customer.Country)</span>
+                    </td>
+                </tr>
+            </table>
         </div>
         
-        <h3 class="orderSummaryHeader">Contact Info</h3>
+        
+        
+        <h3 class="orderSummaryHeader">
+            Contact Info</h3>
         <div id="contactInfo">
-            <span><label>Email: </label>@Html.DisplayTextFor(x => x.Invoice.Customer.Email)</span>    
-            <span><label>Phone: </label>@Html.DisplayTextFor(x => x.Invoice.Customer.Phone)</span>  
+            <table>
+                <tr>
+                    <th>
+                        Email:
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Email Address:
+                    </td>
+                    <td>
+                        @Html.DisplayTextFor(x => x.Invoice.Customer.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone:
+                    </td>
+                    <td>
+                        @Html.DisplayTextFor(x => x.Invoice.Customer.Phone)
+                    </td>
+                </tr>
+            </table>
         </div>
-        
-        <h3 class="orderSummaryHeader">Total Cost</h3>
         <div id="invoiceTotal">
-            <span><label>Invoice Total: </label>@Html.DisplayTextFor(x => x.Invoice.InvoiceTotal)</span>
+            <table>
+                <tr>
+                    <th>
+                        Total Cost:
+                    </th>
+                    <td>
+                        $@Html.DisplayTextFor(x => x.Invoice.InvoiceTotal)
+                    </td>
+                </tr>
+            </table>
         </div>
         
         @Html.HiddenFor(x => x.Invoice.Customer.FirstName)
@@ -52,4 +117,3 @@
         <input id="confirmPayment" type="submit" value="Confirm Payment" />
     }
 </div>
-

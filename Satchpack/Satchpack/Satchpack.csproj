@@ -120,6 +120,7 @@
     <Content Include="Content\css\MasterStyle.css" />
     <Content Include="Content\css\NavigationBar.css" />
     <Content Include="Content\css\Reset.css" />
+    <Content Include="Content\css\ReviewStyle.css" />
     <Content Include="Content\css\ShopStyle.css" />
     <Content Include="Content\images\blue.png" />
     <Content Include="Content\images\cart.png" />
