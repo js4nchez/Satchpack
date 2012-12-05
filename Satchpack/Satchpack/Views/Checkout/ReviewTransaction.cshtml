@@ -116,4 +116,14 @@
         
         <input id="confirmPayment" type="submit" value="Confirm Payment" />
     }
+
+    @using(Html.BeginForm("Checkout", "Checkout"))
+    {
+        <input id="editDetails" type="submit" value="Edit Details" />
+    }
+
+    @using (Html.BeginForm("CancelTransaction", "Checkout"))
+    {
+        <input id="cancelTransaction" type="submit" value="Cancel Order" />
+    }
 </div>

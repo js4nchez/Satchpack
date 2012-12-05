@@ -7,6 +7,8 @@ using Satchpack.PayPalSandbox;
 using Satchpack.Models;
 using Satchpack.Domain.Entities;
 using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace Satchpack.Controllers
 {
@@ -116,6 +118,9 @@ namespace Satchpack.Controllers
         /// </summary>
         public ActionResult CancelTransaction()
         {
+            ShoppingCart cart = GetCart();
+            cart = new ShoppingCart();
+            Session["Cart"] = cart;
             return View();
         }
 
@@ -132,13 +137,35 @@ namespace Satchpack.Controllers
                 {
                     DoExpressCheckoutPaymentRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType()
                     {
-                        Token = transaction.Token,
-                        PayerID = transaction.PayerId,
+                        PaymentActionSpecified = true,
                         PaymentAction = PaymentActionCodeType.Sale,
-                        PaymentDetails = new PaymentDetailsType[] { new PaymentDetailsType() { OrderTotal = new BasicAmountType() { Value = transaction.Invoice.InvoiceTotal.ToString() } } }
-                    }
+                        PayerID = transaction.PayerId,
+                        Token = transaction.Token,
+                        PaymentDetails = new PaymentDetailsType[]
+                        {
+                            new PaymentDetailsType()
+                            {
+                                OrderTotal = new BasicAmountType()
+                                {
+                                    Value = transaction.Invoice.InvoiceTotal.ToString(),
+                                    currencyID = CurrencyCodeType.USD
+                                }
+                            }
+                        }
+                    },
+                    Version = ConfigurationManager.AppSettings["PaypalVersion"]
                 }
             });
+
+            if (response.Errors != null && response.Errors.Length > 0)
+            {
+                ViewBag.Message = "There were a few complications with your order. Your order has been placed on hold.";
+            }
+            else
+            {
+                ViewBag.Message = "Your order has been successfully submitted.";
+                SendEmail(transaction);
+            }
             return View();
         }
 
@@ -171,6 +198,52 @@ namespace Satchpack.Controllers
                 Session["Cart"] = cart;
             }
             return cart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="details"></param>
+        private void SendEmail(TransactionDetails details)
+        {
+            Customer customer = details.Invoice.Customer;
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(ConfigurationManager.AppSettings["SupportEmail"]);
+            message.Subject = "New Order";
+            message.Body = string.Format(@"Transaction Details:\n\r\n\r
+                                          \tFirst Name:  {0}\n\r
+                                          \tLast Name:   {1}\n\r
+                                          \tAddress 1:   {2}\n\r
+                                          \tAddress 2:   {3}\n\r
+                                          \tCity:        {4}\n\r
+                                          \tState:       {5}\n\r
+                                          \tPostal Code: {6}\n\r
+                                          \tCountry:     {7}\n\r
+                                          \tEmail:       {8}\n\r
+                                          \tPhone:       {9}\n\r\n\r
+                                          \tOrder Total: {10}",
+                                                              customer.FirstName,
+                                                              customer.LastName,
+                                                              customer.Address1,
+                                                              customer.Address2,
+                                                              customer.City,
+                                                              customer.State,
+                                                              customer.PostalCode,
+                                                              customer.Country,
+                                                              customer.Email,
+                                                              customer.Phone,
+                                                              details.Invoice.InvoiceTotal);
+            message.To.Add(new MailAddress(ConfigurationManager.AppSettings["SupportEmail"]));
+            message.To.Add(new MailAddress(ConfigurationManager.AppSettings["PersonalEmail"]));
+
+            SmtpClient server = new SmtpClient(
+                ConfigurationManager.AppSettings["EmailHost"].ToString(),
+                int.Parse(ConfigurationManager.AppSettings["EmailPort"].ToString()));
+
+            server.Credentials = new NetworkCredential(
+                ConfigurationManager.AppSettings["SupportEmail"].ToString(),
+                ConfigurationManager.AppSettings["SupportEmailPassword"].ToString());
+            server.Send(message);
         }
     }
 }

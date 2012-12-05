@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
@@ -189,6 +188,7 @@
     <Content Include="Scripts\javascript\jquery-ui-1.8.24.custom.min.js" />
     <Content Include="Scripts\javascript\jquery.carouFredSel-6.0.2.js" />
     <Content Include="Scripts\javascript\pageScripts\masterScript.js" />
+    <Content Include="Views\Checkout\OrderSubmitted.cshtml" />
     <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
     <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
     <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
