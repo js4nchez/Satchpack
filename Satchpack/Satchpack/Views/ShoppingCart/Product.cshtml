@@ -16,6 +16,8 @@
 
             $('#userColor').text($('.colorSelected input').attr('value'));
 
+            $('a.colorTooltip').tooltip();
+
             $('.colorThumb').click(
                 function ()
                 {
@@ -58,24 +60,37 @@
             <label id="productViewSix" class="productThumb"></label>
         </div>*@
         <div id="productColorSection" class="full-width">
-            <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
-                <input type="hidden" value="Red" />
-            </label>
-            <label id="productColorTwo" class="radiusBorder colorThumb">
-                <input type="hidden" value="Silver" />
-            </label>
-            <label id="productColorThree" class="radiusBorder colorThumb">
-                <input type="hidden" value="Blue" />    
-            </label>
-            <label id="productColorFour" class="radiusBorder colorThumb">
-                <input type="hidden" value="Purple" />
-            </label>
-            <label id="productColorFive" class="radiusBorder colorThumb">
-                <input type="hidden" value="Gold" />    
-            </label>
-            <label id="productColorSix" class="radiusBorder colorThumb">
-                <input type="hidden" value="Oil Green" />
-            </label>
+
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Red">
+                <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
+                    <input type="hidden" value="Red" />
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Silver">
+                <label id="productColorTwo" class="radiusBorder colorThumb">
+                    <input type="hidden" value="Silver" />
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Blue">
+                <label id="productColorThree" class="radiusBorder colorThumb">
+                    <input type="hidden" value="Blue" />    
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Purple">
+                <label id="productColorFour" class="radiusBorder colorThumb">
+                    <input type="hidden" value="Purple" />
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Gold">
+                <label id="productColorFive" class="radiusBorder colorThumb">
+                    <input type="hidden" value="Gold" />    
+                </label>
+            </a>
+            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="Oil Green">
+                <label id="productColorSix" class="radiusBorder colorThumb">
+                    <input type="hidden" value="Oil Green" />
+                </label>
+            </a>
             @*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
         </div>    
     </div>
