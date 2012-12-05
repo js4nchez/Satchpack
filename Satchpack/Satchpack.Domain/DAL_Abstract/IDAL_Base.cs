@@ -5,6 +5,7 @@ using System.Text;
 using Satchpack.Domain.Entities;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Satchpack.Domain.DAL_Abstract
 {
@@ -13,7 +14,7 @@ namespace Satchpack.Domain.DAL_Abstract
     /// </summary>
     public abstract class IDAL_Base
     {
-        private readonly string ConnectionString = @"Data Source=tcp:mssql1.cloudsites.gearhost.com;Initial Catalog=satchpack;User ID=satchpack;Pwd=w7ddrb84;";
+        private readonly string ConnectionString = ConfigurationManager.ConnectionStrings["SatchpackAccess"].ToString();
 
         /// <summary>
         /// Creates a new entity in the database.

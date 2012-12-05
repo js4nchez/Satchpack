@@ -11,7 +11,6 @@ namespace Satchpack.Controllers
     public class AdminController : Controller
     {
         private IDAL_Base _dal;
-
         public AdminController(IDAL_Base dal)
         {
             _dal = dal;
@@ -34,12 +33,10 @@ namespace Satchpack.Controllers
             }
             return View();            
         }
-
         public ActionResult Logout()
         {
             return View();
         }
-
         public ActionResult Index()
         {
             return View();        

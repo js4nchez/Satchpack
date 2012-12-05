@@ -6,13 +6,13 @@ using System.Web.Mvc;
 using Satchpack.PayPalSandbox;
 using Satchpack.Models;
 using Satchpack.Domain.Entities;
+using System.Configuration;
 
 namespace Satchpack.Controllers
 {
     public class CheckoutController : Controller
     {
         private PayPalAPIAAInterfaceClient sandboxApi;
-
         public CheckoutController()
         {
             sandboxApi = new PayPalAPIAAInterfaceClient();
@@ -24,24 +24,25 @@ namespace Satchpack.Controllers
         /// </summary>
         public ActionResult Checkout()
         {
-            // This object holds the payment details.
+            // This object holds the payment details (SetExpressCheckoutReq).
+            ShoppingCart cart = GetCart();
             SetExpressCheckoutReq expressCheckout = new SetExpressCheckoutReq()
             {
                 SetExpressCheckoutRequest = new SetExpressCheckoutRequestType()
                 {
                     SetExpressCheckoutRequestDetails = new SetExpressCheckoutRequestDetailsType()
                     {
-                        ReturnURL = "http://localhost:42155/ShoppingCart/ReviewTransaction",
-                        CancelURL = "http://localhost:42155/ShoppingCart/CancelTransaction",
+                        ReturnURL = ConfigurationManager.AppSettings["ReturnURL"].ToString(),
+                        CancelURL = ConfigurationManager.AppSettings["CancelURL"].ToString(),
                         OrderDescription = "Satchpack Order",
                         PaymentAction = PaymentActionCodeType.Sale,
                         OrderTotal = new BasicAmountType()
                         {
                             currencyID = CurrencyCodeType.USD,
-                            Value = "90.00"
+                            Value = cart.TotalCost.ToString()
                         }
                     },
-                    Version = "60.0"
+                    Version = ConfigurationManager.AppSettings["PaypalVersion"].ToString()
                 }
             };
 
@@ -60,17 +61,18 @@ namespace Satchpack.Controllers
         /// <param name="token">The string that identifies the user's session for a transaction.</param>
         public ActionResult ReviewTransaction(string token)
         {
+            // Retrieves customer information based on their session token.
+            CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             GetExpressCheckoutDetailsReq checkoutDetails = new GetExpressCheckoutDetailsReq();
             checkoutDetails.GetExpressCheckoutDetailsRequest = new GetExpressCheckoutDetailsRequestType()
             {
                 Token = token,
-                Version = "60.0"
+                Version = ConfigurationManager.AppSettings["PaypalVersion"].ToString()
             };
-
-            CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             GetExpressCheckoutDetailsResponseType response = sandboxApi.GetExpressCheckoutDetails(ref creds, checkoutDetails);
-            string payerId = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo.PayerID;
 
+            // Extracting customer info into Satchpack objects to display to the user for review.
+            string payerId = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo.PayerID;
             double orderTotal;
             PayerInfoType payer = response.GetExpressCheckoutDetailsResponseDetails.PayerInfo;
             PaymentDetailsType paymentDetails = response.GetExpressCheckoutDetailsResponseDetails.PaymentDetails[0];
@@ -121,7 +123,7 @@ namespace Satchpack.Controllers
         /// Submits the payment to PayPal as confirmed by the user.
         /// </summary>
         /// <param name="token">The string that identifies the user's session for a transaction.</param>
-        public ActionResult OrderSubmitted(TransactionDetails transactionDetails)
+        public ActionResult OrderSubmitted(TransactionDetails transaction)
         {
             CustomSecurityHeaderType creds = RetrieveSecurityHeaders();
             DoExpressCheckoutPaymentResponseType response = sandboxApi.DoExpressCheckoutPayment(ref creds, new DoExpressCheckoutPaymentReq()
@@ -130,10 +132,10 @@ namespace Satchpack.Controllers
                 {
                     DoExpressCheckoutPaymentRequestDetails = new DoExpressCheckoutPaymentRequestDetailsType()
                     {
-                        Token = transactionDetails.Token,
-                        PayerID = transactionDetails.PayerId,
+                        Token = transaction.Token,
+                        PayerID = transaction.PayerId,
                         PaymentAction = PaymentActionCodeType.Sale,
-                        PaymentDetails = new PaymentDetailsType[] { new PaymentDetailsType() { OrderTotal = new BasicAmountType() { Value = transactionDetails.Invoice.InvoiceTotal.ToString() } } }
+                        PaymentDetails = new PaymentDetailsType[] { new PaymentDetailsType() { OrderTotal = new BasicAmountType() { Value = transaction.Invoice.InvoiceTotal.ToString() } } }
                     }
                 }
             });
@@ -149,11 +151,26 @@ namespace Satchpack.Controllers
             CustomSecurityHeaderType securityHeader = new CustomSecurityHeaderType();
             securityHeader.Credentials = new UserIdPasswordType()
             {
-                Username = "bus_1350451002_biz_api1.satchpack.com",
-                Password = "FA2S9MMBHWMY76TD",
-                Signature = "A4RmMU72o2OSLnQJknNAH.OeoTCVAHppt1-eJu.j.639RvKkMcvT6-bW"
+                Username = ConfigurationManager.AppSettings["Username"],
+                Password = ConfigurationManager.AppSettings["Password"],
+                Signature = ConfigurationManager.AppSettings["Signature"]
             };
             return securityHeader;
+        }
+
+        /// <summary>
+        /// Retrieves the current session's ShoppingCart.
+        /// If there currently is no ShoppingCart, then one is created for this session.
+        /// </summary>
+        private ShoppingCart GetCart()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShoppingCart();
+                Session["Cart"] = cart;
+            }
+            return cart;
         }
     }
 }

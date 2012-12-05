@@ -10,10 +10,10 @@ namespace Satchpack.Models
 {
     public class TransactionDetails
     {
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public string Token { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public string PayerId { get; set; }
         public Invoice Invoice { get; set; }
     }

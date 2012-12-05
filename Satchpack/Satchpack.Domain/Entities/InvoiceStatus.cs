@@ -10,7 +10,7 @@ namespace Satchpack.Domain.Entities
 {
     public class InvoiceStatus : DAL_Entity
     {
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide a name for this invoice status.")]

@@ -10,7 +10,7 @@ namespace Satchpack.Domain.Entities
 {
     public class ShippingMethod : DAL_Entity
     {
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide a carrier for this shipping method.")]

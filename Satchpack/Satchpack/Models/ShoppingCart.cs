@@ -30,7 +30,10 @@ namespace Satchpack.Models
         {
             get
             {
-                return SubtotalCost + ShippingCost;
+                double total = 0;
+                if (ItemCount > 0)
+                    total = SubtotalCost + ShippingCost;
+                return total;
             }
         }
         public double ShippingCost { get; private set; }

@@ -10,7 +10,7 @@ namespace Satchpack.Domain.Entities
 {
     public class Inventory : DAL_Entity
     {
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public int Id { get; set; }
 
         [HiddenInput(DisplayValue = false)]

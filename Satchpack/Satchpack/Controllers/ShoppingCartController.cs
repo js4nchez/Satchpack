@@ -13,6 +13,12 @@ namespace Satchpack.Controllers
     {
         private IInventoryDAL _dal;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         public ActionResult Update(int quantity, int productId)
         {
             ShoppingCart cart = GetCart();
@@ -28,6 +34,11 @@ namespace Satchpack.Controllers
             return View("EditCart", GetCart());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         public ActionResult Remove(int productId)
         {
             ShoppingCart cart = GetCart();
@@ -44,6 +55,10 @@ namespace Satchpack.Controllers
             return View("EditCart", GetCart());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dal"></param>
         public ShoppingCartController(IInventoryDAL dal)
         {
             _dal = dal;

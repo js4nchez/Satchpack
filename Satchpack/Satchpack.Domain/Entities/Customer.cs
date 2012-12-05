@@ -10,10 +10,11 @@ namespace Satchpack.Domain.Entities
 {
     public class Customer : DAL_Entity
     {
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = true)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide your first name.")]
+        [Display(Name = "FirstName")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Please provide your last name.")]

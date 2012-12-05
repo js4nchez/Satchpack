@@ -2,27 +2,39 @@
     ViewBag.Title = "ReviewTransaction";
 }
 
+<link href="@Url.Content("~/Content/css/ShopStyle.css")" type="text/css" rel="Stylesheet" />
+
+@using Satchpack.Models
 @model Satchpack.Models.TransactionDetails
 
-<h2>Order Summary</h2>
+<h2 class="orderSummaryHeader">Order Summary</h2>
 
 <div id="orderSummary">
     <p>Please review the following order: </p>
     
-    <h3>Customer Info</h3>
-    <label>First name: <span>@Model.Invoice.Customer.FirstName</span></label>
-    <label>Last name: <span>@Model.Invoice.Customer.LastName</span></label>
-    <label>Address 1: <span>@Model.Invoice.Customer.Address1</span></label>
-    <label>Address 2: <span>@Model.Invoice.Customer.Address2</span></label>
-    <label>City: <span>@Model.Invoice.Customer.City</span></label>
-    <label>State: <span>@Model.Invoice.Customer.State</span></label>
-    <label>Zip: <span>@Model.Invoice.Customer.PostalCode</span></label>
-    <label>Country: <span>@Model.Invoice.Customer.Country</span></label>
-    <label>Email: <span>@Model.Invoice.Customer.Email</span></label>
-    <label>Phone: <span>@Model.Invoice.Customer.Phone</span></label>
-
-    <label>Order total: <span>@Model.Invoice.InvoiceTotal</span></label>
-
     
+    @using (Html.BeginForm("OrderSubmitted", "Checkout"))
+    {
+        <h3 class="orderSummaryHeader">Shipping Info</h3>
+        
+        <div id="shippingInfo">
+            <span>@Html.EditorFor(x => x.Invoice.Customer.FirstName) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.LastName) </span><br />
+            <span>@Html.EditorFor(x => x.Invoice.Customer.Address1) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.Address2)</span><br />
+            <span>@Html.EditorFor(x => x.Invoice.Customer.City),&nbsp; @Html.EditorFor(x => x.Invoice.Customer.State) &nbsp; @Html.EditorFor(x => x.Invoice.Customer.PostalCode)</span>
+            <span>@Html.EditorFor(x => x.Invoice.Customer.Country)</span>
+        </div>  
+        
+        <h3 class="orderSummaryHeader">Contact Info</h3>
+        
+        <div id="contactInfo">
+            <span><label>Email: </label>@Html.EditorFor(x => x.Invoice.Customer.Email)</span>    
+            <span><label>Phone: </label>@Html.EditorFor(x => x.Invoice.Customer.Phone)</span>  
+        </div>
+        
+        @Html.HiddenFor(x => x.PayerId);
+        @Html.HiddenFor(x => x.Token);
+        
+        <input id="confirmPayment" type="submit" value="Confirm Payment" />
+    }
 </div>
 
