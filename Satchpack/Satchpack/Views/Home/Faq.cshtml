@@ -1,18 +1,16 @@
 ﻿<!DOCTYPE html>
 <script type="text/javascript">
     $(document).ready(
-        function ()
-        {
+        function () {
             $('ul.nav li').removeClass('active');
             $('#faqPortal').parent().addClass('active');
             $('.accordion-toggle').click(
-                function ()
-                {
+                function () {
                     var elementId = $(this).attr('href').toString()
                     var element = document.getElementById(elementId);
                     if ($(element).hasClass('collapse')) {
                         $(element).removeClass('collapse');
-                        
+
                     } else {
                         $(element).addClass('collapse');
                     }
@@ -112,26 +110,14 @@
                     <div class="accordion-inner">
                         As of now we have the following colors available:
                         <ul>
+                            <li>Red</li>
+                            <li>Silver</li>
                             <li>Forest Green</li>
                             <li>Royal Blue</li>
-                            <li>Red</li>
-                            <li>Military Green</li>
-                            <li>Silver</li>
+                            <li>Olive</li>
+                            <li>Taupe</li>
+                            <li>Main color: Black</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="collapseFive">
-                        <label class="plusButton">
-                        </label>
-                        &nbsp; May I order my own custom color? </a>
-                </div>
-                <div id="collapseFive" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        You may, but it will bring the cost up. Please send us an email at <a href="mailto:sales@satchpack.com">
-                            sales@satchpack.com</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +181,7 @@
                         <br />
                         4416 N Half Mile Rd.
                         <br />
-                        Enoch, Utah 84121
+                        Enoch, Utah 84721
                         <br />
                         <br />
                         Please include your name, address, email, phone number (including area code) and

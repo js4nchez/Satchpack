@@ -135,15 +135,12 @@
     <Content Include="Content\images\menuGradient.png" />
     <Content Include="Content\images\minusBtn.png" />
     <Content Include="Content\images\more.png" />
+    <Content Include="Content\images\olive.png" />
     <Content Include="Content\images\photos.png" />
     <Content Include="Content\images\plusBtn.png" />
     <Content Include="Content\images\productSpecsSection.png" />
     <Content Include="Content\images\purple.png" />
     <Content Include="Content\images\red.png" />
-    <Content Include="Content\images\satchpack1.JPG" />
-    <Content Include="Content\images\satchpack2.JPG" />
-    <Content Include="Content\images\satchpack3.JPG" />
-    <Content Include="Content\images\satchpack4.JPG" />
     <Content Include="Content\images\satchpack5.JPG" />
     <Content Include="Content\images\satchpack6.JPG" />
     <Content Include="Content\images\satchpack7.JPG" />
@@ -154,6 +151,7 @@
     <Content Include="Content\images\shoppingInfoTitle.png" />
     <Content Include="Content\images\silver.png" />
     <Content Include="Content\images\satchpackInnerBg.png" />
+    <Content Include="Content\images\taupe.png" />
     <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\twitterSocial.png" />
     <Content Include="Content\images\twitter_hover.png" />
