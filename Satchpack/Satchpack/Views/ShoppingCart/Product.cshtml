@@ -2,13 +2,10 @@
     ViewBag.Title = "Satchpack.com ~ Satchpack";
 }
 @model Satchpack.Models.AvailableProducts
-
 <link href="@Url.Content("~/Content/css/ShopStyle.css")" type="text/css" rel="Stylesheet" />
-
 <script type="text/javascript">
     $(document).ready(
-        function ()
-        {
+        function () {
             $("#productTabs").tabs();
 
             $('ul.nav li').removeClass('active');
@@ -19,8 +16,7 @@
             $('a.colorTooltip').tooltip();
 
             $('.colorThumb').click(
-                function ()
-                {
+                function () {
                     $('.colorThumb').removeClass('colorSelected');
                     $(this).addClass('colorSelected');
                     var selectedColor = $(this).children()[0].value;
@@ -31,8 +27,7 @@
                         url: '@Url.Action("GetProductIdByColor", "ShoppingCart")',
                         data: { color: selectedColor },
                         type: 'POST',
-                        success: function (data)
-                        {
+                        success: function (data) {
                             $("#productId").attr("value", data);
                         }
                     });
@@ -45,13 +40,14 @@
 </script>
 @using (Html.BeginForm("AddToCart", "ShoppingCart"))
 {
-<div id="shopTopSection">
-    <div id="shopTopHeader">
-        <h2>@Model.Products.First().Product.Name</h2>
-    </div>
-    <div id="shopLeft">
-        <label id="productViewDefault" class="bigSatchpack"></label>
-        @*<div id="productThumbnailsSection" class="full-width">
+    <div id="shopTopSection">
+        <div id="shopTopHeader">
+            <h2>@Model.Products.First().Product.Name</h2>
+        </div>
+        <div id="shopLeft">
+            <label id="productViewDefault" class="bigSatchpack">
+            </label>
+            @*<div id="productThumbnailsSection" class="full-width">
             <label id="productViewOne" class="productThumb"></label>
             <label id="productViewTwo" class="productThumb"></label>
             <label id="productViewThree" class="productThumb"></label>
@@ -59,109 +55,146 @@
             <label id="productViewFive" class="productThumb"></label>
             <label id="productViewSix" class="productThumb"></label>
         </div>*@
-        <div id="productColorSection" class="full-width">
-
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[0].Product.Color">
-                <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
-                    <input type="hidden" value="@Model.Products[0].Product.Color" />
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[1].Product.Color">
-                <label id="productColorThree" class="radiusBorder colorThumb">
-                    <input type="hidden" value="@Model.Products[1].Product.Color" />
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[2].Product.Color">
-                <label id="productColorSix" class="radiusBorder colorThumb">
-                    <input type="hidden" value="@Model.Products[2].Product.Color" />    
-                </label>
-            </a>
-            <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[5].Product.Color">
-                <label id="productColorFive" class="radiusBorder colorThumb">
-                    <input type="hidden" value="@Model.Products[5].Product.Color" />
-                </label>
-            </a>
-            @*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
-        </div>    
-    </div>
-    <div id="shopMiddle">
-        <div>
-            <h3>Overview</h3>
+            <div id="productColorSection" class="full-width">
+                <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[0].Product.Color">
+                    <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
+                        <input type="hidden" value="@Model.Products[0].Product.Color" />
+                    </label>
+                </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[1].Product.Color">
+                    <label id="productColorTwo" class="radiusBorder colorThumb">
+                        <input type="hidden" value="@Model.Products[1].Product.Color" />
+                    </label>
+                </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[2].Product.Color">
+                    <label id="productColorThree" class="radiusBorder colorThumb">
+                        <input type="hidden" value="@Model.Products[2].Product.Color" />
+                    </label>
+                </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[3].Product.Color">
+                    <label id="productColorFour" class="radiusBorder colorThumb">
+                        <input type="hidden" value="@Model.Products[3].Product.Color" />
+                    </label>
+                </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[4].Product.Color">
+                    <label id="productColorFive" class="radiusBorder colorThumb">
+                        <input type="hidden" value="@Model.Products[4].Product.Color" />
+                    </label>
+                </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[5].Product.Color">
+                    <label id="productColorSix" class="radiusBorder colorThumb">
+                        <input type="hidden" value="@Model.Products[5].Product.Color" />
+                    </label>
+                </a>@*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
+            </div>
+            <br />
+            <div>
+                Click to choose your color</div>
         </div>
-        <table id="productFeaturesTable">
-            <tr>
-                <td>Laptop Compartment Dimensions:</td>
-                <td>15.25" x 10.5" x 2"</td>
-            </tr>
-            <tr>
-                <td>Size:</td>
-                <td>Large</td>
-            </tr>
-            <tr>
-                <td> Dimensions:</td>
-                <td>20" x 13" x 9.5"</td>
-            </tr>
-            <tr>
-                <td>Weight:</td>
-                <td>@Model.Products.First().Product.Weight oz</td>
-            </tr>
-            <tr>
-                <td>Capacity:</td>
-                <td>2015 cu. in.</td>
-            </tr>
-            <tr>
-                <td>Material:</td>
-                <td>420D nylon / 1680 Ballistics</td>
-            </tr>
-            <tr>
-                <td>Color</td>
-                <td>
-                    <span id="userColor"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>Warranty:</td>
-                <td><a id="warrantyLink" href="/Home/Faq">See warranty document.</a></td>
-            </tr>
-        </table>
-    </div>
-    <div id="shopRight">
-        <label id="pricingText" class="text red">Our price:</label>
-        <br />
-        <div id="priceTagContainer">
-            <label class="moneySign red">$</label>
-            <label class="price red">@string.Format("{0:0.00}", Model.Products.First().Product.Price)</label>
-            <label class="text red">USD</label>
+        <div id="shopMiddle">
+            <div>
+                <h3>
+                    Overview</h3>
+            </div>
+            <table id="productFeaturesTable">
+                <tr>
+                    <td>
+                        Laptop Compartment Dimensions:
+                    </td>
+                    <td>
+                        15.5" x 11" x 2"
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Size:
+                    </td>
+                    <td>
+                        Medium
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Dimensions:
+                    </td>
+                    <td>
+                        15.5" x 11" x 5"
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Weight:
+                    </td>
+                    <td>@Model.Products.First().Product.Weight lbs
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Capacity:
+                    </td>
+                    <td>
+                        825 cu. in.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Material:
+                    </td>
+                    <td>
+                        HD Nylon 1050 Denier (Exterior)<br />
+                        420D nylon (Inside liner)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Color
+                    </td>
+                    <td>
+                        <span id="userColor"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Warranty:
+                    </td>
+                    <td>
+                        <a id="warrantyLink" href="/Home/Faq">See warranty document.</a>
+                    </td>
+                </tr>
+            </table>
         </div>
-
-        <div id="cartBtn" class="radiusBorder">
-        <input name="productId" id="productId" value="@Model.Products.First().Product.Id" type="hidden" />
-        <input type="submit" value="Add to Cart" />
-        </div>     
+        <div id="shopRight">
+            <label id="pricingText" class="text red">
+                Our price:</label>
+            <br />
+            <div id="priceTagContainer">
+                <label class="moneySign red">
+                    $</label>
+                <label class="price red">@string.Format("{0:0.00}", Model.Products.First().Product.Price)</label>
+                <label class="text red">
+                    USD</label>
+            </div>
+            <div id="cartBtn" class="radiusBorder">
+                <input name="productId" id="productId" value="@Model.Products.First().Product.Id" type="hidden" />
+                <input type="submit" value="Add to Cart" />
+            </div>
+        </div>
     </div>
-</div>
 }
 <div id="shopBottomSection">
     <div id="productTabs">
         <ul>
-            <li>
-                <a href="#productPhotoGallery">
-                    <label class="photosIcon tabThumbnail"></label>
-                    Photo Gallery
-                </a>
-            </li>
-            <li>
-                <a href="#productVideoGallery">
-                    <label class="videosIcon tabThumbnail"></label>                
-                    Video Gallery
-                </a>
-            </li>
+            <li><a href="#productPhotoGallery">
+                <label class="photosIcon tabThumbnail">
+                </label>
+                Photo Gallery </a></li>
+            <li><a href="#productVideoGallery">
+                <label class="videosIcon tabThumbnail">
+                </label>
+                Video Gallery </a></li>
         </ul>
         <div id="productPhotoGallery">
-            <label class="comingSoon">Content to be posted soon.</label>
+            <label class="comingSoon">
+                Content to be posted soon.</label>
         </div>
         <div id="productVideoGallery">
-            <label class="comingSoon">Content to be posted soon.</label>        
+            <label class="comingSoon">
+                Content to be posted soon.</label>
         </div>
-    </div>    
+    </div>
 </div>
