@@ -18,6 +18,8 @@
             $('.colorThumb').click(
                 function () {
                     $('.colorThumb').removeClass('colorSelected');
+                    $('.colorThumb').addClass('notSelected');
+                    $(this).removeClass('notSelected');
                     $(this).addClass('colorSelected');
                     var selectedColor = $(this).children()[0].value;
                     $('#userColor').text(selectedColor);
@@ -57,34 +59,35 @@
         </div>*@
             <div id="productColorSection" class="full-width">
                 <a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[0].Product.Color">
-                    <label id="productColorOne" class="radiusBorder colorThumb colorSelected">
+                    <label id="productColorOne" class="radiusBorder colorThumb notSelected colorSelected">
                         <input type="hidden" value="@Model.Products[0].Product.Color" />
                     </label>
                 </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[1].Product.Color">
-                    <label id="productColorTwo" class="radiusBorder colorThumb">
+                    <label id="productColorTwo" class="radiusBorder colorThumb notSelected">
                         <input type="hidden" value="@Model.Products[1].Product.Color" />
                     </label>
                 </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[2].Product.Color">
-                    <label id="productColorThree" class="radiusBorder colorThumb">
+                    <label id="productColorThree" class="radiusBorder colorThumb notSelected">
                         <input type="hidden" value="@Model.Products[2].Product.Color" />
                     </label>
                 </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[3].Product.Color">
-                    <label id="productColorFour" class="radiusBorder colorThumb">
+                    <label id="productColorFour" class="radiusBorder colorThumb notSelected">
                         <input type="hidden" value="@Model.Products[3].Product.Color" />
                     </label>
                 </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[4].Product.Color">
-                    <label id="productColorFive" class="radiusBorder colorThumb">
+                    <label id="productColorFive" class="radiusBorder colorThumb notSelected">
                         <input type="hidden" value="@Model.Products[4].Product.Color" />
                     </label>
                 </a><a class="colorTooltip" href="#" rel="tooltip" data-placement="bottom" data-original-title="@Model.Products[5].Product.Color">
-                    <label id="productColorSix" class="radiusBorder colorThumb">
+                    <label id="productColorSix" class="radiusBorder colorThumb notSelected">
                         <input type="hidden" value="@Model.Products[5].Product.Color" />
                     </label>
                 </a>@*<label id="productCustomColors" class="radiusBorder colorThumb"></label>*@
             </div>
             <br />
-            <div>
-                Click to choose your color</div>
+            <br />
+            <label id="clickToChoose">
+                Click to choose your color</label>
         </div>
         <div id="shopMiddle">
             <div>
